@@ -77,13 +77,13 @@ class Gallery extends React.Component {
               </span>
             </h1>
           </div>
-          {this.props.data.file.childImageSharp.fluid && (
+          {/* {this.props.data.file.childImageSharp.fluid && (
             <Img
               fluid={this.props.data.file.childImageSharp.fluid}
               className={style.cover}
               backgroundColor="var(--input-background-color)"
             />
-          )}
+          )} */}
           <div className={style.content}>
             <p>
               Digital paintings created on an iPad using the iOS app{' '}
@@ -103,10 +103,10 @@ class Gallery extends React.Component {
                 return (
                   <div key={post.id} className={style.gridItem}>
                     <Link to={post.frontmatter.path}>
-                      <Img
+                      {/* <Img
                         fluid={image.childImageSharp.fluid}
                         backgroundColor="var(--input-background-color)"
-                      />
+                      /> */}
                     </Link>
                   </div>
                 )
