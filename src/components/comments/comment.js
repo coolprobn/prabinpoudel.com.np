@@ -46,7 +46,6 @@ export const commentQuery = graphql`
     id
     frontmatter {
       name
-      email
       friendlyDate: date(formatString: "MMMM DD, YYYY")
       iso8601Date: date
       published

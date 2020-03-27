@@ -42,11 +42,11 @@ const HomePage = ({ data }) => {
               Nintendo Switch.
             </p>
           </div>
-          <Img
+          {/* <Img
             fluid={data.aboutImage.childImageSharp.fluid}
             className={style.cover}
             backgroundColor="var(--input-background-color)"
-          />
+          /> */}
         </div>
         <div className={style.content}>
           <h2 className={style.subHeading}>Featured articles</h2>
@@ -204,7 +204,6 @@ export const pageQuery = graphql`
         frontmatter: {
           featured: { eq: true }
           published: { ne: false }
-          output: { ne: false }
         }
       }
       sort: { fields: [frontmatter___date], order: DESC }
@@ -241,7 +240,6 @@ export const pageQuery = graphql`
         frontmatter: {
           featured: { ne: true }
           published: { ne: false }
-          output: { ne: false }
           categories: { nin: "work" }
         }
       }
