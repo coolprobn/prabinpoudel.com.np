@@ -2,11 +2,13 @@ import React, { useState } from 'react'
 import PropTypes from 'prop-types'
 import { Link } from 'gatsby'
 import { Helmet } from 'react-helmet'
-import MadeMistakesIcon from './icons/made-mistakes-icon'
+import PersonalBlogIcon from './icons/personal-blog-icon'
 
 import Menu from './menu'
 
 import style from '../styles/header.module.css'
+
+import BlogLogo from '../images/blog-logo.png';
 
 const Header = props => {
   const { siteTitle, mainMenu, defaultTheme } = props
@@ -55,7 +57,8 @@ const Header = props => {
       <header className={style.header}>
         <div className={style.name}>
           <Link to="/">
-            <MadeMistakesIcon />
+            {/* <PersonalBlogIcon /> */}
+            <img src={BlogLogo} width="250" />
             <span className={style.logoLabel}>{siteTitle}</span>
           </Link>
         </div>

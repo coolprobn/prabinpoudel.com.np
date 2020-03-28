@@ -7,6 +7,7 @@ last_modified_at: 2018-04-30T16:22:39-04:00
 image: ../../images/ale-b-procreate.jpg
 categories: [procreate-paintings]
 tags: [Procreate, portrait, illustration, Sktchy, black and white, beard, time lapse]
+published: false
 ---
 
 Portrait of Ale B. inspired by a [photograph on Sktchy](https://sktchy.com/pGkOfH). Digitally painted with Procreate on a 12.9" iPad Pro.

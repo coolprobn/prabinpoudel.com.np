@@ -3,15 +3,17 @@ title: "365 days of drawing faces"
 date: 2013-08-29
 path: /notes/365-days-of-drawing/
 excerpt: "Year one of my 365 day portrait project may be over, but I'm just getting started."
-image: ../../images/paperfaces-476-portraits.jpg
+image: ../../images/thailand-best.jpg
 categories: [notes]
 tags: [life, illustration, Paper for iOS, Apple]
 comments: true
 comments_locked: true
 last_modified_at: 2020-01-06T10:54:14-05:00
+# featured: true
+published: false
 ---
 
-Today my 365 project titled [**PaperFaces**](/paperfaces/) turns one --- holy smokes! In this past year I've managed to illustrate 476 portraits, make a ton of new *Paper friends*, burned through a few pen styli, and rekindled my passion for drawing. 
+Today my 365 project titled [**PaperFaces**](/paperfaces/) turns one --- holy smokes! In this past year I've managed to illustrate 476 portraits, make a ton of new *Paper friends*, burned through a few pen styli, and rekindled my passion for drawing.
 
 I honestly can't believe I've been drawing strangers for 365 days straight. I was half joking when I posted this and had no idea it would take off in the way that it did.
 

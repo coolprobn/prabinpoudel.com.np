@@ -4,13 +4,14 @@ date: 2014-02-09
 path: /mastering-paper/basics/
 excerpt: "A refresher tutorial on Paper for iOS drawing and painting techniques, along with color theory principles for good measure."
 last_modified_at: 2019-09-12T16:07:27-04:00
-image: ../../images/paper-53-basics-feature.jpg
+image: ../../images/remote-working.jpg
 categories: [mastering-paper]
 tags: [Paper for iOS, tutorial, Apple]
 toc: true
-featured: true
+# featured: true
 comments: true
 comments_locked: true
+published: false
 ---
 
 Reading through my earlier guides I came to the realization that I glossed over many basic drawing and painting techniques. Since I refer to the same techniques over and over again it would probably be helpful if I actually explained them. So here is my attempt at remedying that.
@@ -31,7 +32,7 @@ A couple of points to keep in mind for creating an even tone.
 
 ![Pencil shading samples](../../images/paper-53-pencil-shading-samples.jpg)
 
-Once you've gotten the hang of producing a range of smooth values, it can be fun to introduce additional colors to the mix. Colors can be dry blended by overlapping pencil strokes directly on canvas, giving the impression that they've been mixed. 
+Once you've gotten the hang of producing a range of smooth values, it can be fun to introduce additional colors to the mix. Colors can be dry blended by overlapping pencil strokes directly on canvas, giving the impression that they've been mixed.
 
 [[notice | ProTip: dry mixing]]
 | Avoid overlapping one color with the other too much. Doing so will kill the translucency of the pencil strokes and any mixing that might have occurred.
@@ -101,7 +102,7 @@ Applying a few shadows and highlights with the pencil tool can make these shapes
 
 ## Watercolor brush techniques
 
-I'm going to go ahead and assume you've already read my [Paper by 53 Introduction and Tool Guide](/mastering-paper/introduction-tool-guide/#watercolor-brush), where I explain how the brush works and some of its nuances. With this understanding the following four techniques should make more sense. 
+I'm going to go ahead and assume you've already read my [Paper by 53 Introduction and Tool Guide](/mastering-paper/introduction-tool-guide/#watercolor-brush), where I explain how the brush works and some of its nuances. With this understanding the following four techniques should make more sense.
 
 ### Painting smooth
 
@@ -115,7 +116,7 @@ The other important variable to consider is moving your finger (or stylus) acros
 
 ### Feathering edges
 
-Reliably producing a painted edge that is soft and blurry becomes important when blending shapes into each other. To achieve this effect you need to gradually increase the speed of your stroke as you approach the edge you want to feather. 
+Reliably producing a painted edge that is soft and blurry becomes important when blending shapes into each other. To achieve this effect you need to gradually increase the speed of your stroke as you approach the edge you want to feather.
 
 `youtube: https://www.youtube.com/watch?v=RrFlav38uZw`
 
@@ -125,7 +126,7 @@ A wet-on-wet effect can be simulated by feathering brush strokes into each other
 
 ### Lightening with white
 
-The watercolor brush has the unique ability of lightening previously painted or drawn areas when filled with white. This can be an effective way of pulling highlights out of your subject or to erase mistakes. 
+The watercolor brush has the unique ability of lightening previously painted or drawn areas when filled with white. This can be an effective way of pulling highlights out of your subject or to erase mistakes.
 
 ![Various tints made by mixing colors with white](../../images/paper-53-paint-white-range.jpg)
 
@@ -139,7 +140,7 @@ The watercolor brush has the unique ability of lightening previously painted or 
 White paint behaves slightly different from the other colors available in the mixer and default palettes. Much like painting with pure black it fills in quickly. Which means if you use it to paint, you have to move fast or risk completely covering up anything you paint over with white.
 
 [[notice | ProTip: dab fast]]
-| Quick, short strokes in a dabbing motion work great for lightening an area gradually. 
+| Quick, short strokes in a dabbing motion work great for lightening an area gradually.
 
 ### Glazing
 

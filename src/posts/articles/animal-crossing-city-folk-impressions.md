@@ -4,10 +4,12 @@ date: 2009-01-05
 path: /articles/animal-crossing-city-folk-impressions/
 excerpt: "A lengthy review of Animal Crossing City Folk for the Nintendo Wii, some things never change."
 last_modified_at: 2018-02-09T09:12:50-05:00
-image: ../../images/animal-crossing-city-folk-link.jpg
+image: ../../images/cover-pic.jpg
 categories: [articles]
 tags: [video games, review]
 toc: true
+featured: false
+published: false
 ---
 
 Some things get better and some things never change. Going in I knew **Animal Crossing: City Folk** (for the Nintendo Wii) would be remaining mostly unchanged from its predecessor AC: Wild World on the DS. But frankly I didn't care and wanted to try it out for myself even after reading a few lackluster reviews. What really surprised me after playing was how it was able to hook me in...again. Which is pretty admirable seeing how it's the same damn game I've played TWICE before.

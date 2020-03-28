@@ -28,6 +28,10 @@
   excerpt:
   html:
 
+- id: devise
+  excerpt:
+  html:
+
 - id: drawing
   excerpt:
   html:
@@ -134,6 +138,14 @@
   html: |
     <p>Digital paintings created on an iPad using the iOS app <a href="http://procreate.si/"><strong>Procreate</strong> by Savage Interactive</a>.</p>
 
+- id: reactjs
+  excerpt:
+  html:
+
+- id: ruby on rails
+  excerpt:
+  html:
+
 - id: review
   excerpt:
   html:
@@ -156,6 +168,10 @@
   html:
 
 - id: tech geek
+  excerpt:
+  html:
+
+- id: technology
   excerpt:
   html:
 

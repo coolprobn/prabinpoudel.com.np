@@ -7,9 +7,9 @@ date: 2020-01-21
 last_modified_at: 2020-01-22T10:12:52-05:00
 categories: [work]
 tags: [design, web development]
-published: true
 comments: false
 hide_meta: true
+published: false
 ---
 
 [**2 Little Rosebuds**](https://2littlerosebuds.com) is a blog written by my wife Wendy Rose. The site started as a place for her to post about our twin girls and morphed into an outlet for her growing addiction to subscription boxes.

@@ -1,19 +1,19 @@
 module.exports = {
   // pathPrefix: '/', // Prefix for all links. If you deploy your site to example.com/portfolio your pathPrefix should be "portfolio"
-  title: 'Made Mistakes', // Navigation and site title
-  titleAlt: 'Made Mistakes', // Title for schema.org JSONLD
-  description: 'Personal website of designer Michael Rose (@mmistakes).',
-  url: 'https://mademistakes.com', // Domain of your site. No trailing slash!
+  title: 'Prabin Poudel', // Navigation and site title
+  titleAlt: 'Prabin Poudel', // Title for schema.org JSONLD
+  description: 'Personal blog of Prabin Poudel.',
+  url: 'https://prabinpoudel.com.np', // Domain of your site. No trailing slash!
   siteLanguage: 'en', // Language Tag on <html> element
   image: {
     // Used for SEO, relative to /static/ folder
-    src: '/images/made-mistakes-logo.png',
+    src: '/images/blog-logo.png',
     width: 384,
     height: 384,
   },
   ogLanguage: 'en_US', // Facebook Language
-  pingbackUrl: 'https://webmention.io/mademistakes.com/xmlrpc',
-  webmentionUrl: 'https://webmention.io/mademistakes.com/webmention',
+  pingbackUrl: 'https://webmention.io/prabinpoudel.com.np/xmlrpc',
+  webmentionUrl: 'https://webmention.io/prabinpoudel.com.np/webmention',
   micropubUrl: 'https://mm-micropub-to-github.herokuapp.com/micropub/main',
   coilUrl: '$coil.xrptipbot.com/AbwB-yidQNanSI2lYyTJJw',
   googleAnalyticsID: '',
@@ -21,22 +21,22 @@ module.exports = {
     'https://mm-staticman.herokuapp.com/v2/entry/mmistakes/made-mistakes-gatsby/master/comments',
 
   // JSONLD / Manifest
-  favicon: '/images/made-mistakes-logo.png', // Used for manifest favicon generation
-  shortName: 'Made Mistakes', // shortname for manifest. MUST be shorter than 12 characters
+  favicon: '/images/blog-logo.png', // Used for manifest favicon generation
+  shortName: 'Prabin Poudel', // shortname for manifest. MUST be shorter than 12 characters
   author: {
     // Author for schema.org JSONLD
-    name: 'Michael Rose',
-    url: 'https://mademistakes.com',
+    name: 'Prabin Poudel',
+    url: 'https://prabinpoudel.com.np',
   },
   themeColor: '#ffffff',
   backgroundColor: '#111111',
 
-  twitter: '@mmistakes', // Twitter username
-  twitterUrl: 'https://twitter.com/mmistakes',
-  facebook: 'Made Mistakes', // Facebook site name
-  githubUrl: 'https://github.com/mmistakes',
-  instagramUrl: 'https://www.instagram.com/mmistakes/',
-  feedUrl: '/atom.xml',
+  twitter: '@probn', // Twitter username
+  twitterUrl: 'https://twitter.com/probn',
+  facebook: 'Probn Poudel', // Facebook site name
+  githubUrl: 'https://github.com/coolprobn',
+  instagramUrl: 'https://www.instagram.com/coolprobn/',
+  // feedUrl: '/atom.xml',
   githubApiToken: process.env.GITHUB_API_TOKEN,
   githubApiQuery: `query ($number_of_repos: Int!) {
     viewer {

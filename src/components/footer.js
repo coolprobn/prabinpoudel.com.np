@@ -28,9 +28,9 @@ const Footer = ({
   copyrights,
 }) => (
   <footer id="footer" className={style.footer}>
-    <ul className={style.menu}>
+    {/* <ul className={style.menu}>
       <FooterMenu footerMenu={footerMenu} />
-    </ul>
+    </ul> */}
     <ul className={style.menuSocial}>
       {twitter && (
         <li>
@@ -53,14 +53,6 @@ const Footer = ({
           <a href={instagram} rel="nofollow">
             <InstagramIcon />
             <span className={style.iconLabel}>Instagram</span>
-          </a>
-        </li>
-      )}
-      {feed && (
-        <li>
-          <a href={feed}>
-            <RSSIcon />
-            <span className={style.iconLabel}>RSS feed</span>
           </a>
         </li>
       )}

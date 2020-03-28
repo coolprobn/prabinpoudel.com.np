@@ -30,23 +30,20 @@ const HomePage = ({ data }) => {
         <div className={style.title}>
           <h1 className={style.heading}>
             <span>
-              Made Mistakes is the personal site of{' '}
-              <a href="/about/">Michael&nbsp;Rose</a>.
+              Personal blog of <a href="/about/">Prabin&nbsp;Poudel</a>.
             </span>
           </h1>
           <div className={style.intro}>
             <p>
-              I'm just another boring, tattooed, time traveling designer from
-              Buffalo New York who enjoys eating chicken wings, sketching on an
-              iPad Pro, building with static site generators, and playing
-              Nintendo Switch.
+              I'm just another developer from Nepal who enjoys writing codes all
+              day, travelling, trying different foods and going on an adventure.
             </p>
           </div>
-          {/* <Img
+          <Img
             fluid={data.aboutImage.childImageSharp.fluid}
             className={style.cover}
             backgroundColor="var(--input-background-color)"
-          /> */}
+          />
         </div>
         <div className={style.content}>
           <h2 className={style.subHeading}>Featured articles</h2>
@@ -63,9 +60,9 @@ const HomePage = ({ data }) => {
                   path,
                   author,
                   excerpt,
-                  image,
-                },
-              } = node
+                  image
+                }
+              } = node;
 
               return (
                 <Entry
@@ -79,18 +76,18 @@ const HomePage = ({ data }) => {
                   image={image}
                   excerpt={excerpt || autoExcerpt}
                 />
-              )
+              );
             })}
           </div>
-          <h2 className={style.subHeading}>Recent posts</h2>
+          {/* <h2 className={style.subHeading}>Recent posts</h2>
           <div className={style.list}>
             {recentPosts.map(({ node }) => {
               const {
                 id,
                 excerpt: autoExcerpt,
                 timeToRead,
-                frontmatter: { title, date, date_pretty, path, excerpt },
-              } = node
+                frontmatter: { title, date, date_pretty, path, excerpt }
+              } = node;
 
               return (
                 <Entry
@@ -102,9 +99,9 @@ const HomePage = ({ data }) => {
                   timeToRead={timeToRead}
                   excerpt={excerpt || autoExcerpt}
                 />
-              )
+              );
             })}
-          </div>
+          </div> */}
           <h2 className={style.subHeading}>Explore more on this site</h2>
           <div>
             <ul className={`${style.gridListExpanded} ${style.navList}`}>
@@ -116,15 +113,15 @@ const HomePage = ({ data }) => {
                   excerpt="<p>Long form writing mostly about design and web development.</p>"
                 />
               </li>
-              <li key="notes">
+              {/* <li key="notes">
                 <Entry
                   key="notes-home-link"
                   title="Notes"
                   path="/notes/"
                   excerpt="<p>Thoughts, inspiration, mistakes, and other minutia you&rsquo;d find in a blog.</p>"
                 />
-              </li>
-              <li key="works">
+              </li> */}
+              {/* <li key="works">
                 <Entry
                   key="works-home-link"
                   title="Works"
@@ -132,8 +129,8 @@ const HomePage = ({ data }) => {
                   excerpt="<p>Hand-picked selection of things I've designed, illustrated,
                   and developed.</p>"
                 />
-              </li>
-              <li key="mastering-paper">
+              </li> */}
+              {/* <li key="mastering-paper">
                 <Entry
                   key="mastering-paper-home-link"
                   title="Mastering Paper"
@@ -141,8 +138,8 @@ const HomePage = ({ data }) => {
                   excerpt="<p>Tutorials to help master the iOS drawing app&mdash;
                 Paper</p>"
                 />
-              </li>
-              <li key="contact">
+              </li> */}
+              {/* <li key="contact">
                 <Entry
                   key="contact-home-link"
                   title="Contact"
@@ -150,23 +147,23 @@ const HomePage = ({ data }) => {
                   excerpt="<p>Preferred methods of sending questions, messages, and
                   love letters to me.</p>"
                 />
-              </li>
-              <li key="support">
+              </li> */}
+              {/* <li key="support">
                 <Entry
                   key="support-home-link"
                   title="Show your support"
                   path="/support/"
                   excerpt="<p>Give thanks for the free open source goodies I provide.</p>"
                 />
-              </li>
-              <li key="faqs">
+              </li> */}
+              {/* <li key="faqs">
                 <Entry
                   key="faqs-home-link"
                   title="Frequently asked questions"
                   path="/faqs/"
                   excerpt="<p>There&rsquo;s no such thing as a dumb question&hellip;</p>"
                 />
-              </li>
+              </li> */}
               <li key="topics">
                 <Entry
                   key="topics-home-link"
@@ -180,7 +177,7 @@ const HomePage = ({ data }) => {
         </div>
       </main>
     </Layout>
-  )
+  );
 }
 
 HomePage.propTypes = {
@@ -224,7 +221,7 @@ export const pageQuery = graphql`
             categories
             image {
               childImageSharp {
-                fluid(maxWidth: 400, quality: 75) {
+                fluid(maxWidth: 400, maxHeight: 250, quality: 100) {
                   ...GatsbyImageSharpFluid_noBase64
                 }
               }
@@ -261,9 +258,9 @@ export const pageQuery = graphql`
         }
       }
     }
-    aboutImage: file(relativePath: { eq: "michael-rose-glitched.jpg" }) {
+    aboutImage: file(relativePath: { eq: "thailand-best.jpg" }) {
       childImageSharp {
-        fluid(maxWidth: 720, maxHeight: 480, quality: 75) {
+        fluid(maxWidth: 720, maxHeight: 500, quality: 75) {
           ...GatsbyImageSharpFluid_noBase64
         }
       }

@@ -11,16 +11,16 @@ A hierarchical breakdown of all the sections and pages found on the site. For yo
 ## Pages
 
 - [About](/about/)
-- [Contact](/contact/)
-- [Frequently asked questions](/faqs/)
-- [Show your support](/support/)
-- [Terms and policies](/terms/)
+<!-- - [Contact](/contact/) -->
+<!-- - [Frequently asked questions](/faqs/) -->
+<!-- - [Show your support](/support/) -->
+<!-- - [Terms and policies](/terms/) -->
 - [Tag index](/tag/)
 
 ## [Articles](/articles/)
 
-## [Notes](/notes/)
+<!-- ## [Notes](/notes/) -->
 
-## [Mastering Paper for iOS](/mastering-paper/)
+<!-- ## [Mastering Paper for iOS](/mastering-paper/) -->
 
-## [Portfolio work](/work/)
+<!-- ## [Portfolio work](/work/) -->

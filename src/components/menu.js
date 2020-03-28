@@ -35,7 +35,7 @@ const Menu = ({ mainMenu, onChangeTheme }) => {
       >
         <MainMenu mainMenu={mainMenu} />
       </nav>
-      <div className={style.siteControls}>
+      {/* <div className={style.siteControls}>
         <button
           className={style.themeToggle}
           onClick={onChangeTheme}
@@ -47,7 +47,7 @@ const Menu = ({ mainMenu, onChangeTheme }) => {
             <span className={style.themeToggleIcon} />
           </div>
         </button>
-      </div>
+      </div> */}
     </>
   )
 }

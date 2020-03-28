@@ -18,7 +18,6 @@ const Layout = ({ children }) => {
           twitterUrl
           githubUrl
           instagramUrl
-          feedUrl
           copyrights
           mainMenu {
             title
@@ -40,7 +39,6 @@ const Layout = ({ children }) => {
     twitterUrl,
     githubUrl,
     instagramUrl,
-    feedUrl,
     copyrights,
   } = data.site.siteMetadata
 
@@ -57,7 +55,6 @@ const Layout = ({ children }) => {
         twitter={twitterUrl}
         github={githubUrl}
         instagram={instagramUrl}
-        feed={feedUrl}
         copyrights={copyrights}
       />
     </div>
