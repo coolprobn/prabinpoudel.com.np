@@ -2,7 +2,6 @@ import React, { useState } from 'react'
 import PropTypes from 'prop-types'
 import { Link } from 'gatsby'
 import { Helmet } from 'react-helmet'
-import PersonalBlogIcon from './icons/personal-blog-icon'
 
 import Menu from './menu'
 
@@ -57,7 +56,6 @@ const Header = props => {
       <header className={style.header}>
         <div className={style.name}>
           <Link to="/">
-            {/* <PersonalBlogIcon /> */}
             <img src={BlogLogo} width="250" />
             <span className={style.logoLabel}>{siteTitle}</span>
           </Link>
