@@ -31,8 +31,8 @@ module.exports = {
   themeColor: '#ffffff',
   backgroundColor: '#111111',
 
-  twitter: '@probn', // Twitter username
-  twitterUrl: 'https://twitter.com/probn',
+  twitter: '@coolprobn', // Twitter username
+  twitterUrl: 'https://twitter.com/coolprobn',
   facebook: 'Probn Poudel', // Facebook site name
   githubUrl: 'https://github.com/coolprobn',
   instagramUrl: 'https://www.instagram.com/coolprobn/',
