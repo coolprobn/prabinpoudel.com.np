@@ -4,7 +4,7 @@ date: 2014-02-09
 path: /mastering-paper/basics/
 excerpt: "A refresher tutorial on Paper for iOS drawing and painting techniques, along with color theory principles for good measure."
 last_modified_at: 2019-09-12T16:07:27-04:00
-image: ../../images/remote-working.jpg
+image: ../../images/remote-working.webp
 categories: [mastering-paper]
 tags: [Paper for iOS, tutorial, Apple]
 toc: true

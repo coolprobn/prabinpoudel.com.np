@@ -7,7 +7,7 @@ module.exports = {
   siteLanguage: 'en', // Language Tag on <html> element
   image: {
     // Used for SEO, relative to /static/ folder
-    src: '/images/blog-logo.png',
+    src: '/images/blog-icon.webp',
     width: 384,
     height: 384,
   },
@@ -21,7 +21,7 @@ module.exports = {
     'https://mm-staticman.herokuapp.com/v2/entry/mmistakes/made-mistakes-gatsby/master/comments',
 
   // JSONLD / Manifest
-  favicon: '/images/blog-logo.png', // Used for manifest favicon generation
+  favicon: '/images/blog-icon.webp', // Used for manifest favicon generation
   shortName: 'Prabin Poudel', // shortname for manifest. MUST be shorter than 12 characters
   author: {
     // Author for schema.org JSONLD

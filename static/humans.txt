@@ -2,7 +2,7 @@
 
   Developer:    Prabin Poudel
   Designer:     Michael Rose
-  Twitter:      @mmistakes
+  Twitter:      @coolprobn
   Location:     Kathmandu, Nepal
 
   Language:     English

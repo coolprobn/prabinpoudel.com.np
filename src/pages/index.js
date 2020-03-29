@@ -258,7 +258,7 @@ export const pageQuery = graphql`
         }
       }
     }
-    aboutImage: file(relativePath: { eq: "thailand-best.jpg" }) {
+    aboutImage: file(relativePath: { eq: "thailand-best.webp" }) {
       childImageSharp {
         fluid(maxWidth: 720, maxHeight: 500, quality: 75) {
           ...GatsbyImageSharpFluid_noBase64

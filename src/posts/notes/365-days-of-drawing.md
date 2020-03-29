@@ -3,7 +3,7 @@ title: "365 days of drawing faces"
 date: 2013-08-29
 path: /notes/365-days-of-drawing/
 excerpt: "Year one of my 365 day portrait project may be over, but I'm just getting started."
-image: ../../images/thailand-best.jpg
+image: ../../images/thailand-best.webp
 categories: [notes]
 tags: [life, illustration, Paper for iOS, Apple]
 comments: true

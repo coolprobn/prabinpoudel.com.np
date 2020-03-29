@@ -8,7 +8,7 @@ import Menu from './menu'
 
 import style from '../styles/header.module.css'
 
-import BlogLogo from '../images/blog-logo.png';
+import BlogLogo from '../images/blog-logo.webp';
 
 const Header = props => {
   const { siteTitle, mainMenu, defaultTheme } = props

@@ -4,7 +4,7 @@ path: /about/
 date: 2020-03-28
 # last_modified_at: 2020-01-16T12:15:53-05:00
 excerpt: "Prabin Poudel is just another developer from Buffalo New York."
-image: ../images/remote-working.jpg
+image: ../images/remote-working.webp
 ---
 
 Oh hey --- I'm Prabin Poudel, just another developer hailing from the most beautiful country, Nepal; who enjoys coding all day, travelling, eating different new dishes and going on an adventure.

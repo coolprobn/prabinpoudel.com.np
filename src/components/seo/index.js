@@ -124,8 +124,8 @@ const SEO = ({
       <Helmet title={seo.title}>
         <html lang={siteLanguage} />
         <link rel="canonical" href={seo.url} />
-        {/* {pingbackUrl && <link rel="pingback" href={pingbackUrl} />} */}
-        {/* {webmentionUrl && <link rel="webmention" href={webmentionUrl} />} */}
+        {pingbackUrl && <link rel="pingback" href={pingbackUrl} />}
+        {webmentionUrl && <link rel="webmention" href={webmentionUrl} />}
         {/* {micropubUrl && <link rel="micropub" href={micropubUrl} />} */}
         {/* {coilUrl && <meta name="monetization" content={coilUrl} />} */}
         <meta name="description" content={seo.description} />
