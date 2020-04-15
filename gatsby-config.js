@@ -28,23 +28,24 @@ module.exports = {
     coilUrl: site.coilUrl,
     author: {
       name: site.author.name,
-      url: site.author.url
+      url: site.author.url,
     },
     twitter: site.twitter,
     twitterUrl: site.twitterUrl,
     facebook: site.facebook,
     githubUrl: site.githubUrl,
     instagramUrl: site.instagramUrl,
+    upworkUrl: 'https://www.upwork.com/freelancers/~0184b506a4486b8f86',
     // feedUrl: site.feedUrl,
 
     // Site config
-    copyrights: `&copy; 2017&mdash;${new Date().getFullYear()} <a href="https://prabinpoudel.com.np/humans.txt">Prabin Poudel</a>. Some Rights Reserved.<br />All the way from the most beautiful country, <a href="https://www.google.com/search?q=nepal&sxsrf=ALeKk00r22L7_PHOlQn8IpNiXgX0PUwUOA:1585416777170&source=lnms&tbm=isch&sa=X&ved=2ahUKEwi3vMve2b3oAhWPxTgGHR7HCBQQ_AUoAnoECBgQBA&biw=1299&bih=637" target="_blank">Nepal</a>.<br /> Powered by <a href="https://github.com/mmistakes/made-mistakes-gatsby/tree/master/src">Minimal Mistakes</a>`,
+    copyrights: `&copy; 2017&mdash;${new Date().getFullYear()} <a href="https://prabinpoudel.com.np/humans.txt">Prabin Poudel</a>. Some Rights Reserved.<br />All the way from the most beautiful country, <a href="https://www.google.com/search?q=nepal&sxsrf=ALeKk00r22L7_PHOlQn8IpNiXgX0PUwUOA:1585416777170&source=lnms&tbm=isch&sa=X&ved=2ahUKEwi3vMve2b3oAhWPxTgGHR7HCBQQ_AUoAnoECBgQBA&biw=1299&bih=637" target="_blank">Nepal</a>.<br /> Powered by <a href="https://github.com/mmistakes/made-mistakes-gatsby/tree/master/src">Made Mistakes</a>`,
     defaultTheme: 'light',
     postsPerPage: 10,
     mainMenu: [
       {
         title: 'Articles',
-        path: '/articles/'
+        path: '/articles/',
       },
       // {
       //   title: 'Notes',
@@ -56,8 +57,8 @@ module.exports = {
       // },
       {
         title: 'About',
-        path: '/about/'
-      }
+        path: '/about/',
+      },
       // {
       //   title: 'Contact',
       //   path: '/contact/',
@@ -66,21 +67,21 @@ module.exports = {
     footerMenu: [
       {
         title: 'Support me',
-        path: '/support/'
+        path: '/support/',
       },
       {
         title: 'FAQs',
-        path: '/faqs/'
+        path: '/faqs/',
       },
       {
         title: 'Terms & policies',
-        path: '/terms/'
+        path: '/terms/',
       },
       {
         title: 'Sitemap',
-        path: '/sitemap/'
-      }
-    ]
+        path: '/sitemap/',
+      },
+    ],
   },
   plugins: [
     'babel-preset-gatsby',
@@ -99,35 +100,35 @@ module.exports = {
       options: {
         name: 'images',
         path: `${__dirname}/src/images`,
-        ignore: [/\/(node_modules|\.git)\//]
-      }
+        ignore: [/\/(node_modules|\.git)\//],
+      },
     },
     {
       resolve: 'gatsby-source-filesystem',
       options: {
         name: 'posts',
-        path: `${__dirname}/src/posts`
-      }
+        path: `${__dirname}/src/posts`,
+      },
     },
     {
       resolve: 'gatsby-source-filesystem',
       options: {
         name: 'pages',
-        path: `${__dirname}/src/pages`
-      }
+        path: `${__dirname}/src/pages`,
+      },
     },
     {
       resolve: 'gatsby-source-filesystem',
       options: {
         name: 'comments',
-        path: `${__dirname}/src/comments`
-      }
+        path: `${__dirname}/src/comments`,
+      },
     },
     {
       resolve: 'gatsby-source-filesystem',
       options: {
-        path: `${__dirname}/src/data`
-      }
+        path: `${__dirname}/src/data`,
+      },
     },
     'gatsby-remark-source-name',
     {
@@ -137,8 +138,8 @@ module.exports = {
         head: false,
         anonymize: true,
         respectDNT: true,
-        cookieDomain: 'mademistakes.com'
-      }
+        cookieDomain: 'mademistakes.com',
+      },
     },
     'gatsby-plugin-catch-links',
     {
@@ -156,14 +157,14 @@ module.exports = {
               'custom-properties': true,
               'custom-media-queries': true,
               'color-mod-function': true,
-              'nesting-rules': true
-            }
+              'nesting-rules': true,
+            },
           }),
           cssnano({
-            preset: 'default'
-          })
-        ]
-      }
+            preset: 'default',
+          }),
+        ],
+      },
     },
     'gatsby-plugin-css-customs',
     'gatsby-transformer-sharp',
@@ -172,8 +173,8 @@ module.exports = {
       options: {
         useMozJpeg: false,
         stripMetadata: true,
-        defaultQuality: 75
-      }
+        defaultQuality: 75,
+      },
     },
     {
       resolve: 'gatsby-transformer-remark',
@@ -190,10 +191,10 @@ module.exports = {
                 {
                   id: 'youtube',
                   embedURL: (videoId) =>
-                    `https://www.youtube-nocookie.com/embed/${videoId}`
-                }
-              ]
-            }
+                    `https://www.youtube-nocookie.com/embed/${videoId}`,
+                },
+              ],
+            },
           },
           {
             resolve: 'gatsby-remark-images',
@@ -205,23 +206,23 @@ module.exports = {
               backgroundColor: 'none',
               tracedSVG: false,
               loading: 'lazy',
-              linkImagesToOriginal: false
-            }
+              linkImagesToOriginal: false,
+            },
           },
           {
             resolve: '@weknow/gatsby-remark-twitter',
             options: {
               hideThread: true,
               hideMedia: false,
-              align: 'center'
-            }
+              align: 'center',
+            },
           },
           'gatsby-remark-lazy-load',
           {
             resolve: 'gatsby-remark-smartypants',
             options: {
-              dashes: 'oldschool'
-            }
+              dashes: 'oldschool',
+            },
           },
           {
             resolve: 'gatsby-remark-custom-blocks',
@@ -229,10 +230,10 @@ module.exports = {
               blocks: {
                 notice: {
                   classes: 'notice',
-                  title: 'optional'
-                }
-              }
-            }
+                  title: 'optional',
+                },
+              },
+            },
           },
           'gatsby-remark-abbr',
           'gatsby-remark-numbered-footnotes',
@@ -242,8 +243,8 @@ module.exports = {
             options: {
               icon: `<svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg>`,
               removeAccents: true,
-              enableCustomId: true
-            }
+              enableCustomId: true,
+            },
           },
           {
             resolve: 'gatsby-remark-prismjs',
@@ -252,11 +253,11 @@ module.exports = {
               inlineCodeMarker: null,
               aliases: {},
               showLineNumbers: false,
-              noInlineHighlight: false
-            }
-          }
-        ]
-      }
+              noInlineHighlight: false,
+            },
+          },
+        ],
+      },
     },
     {
       resolve: 'gatsby-plugin-sitemap',
@@ -285,10 +286,10 @@ module.exports = {
             return {
               url: site.siteMetadata.siteUrl + edge.node.path,
               changefreq: 'daily',
-              priority: 0.7
+              priority: 0.7,
             };
-          })
-      }
+          }),
+      },
     },
     {
       resolve: 'gatsby-plugin-feed',
@@ -308,23 +309,23 @@ module.exports = {
           query: {
             site: { siteMetadata },
             ...rest
-          }
+          },
         }) => {
           return {
             ...siteMetadata,
             ...rest,
             custom_namespaces: {
-              webfeeds: 'http://webfeeds.org/rss/1.0'
+              webfeeds: 'http://webfeeds.org/rss/1.0',
             },
             custom_elements: [
               {
-                'webfeeds:logo': site.url + site.favicon
+                'webfeeds:logo': site.url + site.favicon,
               },
               {
-                'webfeeds:icon': site.url + site.favicon
+                'webfeeds:icon': site.url + site.favicon,
               },
-              { 'webfeeds:accentColor': '000000' }
-            ]
+              { 'webfeeds:accentColor': '000000' },
+            ],
           };
         },
         feeds: [
@@ -368,8 +369,8 @@ module.exports = {
                   node: {
                     frontmatter: { title, date, path, excerpt, image },
                     excerpt: autoExcerpt,
-                    html
-                  }
+                    html,
+                  },
                 } = edge;
 
                 const permalink = site.siteMetadata.siteUrl + path;
@@ -411,17 +412,17 @@ module.exports = {
                   custom_elements: [
                     {
                       'content:encoded':
-                        imageElement + mainContent + footerContent
-                    }
-                  ]
+                        imageElement + mainContent + footerContent,
+                    },
+                  ],
                 });
               });
             },
             output: '/atom.xml',
-            title: `${site.title} RSS Feed`
-          }
-        ]
-      }
+            title: `${site.title} RSS Feed`,
+          },
+        ],
+      },
     },
     {
       resolve: 'gatsby-plugin-manifest',
@@ -432,8 +433,8 @@ module.exports = {
         background_color: site.backgroundColor,
         theme_color: site.themeColor,
         display: 'standalone',
-        icon: `src${site.favicon}`
-      }
-    }
-  ]
+        icon: `src${site.favicon}`,
+      },
+    },
+  ],
 };

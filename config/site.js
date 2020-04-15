@@ -17,8 +17,6 @@ module.exports = {
   micropubUrl: 'https://mm-micropub-to-github.herokuapp.com/micropub/main',
   coilUrl: '$coil.xrptipbot.com/AbwB-yidQNanSI2lYyTJJw',
   googleAnalyticsID: '',
-  staticmanApi:
-    'https://mm-staticman.herokuapp.com/v2/entry/mmistakes/made-mistakes-gatsby/master/comments',
 
   // JSONLD / Manifest
   favicon: '/images/blog-favicon.webp', // Used for manifest favicon generation
@@ -36,6 +34,7 @@ module.exports = {
   facebook: 'Probn Poudel', // Facebook site name
   githubUrl: 'https://github.com/coolprobn',
   instagramUrl: 'https://www.instagram.com/coolprobn/',
+  upworkUrl: 'https://www.upwork.com/freelancers/~0184b506a4486b8f86',
   // feedUrl: '/atom.xml',
   githubApiToken: process.env.GITHUB_API_TOKEN,
   githubApiQuery: `query ($number_of_repos: Int!) {
@@ -79,4 +78,4 @@ module.exports = {
     secret:
       'uK2DH+wELCxTtM0MmfKfT0W5GPt0B+dGVZ3L4IeYtnKRQ7a/zkdRUmi0z6J7K4BumST/CKuKnk4l3EUpDxWnA0E29kpMzbmhukm0vXCZfGg6zLETxcPXTWcrRchAp59oe77OdRlXjNe01nqL6fohmFv5lBT1SrxfORvBxvSsyTrrBXG1b5JJLleP9o4LGDK15lPCASEehWxpNTs+jxE/VUemMvedGautUBQyK5PRGaKJQb+xe9wl+9GgwueASRbGPl6yUnytUFy3V59yg+WbhbJJhA3dEKW4vnUu4jcgLL8FusCQQjDSvy0Ypqq3Dfx35L5YVfmLW+FrtYNvoD6zhA==',
   },
-}
+};

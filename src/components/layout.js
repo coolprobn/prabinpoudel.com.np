@@ -1,12 +1,12 @@
-import React from 'react'
-import PropTypes from 'prop-types'
-import { useStaticQuery, graphql } from 'gatsby'
+import React from 'react';
+import PropTypes from 'prop-types';
+import { useStaticQuery, graphql } from 'gatsby';
 
-import Header from './header'
-import Footer from './footer'
+import Header from './header';
+import Footer from './footer';
 
-import '../styles/layout.module.css'
-import style from '../styles/grid.module.css'
+import '../styles/layout.module.css';
+import style from '../styles/grid.module.css';
 
 const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`
@@ -18,6 +18,7 @@ const Layout = ({ children }) => {
           twitterUrl
           githubUrl
           instagramUrl
+          upworkUrl
           copyrights
           mainMenu {
             title
@@ -30,7 +31,7 @@ const Layout = ({ children }) => {
         }
       }
     }
-  `)
+  `);
   const {
     title,
     defaultTheme,
@@ -40,7 +41,8 @@ const Layout = ({ children }) => {
     githubUrl,
     instagramUrl,
     copyrights,
-  } = data.site.siteMetadata
+    upworkUrl,
+  } = data.site.siteMetadata;
 
   return (
     <div className={style.wrapper}>
@@ -56,13 +58,14 @@ const Layout = ({ children }) => {
         github={githubUrl}
         instagram={instagramUrl}
         copyrights={copyrights}
+        upwork={upworkUrl}
       />
     </div>
-  )
-}
+  );
+};
 
 Layout.propTypes = {
   children: PropTypes.node.isRequired,
-}
+};
 
-export default Layout
+export default Layout;

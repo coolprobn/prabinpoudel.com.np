@@ -1,6 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { graphql, Link } from 'gatsby'
+import { DiscussionEmbed } from 'disqus-react';
 
 import SEO from '../components/seo'
 import Layout from '../components/layout'
@@ -15,6 +16,7 @@ import style from '../styles/post.module.css'
 const PostTemplate = ({ data, pageContext }) => {
   const {
     frontmatter: {
+      uid,
       title,
       date,
       date_pretty,
@@ -44,6 +46,11 @@ const PostTemplate = ({ data, pageContext }) => {
   const previousLabel = previous && previous.frontmatter.title
   const nextPath = next && next.frontmatter.path
   const nextLabel = next && next.frontmatter.title
+
+  const disqusConfig = {
+    shortname: 'prabin-poudel',
+    config: { identifier: uid, title },
+  };
 
   return (
     <Layout>
@@ -79,6 +86,7 @@ const PostTemplate = ({ data, pageContext }) => {
           nextPost={next}
         />
         <section className={style.comments}>
+          <DiscussionEmbed {...disqusConfig} />
           {commentsEnabled && (
             <>
               {comments && <CommentsList commentsList={comments} />}
@@ -106,7 +114,7 @@ const PostTemplate = ({ data, pageContext }) => {
         nextLabel={nextLabel}
       />
     </Layout>
-  )
+  );
 }
 
 export default PostTemplate

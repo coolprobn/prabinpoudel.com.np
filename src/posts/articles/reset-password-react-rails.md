@@ -1,10 +1,10 @@
 ---
-uid: 'PB1'
-title: "Reset password in react and rails app with devise"
+uid: 'PB-A-1'
+title: 'Reset password in react and rails app with devise'
 date: 2020-01-16
 path: /articles/reset-password-react-rails/
-excerpt: "This tutorial shows you how to send reset password instructions email in React and Rails app. Learn about these steps to reset password for Rails/React app with Devise."
-last_modified_at: 2020-03-29T09:12:50-05:00
+excerpt: 'This tutorial shows you how to send reset password instructions email in React and Rails app. Learn about these steps to reset password for Rails/React app with Devise.'
+last_modified_at: 2020-04-15
 image: ../../images/reset-password-react-rails.webp
 categories: [articles]
 tags: [technology, ruby on rails, reactjs, devise]
@@ -101,11 +101,12 @@ end
 - Following code snippet reflects the use of token:
 
 ```html
-<% reset_password_link = "#{ENV['FRONTEND_APP_HOST']}/new_password?reset_token=#{@token}" %>
-<%= link_to reset_password_link do %>
-   <button class="new-password-button">
-     Choose a new password
-   </button>
+<% reset_password_link =
+"#{ENV['FRONTEND_APP_HOST']}/new_password?reset_token=#{@token}" %> <%= link_to
+reset_password_link do %>
+<button class="new-password-button">
+  Choose a new password
+</button>
 <% end %>
 ```
 
@@ -123,4 +124,4 @@ config.mailer = 'UserMailer'
 
 Now try to send the email again and …. Magic! You are all set, you should get a new email that you added just now with a link redirecting to React app from where you can handle the rest of the process. Good Work!
 
-This is how you send a password reset email with custom design and instructions in React and Rails. I hope this article helped you a lot. If you have any suggestions or confusion, comment section is coming up on next release :P.
+This is how you send a password reset email with custom design and instructions in React and Rails. I hope this article helped you a lot. If you have any suggestions or confusion, please let me know in the comment section below.

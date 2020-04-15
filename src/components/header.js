@@ -56,7 +56,7 @@ const Header = props => {
       <header className={style.header}>
         <div className={style.name}>
           <Link to="/">
-            <img src={BlogLogo} width="250" />
+            <img src={BlogLogo} width="250" alt="blog-logo" />
             <span className={style.logoLabel}>{siteTitle}</span>
           </Link>
         </div>

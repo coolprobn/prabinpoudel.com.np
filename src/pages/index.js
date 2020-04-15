@@ -110,7 +110,7 @@ const HomePage = ({ data }) => {
                   key="articles-home-link"
                   title="Articles"
                   path="/articles/"
-                  excerpt="<p>Long form writing mostly about design and web development.</p>"
+                  excerpt="<p>Long form writing mostly about web development and travel.</p>"
                 />
               </li>
               {/* <li key="notes">

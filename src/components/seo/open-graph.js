@@ -20,11 +20,11 @@ const OpenGraph = ({
     <meta property="og:type" content={type} />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
-    <meta property="og:image" content={image} />
+    <meta name="image" property="og:image" content={image} />
     {width && <meta property="og:image:width" content={width} />}
     {height && <meta property="og:image:height" content={height} />}
   </Helmet>
-)
+);
 
 export default OpenGraph
 

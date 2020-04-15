@@ -130,6 +130,7 @@ const SEO = ({
         {/* {coilUrl && <meta name="monetization" content={coilUrl} />} */}
         <meta name="description" content={seo.description} />
         <meta name="image" content={seo.image} />
+        <meta name="author" content={author.name} />
         {/* Insert schema.org data conditionally (webpage/article) */}
         {!article && (
           <script type="application/ld+json">
@@ -159,7 +160,7 @@ const SEO = ({
         username={twitter}
       />
     </>
-  )
+  );
 }
 
 export default SEO

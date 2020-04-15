@@ -1,23 +1,23 @@
-import React from 'react'
-import PropTypes from 'prop-types'
-import { Link } from 'gatsby'
+import React from 'react';
+import PropTypes from 'prop-types';
+import { Link } from 'gatsby';
 
-import TwitterIcon from './icons/twitter-icon'
-import GithubIcon from './icons/github-icon'
-import InstagramIcon from './icons/instagram-icon'
-import RSSIcon from './icons/rss-icon'
+import TwitterIcon from './icons/twitter-icon';
+import GithubIcon from './icons/github-icon';
+import InstagramIcon from './icons/instagram-icon';
+import UpworkIcon from './icons/upwork-icon';
 
-import style from '../styles/footer.module.css'
+import style from '../styles/footer.module.css';
 
 const FooterMenu = ({ footerMenu }) => {
-  const menu = footerMenu.slice(0)
+  const menu = footerMenu.slice(0);
 
   return menu.map((menuItem, index) => (
     <li key={index}>
       <Link to={menuItem.path}>{menuItem.title}</Link>
     </li>
-  ))
-}
+  ));
+};
 
 const Footer = ({
   footerMenu,
@@ -26,6 +26,7 @@ const Footer = ({
   instagram,
   feed,
   copyrights,
+  upwork,
 }) => (
   <footer id="footer" className={style.footer}>
     {/* <ul className={style.menu}>
@@ -56,6 +57,14 @@ const Footer = ({
           </a>
         </li>
       )}
+      {upwork && (
+        <li>
+          <a href={upwork} rel="nofollow">
+            <UpworkIcon />
+            <span className={style.iconLabel}>Instagram</span>
+          </a>
+        </li>
+      )}
     </ul>
     {copyrights && (
       <div
@@ -66,7 +75,7 @@ const Footer = ({
       />
     )}
   </footer>
-)
+);
 
 Footer.propTypes = {
   footerMenu: PropTypes.arrayOf(
@@ -80,6 +89,6 @@ Footer.propTypes = {
   instagram: PropTypes.string,
   feed: PropTypes.string,
   copyrights: PropTypes.string,
-}
+};
 
-export default Footer
+export default Footer;
