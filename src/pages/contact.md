@@ -10,7 +10,7 @@ Have a question for me? My direct messages are open [on Twitter](https://twitter
 <!-- Before sending, please read my [frequently asked questions section](/faqs/) first to make sure I haven't already answered it. For anything else use the form below. -->
 Want to discuss your next project with me? Just send me the details using the form below.
 
-<form name="contact" method="POST" netlify-honeypot="bot-field" data-netlify-recaptcha="true" data-netlify="true">
+<form name="contact" method="POST" netlify-honeypot="bot-field">
   <div class="form-group">
     <label for="name">Name
       <input id="name" name="name" type="text" spellcheck="false" maxlength="255" required>
@@ -30,9 +30,6 @@ Want to discuss your next project with me? Just send me the details using the fo
     <label for="reference">How&rsquo;d you hear about my website?
       <input id="reference" name="reference" type="text" maxlength="255" placeholder="e.g. Searching the web">
     </label>
-  </div>
-  <div class="form-group">
-    <div data-netlify-recaptcha="true"></div>
   </div>
   <div class="form-group">
     <button id="saveForm" name="saveForm" class="btn submit" type="submit">Send message</button>
