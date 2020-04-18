@@ -7,8 +7,6 @@ http://next-mademistakes.netlify.com/* https://mademistakes.com/:splat 301!
 # ----------------------------------------------------------------------
 
 /about-made-mistakes /about/ 301
-/articles/autumn-refresh/ /notes/autumn-refresh/ 301
-/articles/inktober-2016-failure/ /notes/inktober-2016-failure/ 301
 
 # ----------------------------------------------------------------------
 # Sitemap redirects
@@ -23,11 +21,3 @@ http://next-mademistakes.netlify.com/* https://mademistakes.com/:splat 301!
 # ----------------------------------------------------------------------
 
 /atom /atom.xml 301
-/rss /atom.xml 301
-/feed /atom.xml 301
-/feed.xml /atom.xml 301
-/everything.xml /atom.xml 301
-/articles-feed.xml /articles.xml 301
-/mastering-paper-feed.xml /mastering-paper.xml 301
-/paperfaces-feed.xml /paperfaces.xml 301
-/til.xml /notes.xml 301

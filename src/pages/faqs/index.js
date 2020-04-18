@@ -56,7 +56,6 @@ export const pageQuery = graphql`
     allMarkdownRemark(
       filter: {
         fileAbsolutePath: { regex: "/pages/faqs/" }
-        fields: { sourceName: { ne: "comments" } }
         frontmatter: { published: { ne: false } }
       }
       sort: { fields: [frontmatter___order], order: ASC }

@@ -112,13 +112,6 @@ module.exports = {
     {
       resolve: 'gatsby-source-filesystem',
       options: {
-        name: 'comments',
-        path: `${__dirname}/src/comments`,
-      },
-    },
-    {
-      resolve: 'gatsby-source-filesystem',
-      options: {
         path: `${__dirname}/src/data`,
       },
     },
@@ -355,7 +348,6 @@ module.exports = {
                   limit: 25,
                   filter: {
                     fileAbsolutePath: { regex: "/posts/" }
-                    fields: { sourceName: { ne: "comments" } }
                     frontmatter: { published: { ne: false } }
                   }
                   sort: { fields: [frontmatter___date], order: DESC }
