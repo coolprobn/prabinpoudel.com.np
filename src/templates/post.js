@@ -6,8 +6,6 @@ import { DiscussionEmbed } from 'disqus-react';
 import SEO from '../components/seo'
 import Layout from '../components/layout'
 import Document from '../components/document'
-import CommentsList from '../components/comments/comments-list'
-import CommentForm from '../components/comments/comment-form'
 import Pagination from '../components/pagination'
 import site from '../../config/site'
 
@@ -38,7 +36,6 @@ const PostTemplate = ({ data, pageContext }) => {
     id,
     html,
   } = data.markdownRemark
-  const { comments } = data
   const { next, previous } = pageContext
   const metaImage = image ? image.childImageSharp.fixed : site.image
   const twitterCardType = image ? 'summary_large_image' : 'summary'
@@ -86,10 +83,8 @@ const PostTemplate = ({ data, pageContext }) => {
           nextPost={next}
         />
         <section className={style.comments}>
-          <DiscussionEmbed {...disqusConfig} />
           {commentsEnabled && (
             <>
-              {comments && <CommentsList commentsList={comments} />}
               {commentsLocked ? (
                 <div className="custom-block notice">
                   <div className="custom-block-heading">
@@ -101,7 +96,7 @@ const PostTemplate = ({ data, pageContext }) => {
                   </div>
                 </div>
               ) : (
-                <CommentForm slug={path} />
+                <DiscussionEmbed {...disqusConfig} />
               )}
             </>
           )}
@@ -164,6 +159,5 @@ export const pageQuery = graphql`
       timeToRead
       tableOfContents(pathToSlugField: "frontmatter.path", maxDepth: 3)
     }
-    ...commentsQueryFragment
   }
 `

@@ -47,10 +47,10 @@ module.exports = {
         title: 'Articles',
         path: '/articles/',
       },
-      // {
-      //   title: 'Notes',
-      //   path: '/notes/',
-      // },
+      {
+        title: 'Notes',
+        path: '/notes/',
+      },
       // {
       //   title: 'Works',
       //   path: '/work/',
@@ -65,14 +65,6 @@ module.exports = {
       // },
     ],
     footerMenu: [
-      {
-        title: 'Support me',
-        path: '/support/',
-      },
-      {
-        title: 'FAQs',
-        path: '/faqs/',
-      },
       {
         title: 'Terms & policies',
         path: '/terms/',

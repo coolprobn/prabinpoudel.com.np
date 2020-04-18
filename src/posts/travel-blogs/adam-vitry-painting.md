@@ -1,7 +1,7 @@
 ---
 title: "In Your Face"
 date: 2016-06-10
-path: /tiny-paintings/adam-vitry-painting/
+path: /travel-blogs/adam-vitry-painting/
 excerpt: "Tiny portrait of Adam Vitry, painted with watercolor on hot press paper."
 last_modified_at: 2016-06-10T11:38:48-04:00
 image: ../../images/painting-adam-vitry.jpg

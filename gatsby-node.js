@@ -174,6 +174,7 @@ exports.createSchemaCustomization = ({ actions }) => {
     }
 
     type Frontmatter {
+      uid: String!
       title: String!
       date: Date @dateformat
       last_modified_at: Date @dateformat

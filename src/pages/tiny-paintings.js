@@ -64,8 +64,8 @@ class Gallery extends React.Component {
       <Layout>
         <SEO
           title={`Tiny paintings - ${site.title}`}
-          path="/tiny-paintings/"
-          description="Gallery of mini watercolor portraits painted at really small sizes."
+          path="/gallery/"
+          description="Gallery of my travels."
           metaImage={metaImage}
         />
         <main id="main" className={style.document}>

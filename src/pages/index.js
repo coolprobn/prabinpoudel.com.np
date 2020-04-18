@@ -60,8 +60,8 @@ const HomePage = ({ data }) => {
                   path,
                   author,
                   excerpt,
-                  image
-                }
+                  image,
+                },
               } = node;
 
               return (
@@ -110,33 +110,23 @@ const HomePage = ({ data }) => {
                   key="articles-home-link"
                   title="Articles"
                   path="/articles/"
-                  excerpt="<p>Long form writing mostly about web development and travel.</p>"
+                  excerpt="<p>Long form writing mostly about web or mobile app development and travels.</p>"
                 />
               </li>
-              {/* <li key="notes">
+              <li key="notes">
                 <Entry
                   key="notes-home-link"
                   title="Notes"
                   path="/notes/"
-                  excerpt="<p>Thoughts, inspiration, mistakes, and other minutia you&rsquo;d find in a blog.</p>"
+                  excerpt="<p>Thoughts, inspiration, mistakes, quick solutions and other minutia you&rsquo;d find in a blog.</p>"
                 />
-              </li> */}
+              </li>
               {/* <li key="works">
                 <Entry
                   key="works-home-link"
                   title="Works"
                   path="/work/"
-                  excerpt="<p>Hand-picked selection of things I've designed, illustrated,
-                  and developed.</p>"
-                />
-              </li> */}
-              {/* <li key="mastering-paper">
-                <Entry
-                  key="mastering-paper-home-link"
-                  title="Mastering Paper"
-                  path="/mastering-paper/"
-                  excerpt="<p>Tutorials to help master the iOS drawing app&mdash;
-                Paper</p>"
+                  excerpt="<p>Hand-picked selection of things I've developed.</p>"
                 />
               </li> */}
               {/* <li key="contact">
@@ -144,16 +134,7 @@ const HomePage = ({ data }) => {
                   key="contact-home-link"
                   title="Contact"
                   path="/contact/"
-                  excerpt="<p>Preferred methods of sending questions, messages, and
-                  love letters to me.</p>"
-                />
-              </li> */}
-              {/* <li key="support">
-                <Entry
-                  key="support-home-link"
-                  title="Show your support"
-                  path="/support/"
-                  excerpt="<p>Give thanks for the free open source goodies I provide.</p>"
+                  excerpt="<p>Preferred methods of sending questions, messages, and love letters to me.</p>"
                 />
               </li> */}
               {/* <li key="faqs">
@@ -197,7 +178,6 @@ export const pageQuery = graphql`
     featuredPosts: allMarkdownRemark(
       filter: {
         fileAbsolutePath: { regex: "/posts/" }
-        fields: { sourceName: { ne: "comments" } }
         frontmatter: {
           featured: { eq: true }
           published: { ne: false }
@@ -233,7 +213,6 @@ export const pageQuery = graphql`
     recentPosts: allMarkdownRemark(
       filter: {
         fileAbsolutePath: { regex: "/posts/" }
-        fields: { sourceName: { ne: "comments" } }
         frontmatter: {
           featured: { ne: true }
           published: { ne: false }

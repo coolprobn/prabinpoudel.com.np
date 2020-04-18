@@ -4,13 +4,13 @@ title: 'Reset password in react and rails app with devise'
 date: 2020-01-16
 path: /articles/reset-password-react-rails/
 excerpt: 'This tutorial shows you how to send reset password instructions email in React and Rails app. Learn about these steps to reset password for Rails/React app with Devise.'
-last_modified_at: 2020-04-15
-image: ../../images/reset-password-react-rails.webp
+image: ../../images/articles/reset-password-react-rails.webp
 categories: [articles]
-tags: [technology, ruby on rails, reactjs, devise]
+tags: [ruby on rails, reactjs, devise, tutorial]
+last_modified_at: 2020-04-15
 toc: true
 featured: true
-comments: false
+comments: true
 ---
 
 _NOTE_: This article was first posted on <a href="https://truemark.com.np/blog/reset-password-in-react-and-rails/" rel="canonical">Truemark Blog</a>
