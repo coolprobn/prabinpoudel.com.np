@@ -129,14 +129,14 @@ const HomePage = ({ data }) => {
                   excerpt="<p>Hand-picked selection of things I've developed.</p>"
                 />
               </li> */}
-              {/* <li key="contact">
+              <li key="contact">
                 <Entry
                   key="contact-home-link"
                   title="Contact"
                   path="/contact/"
                   excerpt="<p>Preferred methods of sending questions, messages, and love letters to me.</p>"
                 />
-              </li> */}
+              </li>
               {/* <li key="faqs">
                 <Entry
                   key="faqs-home-link"

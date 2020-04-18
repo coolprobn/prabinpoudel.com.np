@@ -59,10 +59,10 @@ module.exports = {
         title: 'About',
         path: '/about/',
       },
-      // {
-      //   title: 'Contact',
-      //   path: '/contact/',
-      // },
+      {
+        title: 'Contact',
+        path: '/contact/',
+      },
     ],
     footerMenu: [
       {
