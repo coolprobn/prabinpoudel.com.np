@@ -11,7 +11,7 @@ A hierarchical breakdown of all the sections and pages found on the site. For yo
 ## Pages
 
 - [About](/about/)
-<!-- - [Contact](/contact/) -->
+- [Contact](/contact/)
 <!-- - [Frequently asked questions](/faqs/) -->
 - [Terms and policies](/terms/)
 - [Tag index](/tag/)

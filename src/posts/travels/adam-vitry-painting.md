@@ -6,8 +6,8 @@ excerpt: "Tiny portrait of Adam Vitry, painted with watercolor on hot press pape
 last_modified_at: 2016-06-10T11:38:48-04:00
 image: ../../images/painting-adam-vitry.jpg
 thumbnail: ../../images/painting-adam-vitry-crop.jpg
-categories: [tiny-paintings]
-tags: [watercolor, portrait, illustration, Sktchy]
+categories: [travel-gallery]
+tags: [gallery]
 published: false
 ---
 

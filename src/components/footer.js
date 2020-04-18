@@ -29,9 +29,9 @@ const Footer = ({
   upwork,
 }) => (
   <footer id="footer" className={style.footer}>
-    {/* <ul className={style.menu}>
+    <ul className={style.menu}>
       <FooterMenu footerMenu={footerMenu} />
-    </ul> */}
+    </ul>
     <ul className={style.menuSocial}>
       {twitter && (
         <li>

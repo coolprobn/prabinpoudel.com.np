@@ -30,8 +30,7 @@ const FaqsPage = ({
       </div>
       <div className={style.content}>
         <p>
-          Did I leave something out that you were looking for an answer to? Feel
-          free to reach out and <Link to="/contact/">ask me</Link>.
+          Did I leave something out that you were looking for an answer to? Feel free to reach out and <Link to="/contact/">ask me</Link>.
         </p>
         <ul>
           {edges.map(faq => (
