@@ -4,10 +4,6 @@
   html: |
     <p>A collection of thoughts, inspiration, mistakes, and other long-form minutia I've written. For smaller, more regular tidbits &mdash; peruse the <a href="/notes/">notes section</a>.</p>
 
-- id: devise
-  excerpt:
-  html:
-
 - id: notes
   name: Notes
   excerpt: Small, bite sized content I've written.

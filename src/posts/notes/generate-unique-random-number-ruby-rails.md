@@ -16,7 +16,7 @@ Sometimes we need random or unique numbers and tokens in our web apps. Here is a
 
 ## Generate Random Number or Token
 
-For generating secured random numbers and tokens we use `Secure Random`, suitable for generating session keys in HTTP cookies, etc. If you are only looking for generating random numbers, then you can use [rand(Random)](https://apidock.com/ruby/Random/rand). Here, we are using [random_number(SecureRandom)](https://apidock.com/ruby/SecureRandom/random_number/class) for numbers and [hex(SecureRandom)](https://apidock.com/ruby/SecureRandom/hex/class) for tokens. There are varieties of other methods provided by Secure Random like alphanumeric, base64, urlsafe_base64, uuid, etc. which you can read further about here: [Secure Random](https://ruby-doc.org/stdlib-2.5.1/libdoc/securerandom/rdoc/SecureRandom.html).
+For generating secured random numbers and tokens we use `Secure Random`, suitable for generating session keys in HTTP cookies, etc. If you are only looking for generating random numbers, then you can use <a href="https://apidock.com/ruby/Random/rand" target="_blank">rand(Random)</a>. Here, we are using <a href="https://apidock.com/ruby/SecureRandom/random_number/class" target="_blank">random_number(SecureRandom)</a> for numbers and <a href="https://apidock.com/ruby/SecureRandom/hex/class" target="_blank">hex(SecureRandom)</a> for tokens. There are varieties of other methods provided by Secure Random like alphanumeric, base64, urlsafe_base64, uuid, etc. which you can read further about here: <a href="https://ruby-doc.org/stdlib-2.5.1/libdoc/securerandom/rdoc/SecureRandom.html" target="_blank">Secure Random</a>.
 
 ```ruby
 def generate_random_number
@@ -99,6 +99,6 @@ end
 
 Do you know more elegant way to generate unique random numbers or tokens? Enlighten and guide us with your precious comment below if you do.
 
-**References:** [Makandra Cards](https://makandracards.com/alexander-m/39365-generate-unique-random-token)
+**References:** <a href="https://makandracards.com/alexander-m/39365-generate-unique-random-token" target="_blank">Makandra Cards</a>
 
-**Image Credits:** Cover Image by [955169](https://pixabay.com/users/955169-955169/?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=1502706) from [Pixabay](https://pixabay.com/)
+**Image Credits:** Cover Image by <a href="https://pixabay.com/users/955169-955169/?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=1502706" target="_blank">955169</a> from <a href="https://pixabay.com/" target="_blank">Pixabay</a>
