@@ -12,6 +12,8 @@ featured: true
 comments: true
 ---
 
+_NOTE_: This article was first posted on <a href="https://thedevpost.com/blog/setup-action-mailbox-with-postfix-part-1/" rel="canonical" target="_blank">The Dev Post.</a>
+
 This is the first part of a 2 series tutorial to setup action mailbox with postfix. In this part, we will implement action mailbox with postfix and test in development.
 
 If you are only looking to configure postfix in production server to pipe emails, you can read the second part <a href="/articles/action-mailbox-with-postfix-part-2/">here</a>.
@@ -155,7 +157,7 @@ For testing in development, Action Mailbox provides UI to test inbound emails in
 $ rails s
 ```
 
-Now go to `http://localhost:3000/rails/conductor/action_mailbox/inbound_emails` and click on `Deliver new inbound email`. Fill in all the then click `Deliver inbound email`. Ohh wait! before that let's add `byebug` to our `process` method so we know action mailbox is actually forwarding our emails to the right place.
+Now go to `http://localhost:3000/rails/conductor/action_mailbox/inbound_emails` and click on `Deliver new inbound email`. Fill in all required details and then click `Deliver inbound email`. Ohh wait! before that let's add `byebug` to our `process` method so we know action mailbox is actually forwarding our emails to the right place.
 
 ```ruby
 # app/mailboxes/forwards_mailbox.rb

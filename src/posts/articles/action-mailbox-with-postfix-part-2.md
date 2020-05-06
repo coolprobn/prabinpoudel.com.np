@@ -1,7 +1,7 @@
 ---
 uid: 'PB-A-3'
 title: 'Setup Action Mailbox with Postfix - Part 2'
-date: 2020-05-01
+date: 2020-05-02
 path: /articles/action-mailbox-with-postfix-part-2/
 excerpt: 'This is the second part of a 2 series tutorial to setup action mailbox with postfix. In this part, we will configure postfix in production server to forward incoming emails to our rails app so action mailbox can process it.'
 image: ../../images/articles/action-mailbox-with-postfix-part-2.webp
@@ -11,6 +11,8 @@ toc: true
 featured: false
 comments: true
 ---
+
+_NOTE_: This article was first posted on <a href="https://thedevpost.com/blog/setup-action-mailbox-with-postfix-part-2/" rel="canonical" target="_blank">The Dev Post.</a>
 
 This is the second part of a 2 series tutorial to setup action mailbox with postfix. In this part, we will configure postfix in production server to forward incoming emails to our rails app so action mailbox can process it.
 
@@ -43,12 +45,12 @@ export HOME=YOUR_HOME_PATH
 export PATH=YOUR_PATH
 export RBENV_ROOT=YOUR_RBENV_PATH
 
-cd /path/to/your/project && bin/rails action_mailbox:ingress:postfix URL='http://localhost:3000/rails/action_mailbox/relay/inbound_emails' INGRESS_PASSWORD='hello@flexo_p@$$'
+cd /path/to/your/project && bin/rails action_mailbox:ingress:postfix URL='https://truemark.com.np/rails/action_mailbox/relay/inbound_emails' INGRESS_PASSWORD='YOUR_INGRESS_PASSWORD'
 ```
 
-Replace values of `HOME`, `PATH`,  `rbenv`, `URL` and `INGRESS_PASSWORD` as described below:
+Replace values of `HOME`, `PATH`, `RBENV_ROOT`, `URL` and `INGRESS_PASSWORD` as described below:
 
-- Copy your home directory
+- Copy your home directory for **HOME**
 
 `cd` and copy what you get from `pwd` command
 
@@ -57,16 +59,16 @@ $ cd
 $ pwd
 ```
 
-- Copy what you get from `$PATH` and `which rbenv` command
+- Copy what you get from **$PATH** and **which rbenv** command for **PATH** and **RBENV_ROOT** respectively
 
 ```shell
 $ $PATH
 $ which rbenv
 ```
 
-- Copy the password you added to `credentials` file or your ENV file
+- Copy the password you added to `credentials.yml` file or your ENV file as described in <a href="/articles/action-mailbox-with-postfix-part-1/" target="_blank">part 1.</a>
 
-For URL, if your application lived at `https://example.com`, the full command would look like this:
+For **URL**, if your application lived at `https://example.com`, the full command would look like this:
 
 `bin/rails action_mailbox:ingress:postfix URL=https://example.com/rails/action_mailbox/relay/inbound_emails INGRESS_PASSWORD=YOUR_STRONG_PASSWORD`
 
