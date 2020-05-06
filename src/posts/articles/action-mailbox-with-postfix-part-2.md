@@ -59,14 +59,14 @@ $ cd
 $ pwd
 ```
 
-- Copy what you get from **$PATH** and **which rbenv** command for **PATH** and **RBENV_ROOT** respectively
+- Copy what you get from `$PATH` and `which rbenv` command for **PATH** and **RBENV_ROOT** respectively
 
 ```shell
 $ $PATH
 $ which rbenv
 ```
 
-- Copy the password you added to `credentials.yml` file or your ENV file as described in <a href="/articles/action-mailbox-with-postfix-part-1/" target="_blank">part 1.</a>
+- Copy the password you added previously to `credentials.yml` file or your ENV file as described in <a href="/articles/action-mailbox-with-postfix-part-1/" target="_blank">part 1</a> for **INGRESS_PASSWORD**
 
 For **URL**, if your application lived at `https://example.com`, the full command would look like this:
 
