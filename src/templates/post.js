@@ -29,6 +29,8 @@ const PostTemplate = ({ data, pageContext }) => {
       comments: commentsEnabled,
       comments_locked: commentsLocked,
       hide_meta: hideMeta,
+      canonical,
+      canonical_url: canonicalUrl
     },
     excerpt: autoExcerpt,
     timeToRead,
@@ -60,6 +62,8 @@ const PostTemplate = ({ data, pageContext }) => {
         metaImage={metaImage}
         twitterCardType={twitterCardType}
         article
+        canonical={canonical}
+        canonicalUrl={canonicalUrl}
       />
       <main id="main">
         <Document
@@ -151,6 +155,8 @@ export const pageQuery = graphql`
         comments
         comments_locked
         hide_meta
+        canonical
+        canonical_url
       }
       id
       html

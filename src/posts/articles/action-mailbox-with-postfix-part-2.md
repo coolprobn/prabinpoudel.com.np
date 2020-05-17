@@ -10,9 +10,12 @@ tags: [ruby on rails, tutorial]
 toc: true
 featured: false
 comments: true
+last_modified_at: 2020-05-17
+canonical: true
+canonical_url: 'https://thedevpost.com/blog/setup-action-mailbox-with-postfix-part-2/'
 ---
 
-_NOTE_: This article was first posted on <a href="https://thedevpost.com/blog/setup-action-mailbox-with-postfix-part-2/" rel="canonical" target="_blank">The Dev Post.</a>
+_NOTE_: This article was first posted on <a href="https://thedevpost.com/blog/setup-action-mailbox-with-postfix-part-2/" target="_blank">The Dev Post.</a>
 
 This is the second part of a 2 series tutorial to setup action mailbox with postfix. In this part, we will configure postfix in production server to forward incoming emails to our rails app so action mailbox can process it.
 

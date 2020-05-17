@@ -14,6 +14,8 @@ const SEO = ({
   article,
   datePublished,
   dateModified,
+  canonical,
+  canonicalUrl
 }) => {
   const { site } = useStaticQuery(query)
 
@@ -124,6 +126,12 @@ const SEO = ({
       <Helmet title={seo.title}>
         <html lang={siteLanguage} />
         <link rel="canonical" href={seo.url} />
+        {canonical && (
+          <link
+            rel="canonical"
+            href={canonicalUrl}
+          />
+        )}
         {pingbackUrl && <link rel="pingback" href={pingbackUrl} />}
         {webmentionUrl && <link rel="webmention" href={webmentionUrl} />}
         {/* {micropubUrl && <link rel="micropub" href={micropubUrl} />} */}

@@ -10,9 +10,12 @@ tags: [ruby on rails, tutorial]
 toc: true
 featured: true
 comments: true
+last_modified_at: 2020-05-17
+canonical: true
+canonical_url: 'https://thedevpost.com/blog/setup-action-mailbox-with-postfix-part-1/'
 ---
 
-_NOTE_: This article was first posted on <a href="https://thedevpost.com/blog/setup-action-mailbox-with-postfix-part-1/" rel="canonical" target="_blank">The Dev Post.</a>
+_NOTE_: This article was first posted on <a href="https://thedevpost.com/blog/setup-action-mailbox-with-postfix-part-1/" target="_blank">The Dev Post.</a>
 
 This is the first part of a 2 series tutorial to setup action mailbox with postfix. In this part, we will implement action mailbox with postfix and test in development.
 
