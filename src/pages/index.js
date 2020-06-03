@@ -79,7 +79,7 @@ const HomePage = ({ data }) => {
               );
             })}
           </div>
-          {/* <h2 className={style.subHeading}>Recent posts</h2>
+          <h2 className={style.subHeading}>Recent posts</h2>
           <div className={style.list}>
             {recentPosts.map(({ node }) => {
               const {
@@ -101,7 +101,7 @@ const HomePage = ({ data }) => {
                 />
               );
             })}
-          </div> */}
+          </div>
           <h2 className={style.subHeading}>Explore more on this site</h2>
           <div>
             <ul className={`${style.gridListExpanded} ${style.navList}`}>

@@ -8,7 +8,7 @@ image: ../../images/notes/generate-unique-random-number-token-ruby-rails.webp
 categories: [notes]
 tags: [ruby, ruby on rails]
 comments: true
-featured: true
+featured: false
 toc: true
 ---
 
