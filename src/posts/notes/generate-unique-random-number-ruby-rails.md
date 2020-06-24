@@ -6,7 +6,7 @@ path: /notes/generate-unique-random-number-token-ruby-rails/
 excerpt: 'Learn how you can generate random and unique number or token from given range of number in Ruby on Rails.'
 image: ../../images/notes/generate-unique-random-number-token-ruby-rails.webp
 categories: [notes]
-tags: [ruby, ruby on rails]
+tags: [ruby, ruby on rails, web development]
 comments: true
 featured: false
 toc: true

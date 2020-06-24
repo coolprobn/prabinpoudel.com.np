@@ -6,7 +6,7 @@ path: /articles/action-mailbox-with-postfix-part-1/
 excerpt: 'This is the first part of a 2 series tutorial to setup action mailbox with postfix. In this part, we will implement action mailbox with postfix and test it in development.'
 image: ../../images/articles/action-mailbox-with-postfix-part-1.webp
 categories: [articles]
-tags: [ruby on rails, tutorial]
+tags: [ruby on rails, tutorial, web development]
 toc: true
 featured: true
 comments: true

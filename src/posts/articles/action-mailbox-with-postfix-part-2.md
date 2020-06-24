@@ -6,7 +6,7 @@ path: /articles/action-mailbox-with-postfix-part-2/
 excerpt: 'This is the second part of a 2 series tutorial to setup action mailbox with postfix. In this part, we will configure postfix in production server to forward incoming emails to our rails app so action mailbox can process it.'
 image: ../../images/articles/action-mailbox-with-postfix-part-2.webp
 categories: [articles]
-tags: [ruby on rails, tutorial]
+tags: [ruby on rails, tutorial, web development]
 toc: true
 featured: false
 comments: true

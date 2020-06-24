@@ -2,11 +2,12 @@
 uid: 'PB-N-2'
 title: 'Extract key or value from hash in ruby on rails'
 date: 2020-05-30T07:28:34.980Z
+last_modified_at: 2020-06-24T01:53:41.410Z
 path: /notes/extract-key-value-from-hash-ruby-on-rails/
-excerpt: 'Many times when working with pure sql queries for example, we need to extract keys and values separately. Learn how you can extract key or value from hash in Ruby on Rails. '
+excerpt: 'Many times when working with pure sql queries for example, we need to extract keys and values separately. Learn how you can extract key or value from hash in Ruby on Rails.'
 image: ../../images/notes/extract-key-value-from-hash-ruby-on-rails.webp
 categories: [notes]
-tags: [ruby on rails]
+tags: [ruby, ruby on rails, web development]
 comments: true
 featured: true
 toc: true
