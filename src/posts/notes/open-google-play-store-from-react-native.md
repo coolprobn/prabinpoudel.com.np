@@ -11,7 +11,7 @@ comments: true
 featured: true
 toc: true
 canonical: true
-canonical_url: 'https://thedevpost.com/blog/extract-key-or-value-from-hash-in-ror/'
+canonical_url: 'https://thedevpost.com/blog/open-google-play-store-from-react-native-app/'
 ---
 
 User ratings are very valuable to business as they play a crucial part in people's purchasing decisions; be it restaurants, movie tickets or in the current context, our react native app. You must have seen prompts when you are surfing through any android app or playing games, that ask you to rate the app in google play store.
