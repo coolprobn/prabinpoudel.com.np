@@ -4,6 +4,10 @@
   html: |
     <p>A collection of thoughts, inspiration, mistakes, and other long-form minutia I've written. For smaller, more regular tidbits &mdash; peruse the <a href="/notes/">notes section</a>.</p>
 
+- id: mobile development
+  excerpt:
+  html:
+
 - id: notes
   name: Notes
   excerpt: Small, bite sized content I've written.
@@ -11,6 +15,10 @@
     <p>Small, bite sized content I've written. For longer, more thorough writing &mdash; peruse the <a href="/articles/">articles section</a>.</p>
 
 - id: reactjs
+  excerpt:
+  html:
+
+- id: react native
   excerpt:
   html:
 
