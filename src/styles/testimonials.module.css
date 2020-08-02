@@ -1,0 +1,48 @@
+.testimonialList {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.platformButton {
+  position: absolute;
+  top: 0;
+  right: 0;
+  border-radius: 0;
+}
+
+.feedback {
+  margin-top: 2em;
+  margin-bottom: 1.5em;
+}
+
+.clientContainer {
+  display: flex;
+}
+
+.clientImage {
+  border-radius: 0.2em;
+  margin-right: 0.5em;
+  height: 5em;
+  width: 5em;
+  object-fit: cover;
+}
+
+.clientInfo {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.clientName {
+  font-weight: 600;
+}
+
+.clientCompanyInfo {
+  font-size: var(--text-sm);
+}
+
+.clientPost {
+  color: #808080;
+}
