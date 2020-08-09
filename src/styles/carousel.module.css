@@ -58,6 +58,16 @@
   }
 }
 
+@keyframes blink {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
 .history .active {
   background-color: var(--button-background-color);
+  animation: blink 1.5s infinite;
 }

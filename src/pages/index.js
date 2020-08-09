@@ -11,6 +11,7 @@ import style from '../styles/archive.module.css';
 import site from '../../config/site';
 
 import Testimonials from '../components/testimonial';
+import TechnologyStacks from '../components/technologyStack';
 
 const HomePage = ({ data }) => {
   const {
@@ -52,6 +53,12 @@ const HomePage = ({ data }) => {
           <h2 className={style.subHeading}>Testimonials</h2>
 
           <Testimonials />
+        </div>
+
+        <div className={style.content}>
+          <h2 className={style.subHeading}>Skills</h2>
+
+          <TechnologyStacks />
         </div>
 
         <div className={style.content}>
