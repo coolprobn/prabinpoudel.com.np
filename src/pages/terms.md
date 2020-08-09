@@ -2,7 +2,7 @@
 title: "Terms and policies"
 path: /terms/
 date: 2020-04-18
-excerpt: "Personal blog - prabinpoudel.com.np; privacy policy, license, and other legal stuff you won't read."
+excerpt: "Personal site - prabinpoudel.com.np; privacy policy, license, and other legal stuff you won't read."
 toc: true
 ---
 

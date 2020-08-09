@@ -1,0 +1,59 @@
+.technologyStackList {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  flex-direction: row;
+}
+
+.technologyStack {
+  border: 2px solid var(--text-color);
+  display: flex;
+  flex-direction: column;
+  margin-right: var(--grid-list-col-gap);
+  margin-bottom: var(--grid-list-col-gap);
+  width: 8em;
+  text-align: center;
+}
+
+.categoryContainer {
+  position: relative;
+}
+
+.category {
+  position: absolute;
+  top: 0;
+  right: 0;
+  border-radius: 0;
+  cursor: default;
+  font-size: 0.6em;
+
+  &:hover {
+    background-color: var(--button-background-color);
+    color: var(--button-text-color);
+  }
+}
+
+.stackCategoryContainer {
+  padding: 0.2em;
+  border-bottom: 0.2em solid var(--text-color);
+}
+
+.icon-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 2em;
+  margin-bottom: 1em;
+}
+
+.icon {
+  height: 4em;
+  width: 4em;
+}
+
+.name {
+  background-color: var(--button-background-color);
+  color: var(--button-text-color);
+  font-size: var(--text-sm);
+  padding: 0.4em 0.2em;
+}

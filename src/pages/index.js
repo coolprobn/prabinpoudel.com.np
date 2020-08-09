@@ -1,14 +1,17 @@
-import React from 'react'
-import PropTypes from 'prop-types'
-import { graphql } from 'gatsby'
-import Img from 'gatsby-image'
-import Layout from '../components/layout'
-import SEO from '../components/seo'
-import Entry from '../components/entry'
+import React from 'react';
+import PropTypes from 'prop-types';
+import { graphql } from 'gatsby';
+import Img from 'gatsby-image';
+import Layout from '../components/layout';
+import SEO from '../components/seo';
+import Entry from '../components/entry';
 
-import style from '../styles/archive.module.css'
+import style from '../styles/archive.module.css';
 
-import site from '../../config/site'
+import site from '../../config/site';
+
+import Testimonials from '../components/testimonial';
+import TechnologyStacks from '../components/technologyStack';
 
 const HomePage = ({ data }) => {
   const {
@@ -17,7 +20,7 @@ const HomePage = ({ data }) => {
     },
     featuredPosts: { edges: featuredPosts },
     recentPosts: { edges: recentPosts },
-  } = data
+  } = data;
   return (
     <Layout>
       <SEO
@@ -30,13 +33,13 @@ const HomePage = ({ data }) => {
         <div className={style.title}>
           <h1 className={style.heading}>
             <span>
-              Personal blog of <a href="/about/">Prabin&nbsp;Poudel</a>.
+              Personal site of <a href="/about/">Prabin&nbsp;Poudel</a>.
             </span>
           </h1>
           <div className={style.intro}>
             <p>
-              I'm just another developer from Nepal who enjoys writing codes all
-              day, travelling, trying different foods and going on an adventure.
+              Full Stack developer from Nepal who enjoys writing codes all day,
+              travelling, trying different foods and going on adventures.
             </p>
           </div>
           <Img
@@ -45,6 +48,19 @@ const HomePage = ({ data }) => {
             backgroundColor="var(--input-background-color)"
           />
         </div>
+
+        <div className={style.content}>
+          <h2 className={style.subHeading}>Testimonials</h2>
+
+          <Testimonials />
+        </div>
+
+        <div className={style.content}>
+          <h2 className={style.subHeading}>Skills</h2>
+
+          <TechnologyStacks />
+        </div>
+
         <div className={style.content}>
           <h2 className={style.subHeading}>Featured articles</h2>
           <div className={style.gridList}>
@@ -86,7 +102,7 @@ const HomePage = ({ data }) => {
                 id,
                 excerpt: autoExcerpt,
                 timeToRead,
-                frontmatter: { title, date, date_pretty, path, excerpt }
+                frontmatter: { title, date, date_pretty, path, excerpt },
               } = node;
 
               return (
@@ -159,11 +175,11 @@ const HomePage = ({ data }) => {
       </main>
     </Layout>
   );
-}
+};
 
 HomePage.propTypes = {
   data: PropTypes.object.isRequired,
-}
+};
 
 export const pageQuery = graphql`
   query HomeQuery {
@@ -178,10 +194,7 @@ export const pageQuery = graphql`
     featuredPosts: allMarkdownRemark(
       filter: {
         fileAbsolutePath: { regex: "/posts/" }
-        frontmatter: {
-          featured: { eq: true }
-          published: { ne: false }
-        }
+        frontmatter: { featured: { eq: true }, published: { ne: false } }
       }
       sort: { fields: [frontmatter___date], order: DESC }
       limit: 6
@@ -245,6 +258,6 @@ export const pageQuery = graphql`
       }
     }
   }
-`
+`;
 
-export default HomePage
+export default HomePage;
