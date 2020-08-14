@@ -12,6 +12,7 @@ import site from '../../config/site';
 
 import Testimonials from '../components/testimonial';
 import TechnologyStacks from '../components/technologyStack';
+import FeaturedPortfolio from '../components/featuredPortfolio';
 
 const HomePage = ({ data }) => {
   const {
@@ -19,8 +20,8 @@ const HomePage = ({ data }) => {
       siteMetadata: { author: siteAuthor },
     },
     featuredPosts: { edges: featuredPosts },
-    recentPosts: { edges: recentPosts },
   } = data;
+
   return (
     <Layout>
       <SEO
@@ -47,6 +48,12 @@ const HomePage = ({ data }) => {
             className={style.cover}
             backgroundColor="var(--input-background-color)"
           />
+        </div>
+
+        <div className={style.content}>
+          <h2 className={style.subHeading}>Featured Projects</h2>
+
+          <FeaturedPortfolio />
         </div>
 
         <div className={style.content}>
@@ -95,29 +102,7 @@ const HomePage = ({ data }) => {
               );
             })}
           </div>
-          <h2 className={style.subHeading}>Recent posts</h2>
-          <div className={style.list}>
-            {recentPosts.map(({ node }) => {
-              const {
-                id,
-                excerpt: autoExcerpt,
-                timeToRead,
-                frontmatter: { title, date, date_pretty, path, excerpt },
-              } = node;
 
-              return (
-                <Entry
-                  key={id}
-                  title={title}
-                  date={date}
-                  datePretty={date_pretty}
-                  path={path}
-                  timeToRead={timeToRead}
-                  excerpt={excerpt || autoExcerpt}
-                />
-              );
-            })}
-          </div>
           <h2 className={style.subHeading}>Explore more on this site</h2>
           <div>
             <ul className={`${style.gridListExpanded} ${style.navList}`}>
@@ -219,33 +204,6 @@ export const pageQuery = graphql`
                 }
               }
             }
-          }
-        }
-      }
-    }
-    recentPosts: allMarkdownRemark(
-      filter: {
-        fileAbsolutePath: { regex: "/posts/" }
-        frontmatter: {
-          featured: { ne: true }
-          published: { ne: false }
-          categories: { nin: "work" }
-        }
-      }
-      sort: { fields: [frontmatter___date], order: DESC }
-      limit: 3
-    ) {
-      edges {
-        node {
-          id
-          excerpt(format: HTML)
-          timeToRead
-          frontmatter {
-            title
-            date
-            date_pretty: date(formatString: "MMMM Do, YYYY")
-            path
-            excerpt
           }
         }
       }

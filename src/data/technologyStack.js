@@ -1,4 +1,3 @@
-import ReneldyImage from '../images/clients/reneldy.webp';
 import RubyOnRailsIcon from '../images/technologyStacks/rails.webp';
 import ReactIcon from '../images/technologyStacks/react.webp';
 import ReactNativeIcon from '../images/technologyStacks/react-native.webp';
@@ -14,7 +13,7 @@ const technologyStacks = [
     uid: 1,
     name: 'Ruby on Rails',
     icon: RubyOnRailsIcon,
-    category: 'Full Stack',
+    category: 'Backend',
   },
   {
     uid: 2,
