@@ -1,59 +1,42 @@
 .technologyStackList {
   display: flex;
   flex-wrap: wrap;
-  align-items: center;
   flex-direction: row;
 }
 
 .technologyStack {
-  border: 2px solid var(--text-color);
   display: flex;
-  flex-direction: column;
-  margin-right: var(--grid-list-col-gap);
-  margin-bottom: var(--grid-list-col-gap);
-  width: 8em;
-  text-align: center;
+  align-items: center;
+  padding: 0.5em;
 }
 
 .categoryContainer {
-  position: relative;
+  margin-right: 1rem;
+  margin-bottom: 1rem;
+  box-shadow: 0px 0px 30px 1px var(--shadow-color-alpha),
+    0px 0px 20px 1px var(--shadow-color);
+  display: flex;
+  flex-direction: column;
+  min-width: 10rem;
+  min-height: 7rem;
 }
 
 .category {
-  position: absolute;
-  top: 0;
-  right: 0;
-  border-radius: 0;
-  cursor: default;
-  font-size: 0.6em;
-
-  &:hover {
-    background-color: var(--button-background-color);
-    color: var(--button-text-color);
-  }
-}
-
-.stackCategoryContainer {
+  background-color: var(--button-background-color);
+  color: var(--button-text-color);
   padding: 0.2em;
-  border-bottom: 0.2em solid var(--text-color);
-}
-
-.icon-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-top: 2em;
-  margin-bottom: 1em;
+  text-align: center;
 }
 
 .icon {
-  height: 4em;
-  width: 4em;
+  height: 1em;
+  width: 1em;
+  border-radius: 2em;
+  margin-right: 0.4rem;
+  object-fit: cover;
 }
 
 .name {
-  background-color: var(--button-background-color);
-  color: var(--button-text-color);
   font-size: var(--text-sm);
-  padding: 0.4em 0.2em;
+  /* padding: 0.4em 0.2em; */
 }

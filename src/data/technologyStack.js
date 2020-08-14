@@ -13,7 +13,7 @@ const technologyStacks = [
     uid: 1,
     name: 'Ruby on Rails',
     icon: RubyOnRailsIcon,
-    category: 'Full Stack',
+    category: 'Backend',
   },
   {
     uid: 2,
