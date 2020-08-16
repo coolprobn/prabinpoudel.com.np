@@ -2,13 +2,14 @@
 uid: 'PB-N-3'
 title: 'Open google play store from react native app'
 date: 2020-06-24T01:53:41.410Z
+last_modified_at: 2020-08-16T17:43:06.026Z
 path: /notes/open-google-play-store-from-react-native/
 excerpt: "User rating for our react native app is very important factor for us to keep maintaining the app and make it a success. Let's learn how we can take our user to google play store from our react native app here."
 image: ../../images/notes/open-google-play-store-from-react-native.webp
 categories: [notes]
 tags: [react native, mobile development]
 comments: true
-featured: true
+featured: false
 toc: true
 canonical: true
 canonical_url: 'https://thedevpost.com/blog/open-google-play-store-from-react-native-app/'
