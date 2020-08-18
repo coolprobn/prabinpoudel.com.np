@@ -10,8 +10,8 @@ tags: [git]
 comments: true
 featured: true
 toc: true
-# canonical: true
-# canonical_url: 'https://thedevpost.com/blog/open-google-play-store-from-react-native-app/'
+canonical: true
+canonical_url: 'https://thedevpost.com/blog/remove-files-or-folders-from-remote-git/'
 ---
 
 GIT is great, it has made collaboration with other developers so easy, I can't thank GIT enough. But GIT is vast and not every command remains on my mind. I find myself googling over and over again to get that right GIT command that can solve my problem.
