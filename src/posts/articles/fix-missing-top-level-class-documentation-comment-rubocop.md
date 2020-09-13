@@ -1,9 +1,9 @@
 ---
-uid: 'PB-A-1'
+uid: 'PB-A-4'
 title: '[Fix] Missing top level class documentation comment Rubocop'
 date: 2020-09-12
 path: /articles/fix-missing-top-level-class-documentation-comment-rubocop/
-excerpt: "There are multiple ways to fix missing top level class documentation comment in Rubocop. You can disable it in your whole app with by disabling cop in the config file, disable it in one class or just add a comment above the class declaration."
+excerpt: "There are multiple ways to fix missing top level class documentation comment in Rubocop. You can disable it in your whole app with by disabling cop in the whole project, disable it in one class or just add a comment above the class declaration."
 image: ../../images/articles/fix-missing-top-level-class-documentation-comment-rubocop.webp
 categories: [articles]
 tags: [ruby on rails, rubocop, lint]
@@ -24,11 +24,11 @@ Rubocop is the best way to enforce best practices in our rails project. While wo
 
 You can disable or fix this warning using either of the 3 options:
 
-1. Disable cop in configuration file
+1. Disable cop in the whole project
 2. Disable cop in only one class
 3. Add comment just above the class declaration
 
-### Option 1: Disable cop in configuration file
+### Option 1: Disable cop in the whole project
 
 Most of the classes we use are self describing, meaning as a developer, you can easily make sense of what the class is doing. Normally I find this rule not very useful, so most of the time I disable it in the whole project. Add the following cop to your configuration file to disable it project wide:
 
@@ -53,7 +53,7 @@ end
 
 ### Option 3: Add comment just above the class declaration
 
-You can also make the warning go away by adding the comment as warning suggests.
+You can also fix the warning by adding the comment by adding the comment above the class declaration.
 
 ```ruby
 # app/models/user.rb
@@ -63,6 +63,8 @@ class FtpService
 end
 ```
 
-Though this article is specific to resolving **Missing top-level class documentation comment. [Style/Documentation]**, this fix also works on every other warning that rubocop throws. Did I miss any option that you are using? Let me know in the comments below.
+Though this article is specific to resolving **Missing top-level class documentation comment. [Style/Documentation]**, this fix also works on every other warning that rubocop throws.
+
+Did I miss any option that you are using? Let me know in the comments below.
 
 **Image Credits:** Cover Image by <a href="https://unsplash.com/@mattpopovich?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText" target="_blank">Matt Popovich</a> on <a href="https://unsplash.com/s/photos/cop?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText" target="_blank">Unsplash</a>
