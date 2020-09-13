@@ -8,6 +8,10 @@
   excerpt:
   html:
 
+- id: lint
+  excerpt:
+  html:
+
 - id: mobile development
   excerpt:
   html:
@@ -27,6 +31,10 @@
   html:
 
 - id: react native
+  excerpt:
+  html:
+
+- id: rubocop
   excerpt:
   html:
 
