@@ -12,6 +12,10 @@
   excerpt:
   html:
 
+- id: mysql
+  excerpt:
+  html:
+
 - id: notes
   name: Notes
   excerpt: Small, bite sized content I've written.
