@@ -102,7 +102,7 @@ exports.createPages = ({ actions, graphql, getNodes }) => {
     })
 
     // Create paginated category pages
-    const categories = ['articles', 'notes']
+    const categories = ['articles', 'notes', 'book-reviews']
     // const categories = filter(
     //   category => not(isNil(category)),
     //   uniq(flatMap(post => post.frontmatter.categories, postsNodes))
@@ -174,7 +174,6 @@ exports.createSchemaCustomization = ({ actions }) => {
     }
 
     type Frontmatter {
-      uid: String!
       title: String!
       date: Date @dateformat
       last_modified_at: Date @dateformat

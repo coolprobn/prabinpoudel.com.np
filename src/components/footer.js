@@ -61,7 +61,7 @@ const Footer = ({
         <li>
           <a href={upwork} rel="nofollow">
             <UpworkIcon />
-            <span className={style.iconLabel}>Instagram</span>
+            <span className={style.iconLabel}>Upwork</span>
           </a>
         </li>
       )}
