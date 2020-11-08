@@ -4,6 +4,12 @@
   html: |
     <p>A collection of thoughts, inspiration, mistakes, and other long-form minutia I've written. For smaller, more regular tidbits &mdash; peruse the <a href="/notes/">notes section</a>.</p>
 
+- id: book-reviews
+  name: Book Reviews
+  excerpt: My thoughts on the books I read.
+  html: |
+    <p>My thoughts on the books I read.</p>
+
 - id: git
   excerpt:
   html:
@@ -21,6 +27,10 @@
   excerpt: Small, bite sized content I've written.
   html: |
     <p>Small, bite sized content I've written. For longer, more thorough writing &mdash; peruse the <a href="/articles/">articles section</a>.</p>
+
+- id: quotes
+  excerpt:
+  html:
 
 - id: reactjs
   excerpt:

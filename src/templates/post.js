@@ -14,7 +14,6 @@ import style from '../styles/post.module.css'
 const PostTemplate = ({ data, pageContext }) => {
   const {
     frontmatter: {
-      uid,
       title,
       date,
       date_pretty,
@@ -48,7 +47,7 @@ const PostTemplate = ({ data, pageContext }) => {
 
   const disqusConfig = {
     shortname: 'prabin-poudel',
-    config: { identifier: uid, title },
+    config: { identifier: path, title },
   };
 
   return (
