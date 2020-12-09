@@ -121,6 +121,7 @@ I doubt I will ever forget this one. Below I have listed some of the quotes and 
 
 [[notice | Confession time]]
 |I wasn't sure if anyone would be interested to read these types of blogs so I had ran the Twitter poll and got some decent response, so here we are! I had written down these points just so I can look at them in the future because I liked them, I hope you enjoy reading them as much as I enjoyed noting them down.
+|I wasn't sure if anyone would be interested to read these types of blogs so I had ran the Twitter poll and got some decent response, so here we are! I had written down these points just so I can look at them in the future because I liked them, I hope you enjoy reading them as much as I enjoyed noting them down.
 
 If you have come this far, Congratulation! You have reached the end of the blog. Thank you for reading.
 
