@@ -11,7 +11,7 @@ toc: true
 featured: false
 comments: true
 canonical: true
-canonical_url: 'https://truemark.com.np/blog/reset-password-in-react-and-rails/'
+canonical_url: 'https://thedevpost.com/blog/fix-rubocop-missing-comment/'
 ---
 
 Rubocop is the best way to enforce best practices in our rails project. While working on the project with rubocop enabled, it's normal to stumble upon the warning: **Missing top-level class documentation comment. [Style/Documentation]**. When this happens, we have three options to fix or disable the warning.

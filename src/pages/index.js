@@ -122,6 +122,14 @@ const HomePage = ({ data }) => {
                   excerpt="<p>Thoughts, inspiration, mistakes, quick solutions and other minutia you&rsquo;d find in a blog.</p>"
                 />
               </li>
+              <li key="book-reviews">
+                <Entry
+                  key="book-reviews-home-link"
+                  title="Book Reviews"
+                  path="/book-reviews/"
+                  excerpt="<p>My thoughts on the books I read.</p>"
+                />
+              </li>
               {/* <li key="works">
                 <Entry
                   key="works-home-link"
