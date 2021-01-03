@@ -1,9 +1,9 @@
 ---
-uid: 'PB-A-7'
-title: 'Creating Service to Interact with Mysql Server in Rails [Part 3]'
-date: 2020-10-11
-path: /articles/creating-service-to-interact-with-external-mysql-server-in-rails-part-3/
-excerpt: 'In this part, we will learn about how we can perform prepared statements to the external mysql database. Prepared statements are very useful against SQL injections.'
+uid: 'PB-A-6'
+title: 'Interact with Mysql Server using mysql2 gem [Part 2] - Insert and Update Operations'
+date: 2020-09-13
+path: /articles/interact-with-mysql-server-using-mysql2-gem-part-2-insert-and-update-operations/
+excerpt: 'In this part, we will learn about how we can insert and update records to the external mysql server. We will add two new methods to our service that can handle insert and update queries using mysql.'
 image: ../../images/articles/creating-service-to-interact-with-external-mysql-server-in-rails-part-1.webp
 categories: [articles]
 tags: [ruby on rails, mysql, tutorial]
@@ -14,45 +14,54 @@ canonical: true
 canonical_url: 'https://truemark.com.np/blog/reset-password-in-react-and-rails/'
 ---
 
-# TODO: Format code properly before merging
+This is the second part of the series where we create service to interact with mysql server in rails using mysql2 gem. You can read the first part <a href="/articles/creating-service-to-interact-with-external-mysql-server-in-rails-part-1/">here</a>, if you haven't already.
 
-This is the third part of the series where we create service to interact with mysql server in rails. You can read the second part <a href="/articles/creating-service-to-interact-with-external-mysql-server-in-rails-part-2/">here</a>, if you haven't already.
+## Requirements
 
-## Prepared Statement
+- [x] Service to connect with external mysql server
+- [ ] Perform basic query: select, insert and update
+- [ ] Prepared statement
+- [ ] Perform transaction
+- [ ] Perform join query
 
-From <a href="https://en.wikipedia.org/wiki/Prepared_statement" target="_blank">wikipedia</a>:
+We tackled first one and also added `select` operation from the second one. And we will be tackling the remaining two, performing insert and update operations in this blog.
 
-> In database management systems (DBMS), a prepared statement or parameterized statement is a feature used to execute the same or similar database statements repeatedly with high efficiency. Typically used with SQL statements such as queries or updates, the prepared statement takes the form of a template into which certain constant values are substituted during each execution.
+## In this blog
 
-What it means for our service is we will replace the actual value in insert and update query with question mark(?). Let's refactor the code.
+We will be learning the following in this part:
 
-Example query
+- Perform insert query
+- Perform update query
 
-### Insert Query
+## Perform Insert Query
+
+Insert query is used to create new record in the database.
+
+### Code
 
 ```ruby
 
 def insert(attributes)
-        query = format_insert_query(attributes)
+  query = format_insert_query(attributes)
 
-        perform_mysql_operation do
-          mysql_connect.query(query)
+  perform_mysql_operation do
+    mysql_connect.query(query)
 
-          puts 'Record inserted!'
-        end
-      end
+    puts 'Record inserted!'
+  end
+end
 
 private
 
 def format_insert_query(attributes)
-        raise 'Attributes cannot be empty' if attributes.empty?
+  raise 'Attributes cannot be empty' if attributes.empty?
 
-        columns = attributes.keys.join(',')
+  columns = attributes.keys.join(',')
 
-        values = attributes.values.collect! {|value| "'#{value}'"}.join(',')
+  values = attributes.values.collect! { |value| "'#{value}'" }.join(',')
 
-        "INSERT INTO #{table} (#{columns}) VALUES (#{values})"
-      end
+  "INSERT INTO #{table} (#{columns}) VALUES (#{values})"
+end
 ```
 
 ### Explanation
@@ -82,33 +91,33 @@ Update query is used to update existing record in the database.
 
 ```ruby
 def update(id, attributes)
-        query = format_update_query(id, attributes)
+  query = format_update_query(id, attributes)
 
-        perform_mysql_operation do
-          mysql_connect.query(query)
+  perform_mysql_operation do
+    mysql_connect.query(query)
 
-          puts 'Record Updated!'
-        end
-      end
+    puts 'Record Updated!'
+  end
+end
 
 private
 
 def format_update_query(id, attributes)
-        raise 'Attributes cannot be empty' if attributes.empty?
+  raise 'Attributes cannot be empty' if attributes.empty?
 
-        formatted_attributes = attributes.map { |key, value| "#{key}='#{value}'" }.join(',')
+  formatted_attributes = attributes.map { |key, value| "#{key}='#{value}'" }.join(',')
 
-        "UPDATE #{table} SET #{formatted_attributes} WHERE #{primary_column}=#{id}"
-      end
+  "UPDATE #{table} SET #{formatted_attributes} WHERE #{primary_column}=#{id}"
+end
 ```
 
 ### Explanation
 
-Only change in `update` to `insert` is; it's also taking `id` as parameters. `id` let's us know which existing record we want to update in database. It is getting formatted query and updating in database, concept is same as `insert` with only change in query.
+Only change in `update` to `insert` is; it's also taking `id` as parameters. `id` lets us know which existing record we want to update in database. It is getting formatted query and updating in database, concept is same as `insert` with only change in query.
 
 `format_update_query` has slight difference to that of `format_insert_query`; it is converting `attributes` differently, let's see that with practical example below.
 
-- If we are providing `id=1` and `attributes` same as insert query, `format_update_query` will return `"UPDATE user SET first_name='John',last_name='Doe' WHERE id=1"`
+- If we are providing `id=1` and `attributes` same as insert query, `format_update_query` will return `"UPDATE users SET first_name='John',last_name='Doe' WHERE id=1"`
 - Now the `update` method will send the query to server and update the record with `id=1` in the database.
 
 ## Final Code

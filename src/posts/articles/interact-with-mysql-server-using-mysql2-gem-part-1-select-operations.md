@@ -1,22 +1,21 @@
 ---
 uid: 'PB-A-5'
-title: 'Creating Service to Interact with Mysql Server in Rails [Part 1]'
+title: 'Interact with Mysql Server using mysql2 gem [Part 1] - Performing select operations'
 date: 2020-09-13
-path: /articles/creating-service-to-interact-with-external-mysql-server-in-rails-part-1/
-excerpt: "Everything is easy in rails with Active Record but what if you have to communicate with external mysql server? Gotcha! Let's create a service to perform queries we want."
-image: ../../images/articles/creating-service-to-interact-with-external-mysql-server-in-rails-part-1.webp
+path: /articles/interact-with-mysql-server-using-mysql2-gem-part-1-select-operations/
+excerpt: "Database interaction is very simple in rails with Active Record but what if you have to communicate with external mysql server? Gotcha! Let's create a service to perform queries we want without using Active Record."
+image: ../../images/articles/interact-with-mysql-server-using-mysql2-gem-part-1-select-operations.webp
 categories: [articles]
 tags: [ruby on rails, mysql, tutorial]
 toc: true
-featured: false
+featured: true
 comments: true
-canonical: true
-canonical_url: 'https://truemark.com.np/blog/reset-password-in-react-and-rails/'
+canonical_url: 'https://thedevpost.com/blog/mysql-server-mysql2-gem-select-operations/'
 ---
 
 Rails has made our lives easier. If we are talking in terms of querying database, active record has got us covered. But what if we had to communicate with external database?
 
-Recently in one of the project that I worked on, I had to perform insert, update, select, and other different queries to external MariaDB server and I didn't know what to do. I figured out that it would be easy if I created a service which can work like ORM to perform the query I wanted.
+Recently in one of the project that I worked on, I had to perform insert, update, select, and other different queries to external MariaDB server. I figured out that it would be very easier in long term if I created a service which can work like ORM to perform the query I wanted.
 
 ## Skills required to follow the tutorial
 
@@ -38,7 +37,7 @@ Intermediate in:
 Our requirement list is very long, so we will split this blog into various parts. We will be looking at the following requirements in this one:
 
 - Service to connect with external mysql server
-- Perform basic query: select, insert and update
+- Perform basic query: select
 
 ## Service to connect with external mysql server
 
@@ -96,7 +95,7 @@ Here, we are creating a service with private method `connect_to_db` that connect
 
 In `perform_mysql_operation`, for security reasons; we are making sure that connection to external database is closed once all the query operation is completed.
 
-## Perform basic query: select, insert and update
+## Perform basic query: select
 
 ### Select query
 
