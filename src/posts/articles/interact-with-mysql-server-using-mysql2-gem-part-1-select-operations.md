@@ -1,7 +1,7 @@
 ---
 uid: 'PB-A-5'
-title: 'Interact with Mysql Server using mysql2 gem [Part 1] - Performing select operations'
-date: 2020-09-13
+title: 'Interact with MySQL Server using mysql2 gem [Part 1] - Performing select operations'
+date: 2021-01-03
 path: /articles/interact-with-mysql-server-using-mysql2-gem-part-1-select-operations/
 excerpt: "Database interaction is very simple in rails with Active Record but what if you have to communicate with external mysql server? Gotcha! Let's create a service to perform queries we want without using Active Record."
 image: ../../images/articles/interact-with-mysql-server-using-mysql2-gem-part-1-select-operations.webp
@@ -10,12 +10,15 @@ tags: [ruby on rails, mysql, tutorial]
 toc: true
 featured: true
 comments: true
+canonical: true
 canonical_url: 'https://thedevpost.com/blog/mysql-server-mysql2-gem-select-operations/'
 ---
 
 Rails has made our lives easier. If we are talking in terms of querying database, active record has got us covered. But what if we had to communicate with external database?
 
 Recently in one of the project that I worked on, I had to perform insert, update, select, and other different queries to external MariaDB server. I figured out that it would be very easier in long term if I created a service which can work like ORM to perform the query I wanted.
+
+Service takes `params` as input which is passed from controller to model and then finally to our service. If you are not familiar with `param`, it is a hash of attributes used to create or update in rails.
 
 ## Skills required to follow the tutorial
 
@@ -53,7 +56,7 @@ require 'mysql2'
 module MySqlServer
   module Database
     class Connect
-      attr_reader :mysql_connect
+      attr_reader :mysql_client
 
       private
 
@@ -70,13 +73,13 @@ module MySqlServer
         raise ArgumentError, 'No block was given' unless block_given?
 
         begin
-          @mysql_connect = connect_to_db
+          @mysql_client = connect_to_db
 
           yield
         rescue StandardError => e
           raise e
         ensure
-          mysql_connect&.close
+          mysql_client&.close
         end
       end
     end
@@ -107,7 +110,7 @@ Select query lets us fetch row/s from our database.
 
 ```ruby
 class Connect
-  attr_reader :mysql_connect, :table
+  attr_reader :mysql_client, :table
 
   def initialize(table)
     @table = table
@@ -115,7 +118,7 @@ class Connect
 
   def fetch_all
     perform_mysql_operation do
-      result = mysql_connect.query("SELECT * from #{table}")
+      result = mysql_client.query("SELECT * from #{table}")
 
       result.entries
     end
@@ -137,7 +140,7 @@ We are saving the result to `result` which will return an instance of mysql2 cla
 
 ```ruby
 class Connect
-  attr_reader :mysql_connect, :table, :primary_column
+  attr_reader :mysql_client, :table, :primary_column
 
   def initialize(table, primary_column)
     @table = table
@@ -146,7 +149,7 @@ class Connect
 
   def fetch_one(id)
     perform_mysql_operation do
-      result = mysql_connect.query("SELECT * from #{table} WHERE #{primary_column}=#{id}")
+      result = mysql_client.query("SELECT * from #{table} WHERE #{primary_column}=#{id}")
 
       result.entries
     end
@@ -168,7 +171,7 @@ require 'mysql2'
 module MySqlServer
   module Database
     class Connect
-      attr_reader :mysql_connect, :table, :primary_column
+      attr_reader :mysql_client, :table, :primary_column
 
       def initialize(table, primary_column)
         @table = table
@@ -177,7 +180,7 @@ module MySqlServer
 
       def fetch_all
         perform_mysql_operation do
-          result = mysql_connect.query("SELECT * from #{table}")
+          result = mysql_client.query("SELECT * from #{table}")
 
           result.entries
         end
@@ -185,7 +188,7 @@ module MySqlServer
 
       def fetch_one(id)
         perform_mysql_operation do
-          result = mysql_connect.query("SELECT * from #{table} WHERE #{primary_column}=#{id}")
+          result = mysql_client.query("SELECT * from #{table} WHERE #{primary_column}=#{id}")
 
           result.entries
         end
@@ -206,13 +209,13 @@ module MySqlServer
         raise ArgumentError, 'No block was given' unless block_given?
 
         begin
-          @mysql_connect = connect_to_db
+          @mysql_client = connect_to_db
 
           yield
         rescue StandardError => e
           raise e
         ensure
-          mysql_connect&.close
+          mysql_client&.close
         end
       end
     end

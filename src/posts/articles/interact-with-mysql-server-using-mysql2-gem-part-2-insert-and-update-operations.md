@@ -1,20 +1,20 @@
 ---
 uid: 'PB-A-6'
-title: 'Interact with Mysql Server using mysql2 gem [Part 2] - Insert and Update Operations'
-date: 2020-09-13
+title: 'Interact with MySQL Server using mysql2 gem [Part 2] - Insert and Update Operations'
+date: 2021-01-07
 path: /articles/interact-with-mysql-server-using-mysql2-gem-part-2-insert-and-update-operations/
-excerpt: 'In this part, we will learn about how we can insert and update records to the external mysql server. We will add two new methods to our service that can handle insert and update queries using mysql.'
-image: ../../images/articles/creating-service-to-interact-with-external-mysql-server-in-rails-part-1.webp
+excerpt: 'In this part, we will learn about how we can insert and update records to the external mysql server using mysql2 gem. We will add two new methods to our service that can insert and update records to mysql server using mysql2 gem.'
+image: ../../images/articles/interact-with-mysql-server-using-mysql2-gem-part-2-insert-and-update-operations.webp
 categories: [articles]
 tags: [ruby on rails, mysql, tutorial]
 toc: true
 featured: false
 comments: true
 canonical: true
-canonical_url: 'https://truemark.com.np/blog/reset-password-in-react-and-rails/'
+canonical_url: 'https://thedevpost.com/blog/update-insert-using-mysql2-gem/'
 ---
 
-This is the second part of the series where we create service to interact with mysql server in rails using mysql2 gem. You can read the first part <a href="/articles/creating-service-to-interact-with-external-mysql-server-in-rails-part-1/">here</a>, if you haven't already.
+This is the second part of the series where we create service to interact with mysql server in rails using mysql2 gem. You can read the first part <a href="/articles/interact-with-mysql-server-using-mysql2-gem-part-1-select-operations/">here</a>, where we created a service and also added methods for performing select operations to mysql server using mysql2 gem.
 
 ## Requirements
 
@@ -24,11 +24,11 @@ This is the second part of the series where we create service to interact with m
 - [ ] Perform transaction
 - [ ] Perform join query
 
-We tackled first one and also added `select` operation from the second one. And we will be tackling the remaining two, performing insert and update operations in this blog.
+In previous blog, we created a service and also added method to perform `select` operations. Today we will be adding additional methods to help us perform insert and update operations to mysql server using mysql2 gem.
 
 ## In this blog
 
-We will be learning the following in this part:
+We will be learning the following in this blog:
 
 - Perform insert query
 - Perform update query
@@ -45,7 +45,7 @@ def insert(attributes)
   query = format_insert_query(attributes)
 
   perform_mysql_operation do
-    mysql_connect.query(query)
+    mysql_client.query(query)
 
     puts 'Record inserted!'
   end
@@ -94,7 +94,7 @@ def update(id, attributes)
   query = format_update_query(id, attributes)
 
   perform_mysql_operation do
-    mysql_connect.query(query)
+    mysql_client.query(query)
 
     puts 'Record Updated!'
   end
@@ -130,7 +130,7 @@ require 'mysql2'
 module MySqlServer
   module Database
     class Connect
-      attr_reader :mysql_connect, :table, :primary_column
+      attr_reader :mysql_client, :table, :primary_column
 
       def initialize(table, primary_column)
         @table = table
@@ -139,7 +139,7 @@ module MySqlServer
 
       def fetch_all
         perform_mysql_operation do
-          result = mysql_connect.query("SELECT * from #{table}")
+          result = mysql_client.query("SELECT * from #{table}")
 
           puts result.entries
         end
@@ -147,7 +147,7 @@ module MySqlServer
 
       def fetch_one(id)
         perform_mysql_operation do
-          result = mysql_connect.query("SELECT * from #{table} WHERE #{primary_column}=#{id}")
+          result = mysql_client.query("SELECT * from #{table} WHERE #{primary_column}=#{id}")
 
           puts result.entries
         end
@@ -157,7 +157,7 @@ module MySqlServer
         query = format_insert_query(attributes)
 
         perform_mysql_operation do
-          mysql_connect.query(query)
+          mysql_client.query(query)
 
           puts 'Record inserted!'
         end
@@ -167,7 +167,7 @@ module MySqlServer
         query = format_update_query(id, attributes)
 
         perform_mysql_operation do
-          mysql_connect.query(query)
+          mysql_client.query(query)
 
           puts 'Record Updated!'
         end
@@ -188,13 +188,13 @@ module MySqlServer
         raise ArgumentError, 'No block was given' unless block_given?
 
         begin
-          @mysql_connect = connect_to_db
+          @mysql_client = connect_to_db
 
           yield
         rescue StandardError => e
           raise e
         ensure
-          mysql_connect&.close
+          mysql_client&.close
         end
       end
 
@@ -220,6 +220,6 @@ module MySqlServer
 end
 ```
 
-After this our service should be able to perform basic query in the external mysql server. Next week we will be learning how we can perform query with prepared statement so as to avoid sql injection problem.
+After this our service should be able to perform basic query in the external mysql server. Next week we will be learning how we can perform query with prepared statement which helps us to avoid sql injection issues.
 
-**Image Credits:** Cover Image by <a href="https://unsplash.com/@fabioha?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText" target="_blank">fabio</a> on <a href="https://unsplash.com/s/photos/database?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText" target="_blank">Unsplash</a>
+**Image Credits:** Cover Image by <a href="https://unsplash.com/@kelvin1987?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText" target="_blank">Kelvin Ang</a> on <a href="https://unsplash.com/s/photos/server?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText" target="_blank">Unsplash</a>

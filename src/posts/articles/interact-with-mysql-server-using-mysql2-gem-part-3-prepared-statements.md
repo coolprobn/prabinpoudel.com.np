@@ -1,20 +1,39 @@
 ---
 uid: 'PB-A-7'
-title: 'Creating Service to Interact with Mysql Server in Rails [Part 3]'
-date: 2020-10-11
-path: /articles/creating-service-to-interact-with-external-mysql-server-in-rails-part-3/
-excerpt: 'In this part, we will learn about how we can perform prepared statements to the external mysql database. Prepared statements are very useful against SQL injections.'
-image: ../../images/articles/creating-service-to-interact-with-external-mysql-server-in-rails-part-1.webp
+title: 'Interact with Mysql Server using mysql2 gem [Part 3] - Prepared Statement'
+date: 2021-01-15
+path: /articles/interact-with-mysql-server-using-mysql2-gem-part-3-prepared-statements/
+excerpt: 'In this part, we will learn about how we can perform prepared statements to the external mysql database using mysql2 gem. Prepared statements are very useful against SQL injections.'
+image: ../../images/articles/interact-with-mysql-server-using-mysql2-gem-part-3-prepared-statements.webp
 categories: [articles]
 tags: [ruby on rails, mysql, tutorial]
 toc: true
 featured: false
 comments: true
 canonical: true
-canonical_url: 'https://truemark.com.np/blog/reset-password-in-react-and-rails/'
+canonical_url: 'https://thedevpost.com/blog/mysql2-gem-prepared-statements/'
 ---
 
-This is the third part of the series where we create service to interact with mysql server in rails. You can read the second part <a href="/articles/creating-service-to-interact-with-external-mysql-server-in-rails-part-2/">here</a>, if you haven't already.
+This is the third part of the series where we create service to interact with mysql server in rails using mysql2 gem. You can read other parts by following the links below:
+
+- <a href="/articles/interact-with-mysql-server-using-mysql2-gem-part-1-select-operations/">Interact with MySQL Server using mysql2 gem - Select Operations</a>
+- <a href="/articles/interact-with-mysql-server-using-mysql2-gem-part-2-insert-and-update-operations/">Interact with MySQL Server using mysql2 gem [Part 2] - Insert and Update Operations</a>
+
+## Requirements
+
+- [x] Service to connect with external mysql server
+- [x] Perform basic query: select, insert and update
+- [ ] Prepared statement
+- [ ] Perform transaction
+- [ ] Perform join query
+
+In previous two articles, we created a service and added methods to help us perform select, insert and update operations. Today we will be looking at performing prepared statements to mysql server using mysql2 gem.
+
+## In this blog
+
+We will be learning the following in this blog:
+
+- Perform prepared statement
 
 ## Prepared Statement
 
@@ -32,15 +51,15 @@ Here is what we will do for supporting prepared statements in our insert operati
 2. Create `prepare_query` method which will format the query as needed and provide us the hash with query and values.
 3. Update `insert` method to perform prepared statement.
 
-After doing all of the above, our code will look like this:
+#### Code
 
 ```ruby
 def insert(attributes)
   query = prepare_query(attributes)
 
   perform_mysql_operation do
-    mysql_connect.prepare(query[:prepared_query])
-    mysql_connect.execute(*query[:values])
+    statement = mysql_client.prepare(query[:prepared_query])
+    statement.execute(*query[:values])
 
     puts 'Record inserted!'
   end
@@ -66,7 +85,7 @@ def prepare_query(attributes)
 end
 ```
 
-### Explanation
+#### Explanation
 
 `prepare_query` is taking `attributes` hash parameter from `insert` method and returning hash with prepared query and values to insert to database. Following is happening inside the method:
 
@@ -89,7 +108,7 @@ Practically:
 - Inside `prepare_query`, `columns` will have `"first_name, last_name"`, `substituted_columns` will have `"?, ?"` i.e. the number of values that will be inserted. If `table` was `users`, `prepared_query` will be `"INSERT INTO users (first_name, last_name) VALUES (?, ?)"` and `values` will have `['John', 'Doe']`
 - After receiving hash from `prepare_query`, `insert` method will now prepare the query with `prepare` method and insert to database with `execute` method.
 
-## Prepared Update Query
+### Prepared Update Query
 
 Insert and update query has only one difference when query is prepared so we want to use same `prepare_query` method used in insert operation/. To do that we will update the code and do the following:
 
@@ -100,7 +119,7 @@ Insert and update query has only one difference when query is prepared so we wan
 5. Depending on `type` param, we will call related method that is formatting the prepared queries.
 6. Update `update` method to perform prepared statement.
 
-### Code
+#### Code
 
 ```ruby
 def update(id, attributes)
@@ -109,8 +128,8 @@ def update(id, attributes)
   values.push(id)
 
   perform_mysql_operation do
-    mysql_connect.prepare(query[:prepared_query])
-    mysql_connect.execute(*values)
+    statement = mysql_client.prepare(query[:prepared_query])
+    statement.execute(*values)
 
     puts 'Record Updated!'
   end
@@ -147,7 +166,7 @@ def prepare_query(attributes, type)
 end
 ```
 
-### Explanation
+#### Explanation
 
 Only change in `update` to `insert` is; it's also taking `id` as parameters. `id` lets us know which existing record we want to update in database. It is getting prepared query and values for updating in database, concept is same as `insert` with change in query and values where `id` value is added to the values that are returned from `prepare_query` hash.
 
@@ -167,7 +186,7 @@ require 'mysql2'
 module MySqlServer
   module Database
     class Connect
-      attr_reader :mysql_connect, :table, :primary_column
+      attr_reader :mysql_client, :table, :primary_column
 
       def initialize(table, primary_column)
         @table = table
@@ -176,7 +195,7 @@ module MySqlServer
 
       def fetch_all
         perform_mysql_operation do
-          result = mysql_connect.query("SELECT * from #{table}")
+          result = mysql_client.query("SELECT * from #{table}")
 
           puts result.entries
         end
@@ -184,7 +203,7 @@ module MySqlServer
 
       def fetch_one(id)
         perform_mysql_operation do
-          result = mysql_connect.query("SELECT * from #{table} WHERE #{primary_column}=#{id}")
+          result = mysql_client.query("SELECT * from #{table} WHERE #{primary_column}=#{id}")
 
           puts result.entries
         end
@@ -194,8 +213,8 @@ module MySqlServer
         query = prepare_query(attributes, 'insert')
 
         perform_mysql_operation do
-          mysql_connect.prepare(query[:prepared_query])
-          mysql_connect.execute(*query[:values])
+          statement = mysql_client.prepare(query[:prepared_query])
+          statement.execute(*query[:values])
 
           puts 'Record inserted!'
         end
@@ -207,8 +226,8 @@ module MySqlServer
         values.push(id)
 
         perform_mysql_operation do
-          mysql_connect.prepare(query[:prepared_query])
-          mysql_connect.execute(*values)
+          statement = mysql_client.prepare(query[:prepared_query])
+          statement.execute(*values)
 
           puts 'Record Updated!'
         end
@@ -217,10 +236,10 @@ module MySqlServer
       private
 
       def connect_to_db
-        host = ENV['MYSQL_SERVER_IP']
-        database = ENV['MYSQL_DB_NAME']
-        username = ENV['MYSQL_USERNAME']
-        password = ENV['MYSQL_PASSWORD']
+        host = '172.20.20.206'
+        database = 'asterisk'
+        username = 'asterisk-staging'
+        password = 'iBBJUdPVdsSD7K5w'
 
         Mysql2::Client.new(username: username, password: password, database: database, host: host)
       end
@@ -229,13 +248,13 @@ module MySqlServer
         raise ArgumentError, 'No block was given' unless block_given?
 
         begin
-          @mysql_connect = connect_to_db
+          @mysql_client = connect_to_db
 
           yield
         rescue StandardError => e
           raise e
         ensure
-          mysql_connect&.close
+          mysql_client&.close
         end
       end
 
@@ -271,6 +290,6 @@ module MySqlServer
 end
 ```
 
-After this our service should be able to perform all basic and prepared operations in and to the external mysql server. Next week we will learn to perform transaction operations i.e. we will be performing multiple queries and rollback all operations if there is error in even one of the operation. Thank you and stay tuned!
+After this, our service should be able to perform all basic and prepared operations in and to the external mysql server. Next week we will learn to perform transaction operations i.e. we will be performing multiple queries and rollback all operations if there is error in even one of the operation. Thank you and stay tuned!
 
-**Image Credits:** Cover Image by <a href="https://unsplash.com/@fabioha?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText" target="_blank">fabio</a> on <a href="https://unsplash.com/s/photos/database?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText" target="_blank">Unsplash</a>
+**Image Credits:** Cover Image by <a href="https://unsplash.com/@ianjbattaglia?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText" target="_blank">Ian Battaglia</a> on <a href="https://unsplash.com/s/photos/server?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText" target="_blank">Unsplash</a>
