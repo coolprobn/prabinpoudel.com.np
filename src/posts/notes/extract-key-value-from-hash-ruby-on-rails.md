@@ -9,7 +9,6 @@ image: ../../images/notes/extract-key-value-from-hash-ruby-on-rails.webp
 categories: [notes]
 tags: [ruby, ruby on rails, web development]
 comments: true
-featured: true
 toc: true
 canonical: true
 canonical_url: 'https://thedevpost.com/blog/extract-key-or-value-from-hash-in-ror/'
