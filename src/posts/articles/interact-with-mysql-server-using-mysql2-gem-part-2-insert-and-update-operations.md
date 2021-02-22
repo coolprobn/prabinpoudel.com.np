@@ -12,16 +12,23 @@ featured: false
 comments: true
 canonical: true
 canonical_url: 'https://thedevpost.com/blog/update-insert-using-mysql2-gem/'
+last_modified_at: 2021-02-21
 ---
 
-This is the second part of the series where we create service to interact with mysql server in rails using mysql2 gem. You can read the first part <a href="/articles/interact-with-mysql-server-using-mysql2-gem-part-1-select-operations/">here</a>, where we created a service and also added methods for performing select operations to mysql server using mysql2 gem.
+This is the second part of the series where we create service to interact with mysql server in rails using mysql2 gem.
+
+## Others in series
+
+- <a href="/articles/interact-with-mysql-server-using-mysql2-gem-part-1-select-operations/">Interact with MySQL Server using mysql2 gem [Part 1] - Select Operations</a>
+- <a href="/articles/interact-with-mysql-server-using-mysql2-gem-part-3-prepared-statements/">Interact with MySQL Server using mysql2 gem [Part 3] - Prepared Statements</a>
+- <a href="/articles/interact-with-mysql-server-using-mysql2-gem-part-4-perform-transactions">Interact with MySQL Server using mysql2 gem [Part 4] - Perform Transactions</a>
 
 ## Requirements
 
 - [x] Service to connect with external mysql server
 - [ ] Perform basic query: select, insert and update
 - [ ] Prepared statement
-- [ ] Perform transaction
+- [ ] Perform transactions
 - [ ] Perform join query
 
 In previous blog, we created a service and also added method to perform `select` operations. Today we will be adding additional methods to help us perform insert and update operations to mysql server using mysql2 gem.

@@ -12,19 +12,23 @@ featured: false
 comments: true
 canonical: true
 canonical_url: 'https://thedevpost.com/blog/mysql2-gem-prepared-statements/'
+last_modified_at: 2021-02-21
 ---
 
-This is the third part of the series where we create service to interact with mysql server in rails using mysql2 gem. You can read other parts by following the links below:
+This is the third part of the series where we create service to interact with mysql server in rails using mysql2 gem.
 
-- <a href="/articles/interact-with-mysql-server-using-mysql2-gem-part-1-select-operations/">Interact with MySQL Server using mysql2 gem - Select Operations</a>
+## Others in series
+
+- <a href="/articles/interact-with-mysql-server-using-mysql2-gem-part-1-select-operations/">Interact with MySQL Server using mysql2 gem [Part 1] - Select Operations</a>
 - <a href="/articles/interact-with-mysql-server-using-mysql2-gem-part-2-insert-and-update-operations/">Interact with MySQL Server using mysql2 gem [Part 2] - Insert and Update Operations</a>
+- <a href="/articles/interact-with-mysql-server-using-mysql2-gem-part-4-perform-transactions">Interact with MySQL Server using mysql2 gem [Part 4] - Perform Transactions</a>
 
 ## Requirements
 
 - [x] Service to connect with external mysql server
 - [x] Perform basic query: select, insert and update
 - [ ] Prepared statement
-- [ ] Perform transaction
+- [ ] Perform transactions
 - [ ] Perform join query
 
 In previous two articles, we created a service and added methods to help us perform select, insert and update operations. Today we will be looking at performing prepared statements to mysql server using mysql2 gem.
@@ -236,10 +240,10 @@ module MySqlServer
       private
 
       def connect_to_db
-        host = '172.20.20.206'
-        database = 'asterisk'
-        username = 'asterisk-staging'
-        password = 'iBBJUdPVdsSD7K5w'
+        host = ENV['MYSQL_SERVER_IP']
+        database = ENV['MYSQL_DB_NAME']
+        username = ENV['MYSQL_USERNAME']
+        password = ENV['MYSQL_PASSWORD']
 
         Mysql2::Client.new(username: username, password: password, database: database, host: host)
       end

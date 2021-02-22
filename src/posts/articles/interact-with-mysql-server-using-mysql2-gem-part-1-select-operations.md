@@ -12,6 +12,7 @@ featured: true
 comments: true
 canonical: true
 canonical_url: 'https://thedevpost.com/blog/mysql-server-mysql2-gem-select-operations/'
+last_modified_at: 2021-02-21
 ---
 
 Rails has made our lives easier. If we are talking in terms of querying database, active record has got us covered. But what if we had to communicate with external database?
@@ -19,6 +20,12 @@ Rails has made our lives easier. If we are talking in terms of querying database
 Recently in one of the project that I worked on, I had to perform insert, update, select, and other different queries to external MariaDB server. I figured out that it would be very easier in long term if I created a service which can work like ORM to perform the query I wanted.
 
 Service takes `params` as input which is passed from controller to model and then finally to our service. If you are not familiar with `param`, it is a hash of attributes used to create or update in rails.
+
+## Others in series
+
+- <a href="/articles/interact-with-mysql-server-using-mysql2-gem-part-2-insert-and-update-operations/">Interact with MySQL Server using mysql2 gem [Part 2] - Insert and Update Operations</a>
+- <a href="/articles/interact-with-mysql-server-using-mysql2-gem-part-3-prepared-statements/">Interact with MySQL Server using mysql2 gem [Part 3] - Prepared Statements</a>
+- <a href="/articles/interact-with-mysql-server-using-mysql2-gem-part-4-perform-transactions">Interact with MySQL Server using mysql2 gem [Part 4] - Perform Transactions</a>
 
 ## Skills required to follow the tutorial
 
@@ -32,7 +39,7 @@ Intermediate in:
 - Service to connect with external mysql server
 - Perform basic query: select, insert and update
 - Prepared statement
-- Perform transaction
+- Perform transactions
 - Perform join query
 
 ## In this blog
