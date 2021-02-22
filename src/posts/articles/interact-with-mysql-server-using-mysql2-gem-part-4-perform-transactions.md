@@ -11,7 +11,7 @@ toc: true
 featured: false
 comments: true
 canonical: true
-canonical_url: ''
+canonical_url: 'https://thedevpost.com/blog/mysql2-gem-perform-transactions/'
 ---
 
 This is the fourth part of the series where we create service to interact with mysql server in rails using mysql2 gem.
@@ -434,10 +434,10 @@ module MySqlServer
       private
 
       def connect_to_db
-        host = '172.20.20.206'
-        database = 'asterisk'
-        username = 'asterisk-staging'
-        password = 'iBBJUdPVdsSD7K5w'
+        host = ENV['MYSQL_SERVER_IP']
+        database = ENV['MYSQL_DB_NAME']
+        username = ENV['MYSQL_USERNAME']
+        password = ENV['MYSQL_PASSWORD']
 
         Mysql2::Client.new(username: username, password: password, database: database, host: host)
       end
