@@ -10,6 +10,10 @@
   html: |
     <p>My thoughts on the books I read.</p>
 
+- id: gatsby
+  excerpt:
+  html:
+
 - id: git
   excerpt:
   html:
@@ -53,6 +57,10 @@
   html:
 
 - id: ruby on rails
+  excerpt:
+  html:
+
+- id: strapi
   excerpt:
   html:
 

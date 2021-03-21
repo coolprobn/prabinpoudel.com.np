@@ -2,6 +2,10 @@
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
+  
+  @media (--extra-small-down) {
+    justify-content: center;
+  }
 }
 
 .technologyStack {
