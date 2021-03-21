@@ -8,7 +8,7 @@ image: ../../images/notes/git-remove-files-and-folders-from-remote.webp
 categories: [notes]
 tags: [git]
 comments: true
-featured: true
+featured: false
 toc: true
 canonical: true
 canonical_url: 'https://thedevpost.com/blog/remove-files-or-folders-from-remote-git/'
