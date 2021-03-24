@@ -69,17 +69,18 @@
   }
 }
 
-.logoLabel {
-  position: absolute;
-  clip: rect(1px, 1px, 1px, 1px);
-  clip-path: inset(50%);
-  height: 1px;
-  width: 1px;
-  margin: -1px;
-  padding: 0;
-  overflow: hidden;
-}
-
 .invertedImage {
   filter: invert(1);
+}
+
+.blogLogoLink {
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+.blogLogo {
+  border-radius: 0.2em;
+  height: 3em;
+  width: 3em;
 }

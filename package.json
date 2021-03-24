@@ -1,14 +1,15 @@
 {
   "name": "prabin-poudel",
-  "description": "Personal site of Prabin Poudel.",
+  "description": "Rails & Web App Developer | Freelancer",
   "version": "2.0.0",
   "author": "Prabin Poudel",
   "keywords": [
-    "gatsby",
+    "rails developer",
     "prabin poudel",
-    "blog",
-    "personal site",
-    "portfolio"
+    "personal blog",
+    "portfolio",
+    "freelancer",
+    "web app developer"
   ],
   "license": "MIT",
   "scripts": {

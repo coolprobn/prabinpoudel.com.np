@@ -50,6 +50,16 @@
   }
 }
 
+.hireMeMenuItem {
+  a:hover {
+    text-decoration: none;
+  }
+}
+
+.hireMeMenuTitle {
+  border-bottom: 0.2em solid var(--text-color);
+}
+
 .siteControls {
   display: flex;
   justify-content: flex-end;

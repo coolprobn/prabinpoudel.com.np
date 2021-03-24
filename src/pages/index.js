@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { graphql } from 'gatsby';
+import { graphql, Link } from 'gatsby';
 import Img from 'gatsby-image';
 import Layout from '../components/layout';
 import SEO from '../components/seo';
@@ -13,6 +13,7 @@ import site from '../../config/site';
 import Testimonials from '../components/testimonial';
 import TechnologyStacks from '../components/technologyStack';
 import FeaturedPortfolio from '../components/featuredPortfolio';
+import RightArrowIcon from '../components/icons/right-arrow-icon';
 
 const HomePage = ({ data }) => {
   const {
@@ -33,16 +34,24 @@ const HomePage = ({ data }) => {
       <main id="main" className={style.main}>
         <div className={style.title}>
           <h1 className={style.heading}>
-            <span>
-              Personal site of <a href="/about/">Prabin&nbsp;Poudel</a>.
-            </span>
+            <span>I create web apps to solve your business problems.</span>
           </h1>
+
           <div className={style.intro}>
-            <p>
-              Full Stack developer from Nepal who enjoys writing codes all day,
-              travelling, trying different foods and going on adventures.
+            <p>Custom solutions to your business problems</p>
+
+            <p className={style.hireMeButtonContainer}>
+              <Link to="/contact/">
+                <button className={`${style.hireMeButton} btn`} type="button">
+                  Hire me
+                  <span className={style.rightArrowIconContainer}>
+                    <RightArrowIcon />
+                  </span>
+                </button>
+              </Link>
             </p>
           </div>
+
           <Img
             fluid={data.aboutImage.childImageSharp.fluid}
             className={style.cover}
@@ -130,14 +139,6 @@ const HomePage = ({ data }) => {
                   excerpt="<p>My thoughts on the books I read.</p>"
                 />
               </li>
-              {/* <li key="works">
-                <Entry
-                  key="works-home-link"
-                  title="Works"
-                  path="/work/"
-                  excerpt="<p>Hand-picked selection of things I've developed.</p>"
-                />
-              </li> */}
               <li key="contact">
                 <Entry
                   key="contact-home-link"
@@ -146,14 +147,6 @@ const HomePage = ({ data }) => {
                   excerpt="<p>Preferred methods of sending questions, messages, and love letters to me.</p>"
                 />
               </li>
-              {/* <li key="faqs">
-                <Entry
-                  key="faqs-home-link"
-                  title="Frequently asked questions"
-                  path="/faqs/"
-                  excerpt="<p>There&rsquo;s no such thing as a dumb question&hellip;</p>"
-                />
-              </li> */}
               <li key="topics">
                 <Entry
                   key="topics-home-link"
@@ -216,7 +209,7 @@ export const pageQuery = graphql`
         }
       }
     }
-    aboutImage: file(relativePath: { eq: "thailand-best.webp" }) {
+    aboutImage: file(relativePath: { eq: "landing-page-hero.jpeg" }) {
       childImageSharp {
         fluid(maxWidth: 720, maxHeight: 500, quality: 75) {
           ...GatsbyImageSharpFluid_noBase64
