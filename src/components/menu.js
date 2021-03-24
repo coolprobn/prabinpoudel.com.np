@@ -1,27 +1,35 @@
-import React from 'react'
-import PropTypes from 'prop-types'
-import { Link } from 'gatsby'
+import React from 'react';
+import PropTypes from 'prop-types';
+import { Link } from 'gatsby';
 
-import style from '../styles/menu.module.css'
+import style from '../styles/menu.module.css';
 
 const MainMenu = ({ mainMenu }) => {
-  const menu = mainMenu.slice(0)
+  const menu = mainMenu.slice(0);
 
-  const items = menu.map((menuItem, index) => (
-    <li key={index} className={style.primaryMenuItem}>
-      <Link
-        to={menuItem.path}
-        itemProp="url"
-        activeStyle={{ textDecoration: 'line-through' }}
-        partiallyActive
+  const items = menu.map(({ title, path }, index) => {
+    const titleClassName = title === 'Hire Me' ? style.hireMeMenuTitle : '';
+    const menuItemClassName = title === 'Hire Me' ? style.hireMeMenuItem : '';
+
+    return (
+      <li
+        key={index}
+        className={`${style.primaryMenuItem} ${menuItemClassName}`}
       >
-        {menuItem.title}
-      </Link>
-    </li>
-  ))
+        <Link
+          to={path}
+          itemProp="url"
+          activeStyle={{ textDecoration: 'line-through' }}
+          partiallyActive
+        >
+          <span className={titleClassName}>{title}</span>
+        </Link>
+      </li>
+    );
+  });
 
-  return <ul className={style.primaryMenu}>{items}</ul>
-}
+  return <ul className={style.primaryMenu}>{items}</ul>;
+};
 
 const Menu = ({ mainMenu, onChangeTheme }) => {
   return (
@@ -49,8 +57,8 @@ const Menu = ({ mainMenu, onChangeTheme }) => {
         </button>
       </div>
     </>
-  )
-}
+  );
+};
 
 Menu.propTypes = {
   mainMenu: PropTypes.arrayOf(
@@ -60,6 +68,6 @@ Menu.propTypes = {
     })
   ),
   onChangeTheme: PropTypes.func,
-}
+};
 
-export default Menu
+export default Menu;

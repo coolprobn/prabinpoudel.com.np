@@ -1,6 +1,6 @@
   PRABINPOUDEL.COM.NP
 
-  Developer:    Prabin Poudel
+  Developer:    Prabin Poudel [Rails & Web App Developer]
   Designer:     Michael Rose
   Twitter:      @coolprobn
   Location:     Kathmandu, Nepal

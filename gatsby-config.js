@@ -1,16 +1,16 @@
 /* eslint-disable prefer-object-spread */
-const postcssPresetEnv = require('postcss-preset-env')
-const postcssNested = require('postcss-nested')
-const postcssUrl = require('postcss-url')
-const postcssImports = require('postcss-import')
-const postcssMixins = require('postcss-mixins')
-const cssnano = require('cssnano')
+const postcssPresetEnv = require('postcss-preset-env');
+const postcssNested = require('postcss-nested');
+const postcssUrl = require('postcss-url');
+const postcssImports = require('postcss-import');
+const postcssMixins = require('postcss-mixins');
+const cssnano = require('cssnano');
 
-const site = require('./config/site')
+const site = require('./config/site');
 
 require('dotenv').config({
   path: `.env.${process.env.NODE_ENV}`,
-})
+});
 
 module.exports = {
   siteMetadata: {
@@ -44,23 +44,15 @@ module.exports = {
     postsPerPage: 10,
     mainMenu: [
       {
-        title: 'Articles',
-        path: '/articles/',
-      },
-      {
-        title: 'Notes',
-        path: '/notes/',
-      },
-      // {
-      //   title: 'Works',
-      //   path: '/work/',
-      // },
-      {
         title: 'About',
         path: '/about/',
       },
       {
-        title: 'Contact',
+        title: 'Blog',
+        path: '/articles/',
+      },
+      {
+        title: 'Hire Me',
         path: '/contact/',
       },
     ],
@@ -79,14 +71,6 @@ module.exports = {
     'babel-preset-gatsby',
     'gatsby-plugin-react-helmet',
     'gatsby-transformer-yaml',
-    // {
-    //   resolve: `gatsby-source-github-api`,
-    //   options: {
-    //     token: process.env.GITHUB_API_TOKEN,
-    //     graphQLQuery: site.githubApiQuery,
-    //     variables: site.githubApiVariables,
-    //   },
-    // },
     {
       resolve: 'gatsby-source-filesystem',
       options: {
@@ -392,6 +376,7 @@ module.exports = {
                     }" alt=""></p>`
                   : ``;
                 let mainContent = html;
+
                 // Hacky workaround for relative paths https://github.com/gaearon/overreacted.io/issues/65
                 mainContent = mainContent
                   .replace(/href="\//g, `href="${site.siteMetadata.siteUrl}/`)

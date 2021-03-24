@@ -7,7 +7,7 @@ import Menu from './menu'
 
 import style from '../styles/header.module.css'
 
-import BlogLogo from '../images/blog-logo.webp';
+import BlogLogo from '../images/blog-logo.png';
 
 const Header = props => {
   const { siteTitle, mainMenu, defaultTheme } = props
@@ -55,9 +55,8 @@ const Header = props => {
       </nav>
       <header className={style.header}>
         <div className={style.name}>
-          <Link to="/">
-            <img src={BlogLogo} width="250" alt="blog-logo" className={userTheme === 'dark' ? style.invertedImage : undefined} />
-            <span className={style.logoLabel}>{siteTitle}</span>
+          <Link to="/" className={style.blogLogoLink}>
+            <img src={BlogLogo} alt="blog-logo" className={style.blogLogo} />
           </Link>
         </div>
         <Menu mainMenu={mainMenu} onChangeTheme={onChangeTheme} />
