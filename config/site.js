@@ -7,7 +7,7 @@ module.exports = {
   siteLanguage: 'en', // Language Tag on <html> element
   image: {
     // Used for SEO, relative to /static/ folder
-    src: '/images/blog-cover.webp',
+    src: '/images/blog-cover.png',
     width: 384,
     height: 384,
   },
