@@ -60,6 +60,8 @@ const HomePage = ({ data }) => {
           />
         </div>
 
+        {/* Featured Testimonial */}
+
         <div className={style.content}>
           <h2 className={style.subHeading}>Featured Projects</h2>
 

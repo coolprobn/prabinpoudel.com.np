@@ -1,5 +1,4 @@
-import React, { Fragment } from 'react';
-import { Link } from 'gatsby';
+import React from 'react';
 
 import projects from '../data/portfolio';
 
@@ -23,7 +22,7 @@ const ProjectLinkButton = ({ link, title }) => {
       href={link}
       className={`btn ${style.projectLinkButton}`}
       target="_blank"
-      rel="nofollow"
+      rel="nofollow noreferrer"
     >
       {title}
     </a>
@@ -33,10 +32,10 @@ const ProjectLinkButton = ({ link, title }) => {
 const ProjectLinks = ({ website, playStore, appStore }) => {
   if (playStore || appStore) {
     return (
-      <Fragment>
+      <>
         {playStore && <ProjectLinkButton link={playStore} title="Play Store" />}
         {appStore && <ProjectLinkButton link={appStore} title="App Store" />}
-      </Fragment>
+      </>
     );
   }
 
@@ -69,7 +68,11 @@ const FeaturedPortfolio = () => {
 
               <div className={style.projectLinkContainer}>
                 <div className={style.projectLinks}>
-                  <ProjectLinks website={website} appStore={appStore} playStore={playStore} />
+                  <ProjectLinks
+                    website={website}
+                    appStore={appStore}
+                    playStore={playStore}
+                  />
                 </div>
               </div>
             </div>
