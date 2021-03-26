@@ -7,26 +7,18 @@ import style from '../styles/menu.module.css';
 const MainMenu = ({ mainMenu }) => {
   const menu = mainMenu.slice(0);
 
-  const items = menu.map(({ title, path }, index) => {
-    const titleClassName = title === 'Hire Me' ? style.hireMeMenuTitle : '';
-    const menuItemClassName = title === 'Hire Me' ? style.hireMeMenuItem : '';
-
-    return (
-      <li
-        key={index}
-        className={`${style.primaryMenuItem} ${menuItemClassName}`}
+  const items = menu.map(({ title, path }, index) => (
+    <li key={index} className={style.primaryMenuItem}>
+      <Link
+        to={path}
+        itemProp="url"
+        activeStyle={{ textDecoration: 'line-through' }}
+        partiallyActive
       >
-        <Link
-          to={path}
-          itemProp="url"
-          activeStyle={{ textDecoration: 'line-through' }}
-          partiallyActive
-        >
-          <span className={titleClassName}>{title}</span>
-        </Link>
-      </li>
-    );
-  });
+        <span>{title}</span>
+      </Link>
+    </li>
+  ));
 
   return <ul className={style.primaryMenu}>{items}</ul>;
 };

@@ -11,8 +11,6 @@ Oh hey --- I'm Prabin Poudel, just another developer hailing from the most beaut
 
 ## Follow me on the internets
 
-I promise not to junk up your feeds as I rarely post on social media.
-
 <ul class="social-media">
   <li>
     <div class="icon" style="background: #1DA1F2;">
@@ -45,7 +43,7 @@ I promise not to junk up your feeds as I rarely post on social media.
 
 ## Hire me
 
-<!-- Because I will make you love my work. -->
+Because I deliver!
 
 <ul class="social-media">
   <li>
@@ -58,15 +56,3 @@ I promise not to junk up your feeds as I rarely post on social media.
     </div>
   </li>
 </ul>
-
-<!-- ## Selected interviews
-
-- [**The Story of PaperFaces**](https://web.archive.org/web/20140216060340/http://anewatlantis.com/2013/01/the-story-of-paperfaces/) --- A New Atlantis
-- [**...don't break the chain**](http://blog.sktchy.com/post/78751385093/dont-break-the-chain) --- Sktchy artist feature
-
-## Honorable mentions
-
-- [**22 Gorgeous Pieces Of Art You Won't Believe Were Drawn On An iPad**](http://www.businessinsider.com/gorgeous-ipad-art-2015-1?op=1) --- Business Insider
-- [**This Summer We Learned About PaperFaces**](http://madewithpaper.fiftythree.com/post/36767754768/this-summer-we-learned-about-paper-faces-by) --- FiftyThree
-
-*[CMS]: Content Management System -->

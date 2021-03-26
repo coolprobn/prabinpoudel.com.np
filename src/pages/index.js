@@ -26,10 +26,11 @@ const HomePage = ({ data }) => {
   return (
     <Layout>
       <SEO
-        title={`${site.title} - ${site.description}`}
+        title={site.title}
         path="/"
         description={site.description}
         metaImage={site.image}
+        twitterCardType="summary_large_image"
       />
       <main id="main" className={style.main}>
         <div className={style.title}>
@@ -38,7 +39,7 @@ const HomePage = ({ data }) => {
           </h1>
 
           <div className={style.intro}>
-            <p>Custom solutions to your business problems</p>
+            <p>Custom solutions for your business</p>
 
             <p className={style.hireMeButtonContainer}>
               <Link to="/contact/">

@@ -1,8 +1,9 @@
 module.exports = {
   // pathPrefix: '/', // Prefix for all links. If you deploy your site to example.com/portfolio your pathPrefix should be "portfolio"
-  title: 'Prabin Poudel', // Navigation and site title
-  titleAlt: 'Prabin Poudel', // Title for schema.org JSONLD
-  description: 'Rails & Web App Developer | Freelancer',
+  title: 'Prabin Poudel - Rails & Web App Developer | Freelancer', // Navigation and site title
+  titleAlt: 'Prabin Poudel - Rails & Web App Developer | Freelancer', // Title for schema.org JSONLD
+  description:
+    'I create web apps to solve your business problems. Rails & Web App Developer with over 4 years of experience in freelancing',
   url: 'https://prabinpoudel.com.np', // Domain of your site. No trailing slash!
   siteLanguage: 'en', // Language Tag on <html> element
   image: {

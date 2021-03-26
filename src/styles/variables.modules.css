@@ -80,7 +80,7 @@
 
 /* Dark mode */
 [data-theme="dark"] {
-  --background-color: #111;
+  --background-color: #222831;
   --text-color: #fff;
   --link-color: #fff;
   --secondary-color: #fff;
