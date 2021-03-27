@@ -61,25 +61,33 @@ const HomePage = ({ data }) => {
         </div>
 
         <div className={style.content}>
-          <h2 className={style.subHeading}>Featured Projects</h2>
+          <h2 className={style.subHeading}>
+            <span>Featured Projects</span>
+          </h2>
 
           <FeaturedPortfolio />
         </div>
 
         <div className={style.content}>
-          <h2 className={style.subHeading}>Testimonials</h2>
+          <h2 className={style.subHeading}>
+            <span>Testimonials</span>
+          </h2>
 
           <Testimonials />
         </div>
 
         <div className={style.content}>
-          <h2 className={style.subHeading}>Skills</h2>
+          <h2 className={style.subHeading}>
+            <span>Skills</span>
+          </h2>
 
           <TechnologyStacks />
         </div>
 
         <div className={style.content}>
-          <h2 className={style.subHeading}>Featured articles</h2>
+          <h2 className={style.subHeading}>
+            <span>Featured articles</span>
+          </h2>
           <div className={style.gridList}>
             {featuredPosts.map(({ node }) => {
               const {
@@ -113,7 +121,9 @@ const HomePage = ({ data }) => {
             })}
           </div>
 
-          <h2 className={style.subHeading}>Explore more on this site</h2>
+          <h2 className={style.subHeading}>
+            <span>Explore more on this site</span>
+          </h2>
           <div>
             <ul className={`${style.gridListExpanded} ${style.navList}`}>
               <li key="articles">

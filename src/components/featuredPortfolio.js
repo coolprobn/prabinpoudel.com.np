@@ -33,10 +33,10 @@ const ProjectLinkButton = ({ link, title }) => {
 const ProjectLinks = ({ website, playStore, appStore }) => {
   if (playStore || appStore) {
     return (
-      <Fragment>
+      <>
         {playStore && <ProjectLinkButton link={playStore} title="Play Store" />}
         {appStore && <ProjectLinkButton link={appStore} title="App Store" />}
-      </Fragment>
+      </>
     );
   }
 
@@ -69,7 +69,11 @@ const FeaturedPortfolio = () => {
 
               <div className={style.projectLinkContainer}>
                 <div className={style.projectLinks}>
-                  <ProjectLinks website={website} appStore={appStore} playStore={playStore} />
+                  <ProjectLinks
+                    website={website}
+                    appStore={appStore}
+                    playStore={playStore}
+                  />
                 </div>
               </div>
             </div>

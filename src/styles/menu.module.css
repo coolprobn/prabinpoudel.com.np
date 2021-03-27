@@ -153,7 +153,7 @@
     height: 100%;
     left: 50%;
     float: left;
-    background-color: var(--theme-toggle-secondary-color);
+    background-color: var(--text-color);
     transition: border-radius 0.5s ease, width 0.5s ease, height 0.5s ease,
       left 0.5s ease, transform 0.5s ease;
   }
