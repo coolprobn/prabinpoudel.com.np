@@ -5,6 +5,17 @@ import AntonImage from '../images/clients/anton.webp';
 
 const testimonials = [
   {
+    uid: 2,
+    name: 'Reneldy Senat',
+    company: 'Idoleyes Interactive',
+    post: 'Owner',
+    feedback:
+      'I hired Prabin to build our mobile app and he did a great job! He was able to get it built and released to both Apple and Google Play app stores with great quality. Prabin has been the ideal partner; flexible, reliable, and very responsive. He also has great time management skills and always comes to the table with ideas and suggestions to help make the project run smoother. Highly recommended!',
+    imageUrl: ReneldyImage,
+    platform: 'Truemark',
+    platformUrl: 'https://truemark.com.np/hire/resources/',
+  },
+  {
     uid: 1,
     name: 'Ronni Poulsen',
     company: 'Flexonet',
@@ -16,18 +27,6 @@ const testimonials = [
     imageUrl: RonniImage,
     platform: 'Upwork',
     platformUrl: 'https://www.upwork.com/freelancers/~0184b506a4486b8f86',
-    rating: 5,
-  },
-  {
-    uid: 2,
-    name: 'Reneldy Senat',
-    company: 'Idoleyes Interactive',
-    post: 'Owner',
-    feedback:
-      'I hired Prabin to build our mobile app and he did a great job! He was able to get it built and released to both Apple and Google Play app stores with great quality. Prabin has been the ideal partner; flexible, reliable, and very responsive. He also has great time management skills and always comes to the table with ideas and suggestions to help make the project run smoother. Highly recommended!',
-    imageUrl: ReneldyImage,
-    platform: 'Truemark',
-    platformUrl: 'https://truemark.com.np/hire/resources/',
   },
   {
     uid: 3,

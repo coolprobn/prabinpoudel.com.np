@@ -2,7 +2,7 @@ import React from 'react';
 
 import technologyStacks from '../data/technologyStack';
 
-import style from '../styles/technologyStacks.module.css';
+import style from '../styles/technology-stacks.module.css';
 
 const TechCategory = ({ techList, title }) => {
   const techArray = techList.map((tech) => {

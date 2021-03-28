@@ -15,6 +15,7 @@ import TechnologyStacks from '../components/technologyStack';
 import FeaturedPortfolio from '../components/featuredPortfolio';
 import RightArrowIcon from '../components/icons/right-arrow-icon';
 import FeaturedTestimonial from '../components/featuredTestimonial';
+import TrustedBy from '../components/trustedBy';
 
 const HomePage = ({ data }) => {
   const {
@@ -75,6 +76,14 @@ const HomePage = ({ data }) => {
           </h2>
 
           <FeaturedPortfolio />
+        </div>
+
+        <div className={style.content}>
+          <h2 className={style.subHeading}>
+            <span>Trusted By</span>
+          </h2>
+
+          <TrustedBy />
         </div>
 
         <div className={style.content}>
