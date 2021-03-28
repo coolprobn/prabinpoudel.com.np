@@ -1,0 +1,40 @@
+.excerpt {
+  q {
+    font-size: 1.3em;
+  }
+}
+
+.clientImage {
+  height: 4em;
+  width: 4em;
+}
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 3em;
+
+  @media (--extra-small-down) {
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-top: 2em;
+  }
+}
+
+.footerButtons {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.startRatingContainer {
+  margin-bottom: 0.5em;
+}
+
+.clientContainer {
+  @media (--extra-small-down) {
+    margin-top: 2em;
+  }
+}

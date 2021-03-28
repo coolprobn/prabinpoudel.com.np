@@ -14,6 +14,7 @@ import Testimonials from '../components/testimonial';
 import TechnologyStacks from '../components/technologyStack';
 import FeaturedPortfolio from '../components/featuredPortfolio';
 import RightArrowIcon from '../components/icons/right-arrow-icon';
+import FeaturedTestimonial from '../components/featuredTestimonial';
 
 const HomePage = ({ data }) => {
   const {
@@ -60,7 +61,13 @@ const HomePage = ({ data }) => {
           />
         </div>
 
-        {/* Featured Testimonial */}
+        <div className={style.content}>
+          <h2 className={style.subHeading}>
+            <span>Featured Testimonial</span>
+          </h2>
+
+          <FeaturedTestimonial />
+        </div>
 
         <div className={style.content}>
           <h2 className={style.subHeading}>
