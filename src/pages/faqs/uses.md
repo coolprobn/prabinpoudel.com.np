@@ -5,6 +5,7 @@ path: /uses/
 date: 2016-08-26
 last_modified_at: 2020-01-13T09:56:34-05:00
 order: 9
+published: false
 ---
 
 Read on friend to learn about the hardware and software I use for play and to build Made Mistakes. None of it is terribly exciting or unexpected, but hey --- maybe the curious of you will find it interesting.

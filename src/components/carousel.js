@@ -61,9 +61,9 @@ const Carousel = ({ items }) => {
 
         <div className={style.clientContainer}>
           <img
-            src={imageUrl}
-            alt="client-image"
-            className={style.clientImage}
+            data-src={imageUrl}
+            alt="client"
+            className={`${style.clientImage} lazyload`}
           />
 
           <div className={style.clientInfo}>

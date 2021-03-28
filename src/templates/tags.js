@@ -1,16 +1,16 @@
-import React from 'react'
-import PropTypes from 'prop-types'
-import { graphql } from 'gatsby'
-import SEO from '../components/seo'
-import Layout from '../components/layout'
-import Entry from '../components/entry'
-import Pagination from '../components/pagination'
+import React from 'react';
+import PropTypes from 'prop-types';
+import { graphql } from 'gatsby';
+import SEO from '../components/seo';
+import Layout from '../components/layout';
+import Entry from '../components/entry';
+import Pagination from '../components/pagination';
 
-import site from '../../config/site'
+import site from '../../config/site';
 
-import style from '../styles/archive.module.css'
+import style from '../styles/archive.module.css';
 
-const _ = require('lodash-addons')
+const _ = require('lodash-addons');
 
 const Tags = ({
   data,
@@ -28,12 +28,12 @@ const Tags = ({
     },
     taxonomyYaml: { excerpt: taxonomyExcerpt, html: taxonomyHtml },
     allMarkdownRemark: { edges: posts },
-  } = data
+  } = data;
   const paginationTitle =
     humanPageNumber === 1
       ? ''
-      : ` - Page ${humanPageNumber} of ${numberOfPages}`
-  const metaImage = site.image
+      : ` - Page ${humanPageNumber} of ${numberOfPages}`;
+  const metaImage = site.image;
 
   return (
     <Layout>
@@ -75,7 +75,7 @@ const Tags = ({
                   image,
                   excerpt,
                 },
-              } = node
+              } = node;
 
               return (
                 <Entry
@@ -89,7 +89,7 @@ const Tags = ({
                   image={image}
                   excerpt={excerpt || autoExcerpt}
                 />
-              )
+              );
             })}
           </div>
         </div>
@@ -101,8 +101,8 @@ const Tags = ({
         nextLabel="Older posts"
       />
     </Layout>
-  )
-}
+  );
+};
 
 Tags.propTypes = {
   data: PropTypes.object.isRequired,
@@ -113,7 +113,7 @@ Tags.propTypes = {
     humanPageNumber: PropTypes.number,
     numberOfPages: PropTypes.number,
   }),
-}
+};
 
 export const postsQuery = graphql`
   query($limit: Int!, $skip: Int!, $tag: String!) {
@@ -163,6 +163,6 @@ export const postsQuery = graphql`
       }
     }
   }
-`
+`;
 
-export default Tags
+export default Tags;
