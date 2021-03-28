@@ -5,7 +5,7 @@ import carouselStyle from '../styles/carousel.module.css';
 
 const History = ({ activeIndex, items, changeSlide }) => {
   const itemList = items.map((el, index) => {
-    const name = index == activeIndex ? carouselStyle.active : '';
+    const name = index === activeIndex ? carouselStyle.active : '';
 
     return (
       <li key={index}>

@@ -11,9 +11,12 @@ const testimonials = [
     post: 'Owner',
     feedback:
       'I had a bad experience with freelancing previously and was quite afraid when I hired Prabin to work on our telecom app. But he is such a professional that he right away made me feel that he was the right choice for the job. I needed a full stack developer who could work on redesigning existing system and also create new applications as we moved forward, and Prabin has done a brilliant job in that regard. He has excellent knowledge on Ruby on Rails and React. He always comes up with suggestions and is very approachable and flexible. I will definitely hire him again in the future and recommend him to anyone wanting to hire him!',
+    excerpt:
+      'I had a bad experience with freelancing in the past and Prabin completely changed that with his work.',
     imageUrl: RonniImage,
     platform: 'Upwork',
     platformUrl: 'https://www.upwork.com/freelancers/~0184b506a4486b8f86',
+    rating: 5,
   },
   {
     uid: 2,

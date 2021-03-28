@@ -20,3 +20,30 @@
   top: 0.25em;
   vertical-align: middle;
 }
+
+use {
+  &:nth-child(2) {
+    transform: translate(30px);
+  }
+  &:nth-child(3) {
+    transform: translate(60px);
+  }
+  &:nth-child(4) {
+    transform: translate(90px);
+  }
+  &:nth-child(5) {
+    transform: translate(120px);
+  }
+}
+
+.rating {
+  display: block;
+  height: 25px;
+  width: 12em;
+
+
+
+  @media (--extra-small-down) {
+    width: 150px;
+  }
+}

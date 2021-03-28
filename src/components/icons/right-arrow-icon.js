@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 import style from '../../styles/icon.module.css';
 
-function RSSIcon({ className }) {
+function RightArrowIcon({ className }) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -22,12 +22,12 @@ function RSSIcon({ className }) {
   );
 }
 
-RSSIcon.propTypes = {
+RightArrowIcon.propTypes = {
   className: PropTypes.string,
 };
 
-RSSIcon.defaultProps = {
+RightArrowIcon.defaultProps = {
   className: undefined,
 };
 
-export default RSSIcon;
+export default RightArrowIcon;
