@@ -1,15 +1,15 @@
-import React from 'react'
-import PropTypes from 'prop-types'
-import { graphql, Link } from 'gatsby'
+import React from 'react';
+import PropTypes from 'prop-types';
+import { graphql, Link } from 'gatsby';
 import { DiscussionEmbed } from 'disqus-react';
 
-import SEO from '../components/seo'
-import Layout from '../components/layout'
-import Document from '../components/document'
-import Pagination from '../components/pagination'
-import site from '../../config/site'
+import SEO from '../components/seo';
+import Layout from '../components/layout';
+import Document from '../components/document';
+import Pagination from '../components/pagination';
+import site from '../../config/site';
 
-import style from '../styles/post.module.css'
+import style from '../styles/post.module.css';
 
 const PostTemplate = ({ data, pageContext }) => {
   const {
@@ -29,21 +29,21 @@ const PostTemplate = ({ data, pageContext }) => {
       comments_locked: commentsLocked,
       hide_meta: hideMeta,
       canonical,
-      canonical_url: canonicalUrl
+      canonical_url: canonicalUrl,
     },
     excerpt: autoExcerpt,
     timeToRead,
     tableOfContents,
     id,
     html,
-  } = data.markdownRemark
-  const { next, previous } = pageContext
-  const metaImage = image ? image.childImageSharp.fixed : site.image
-  const twitterCardType = image ? 'summary_large_image' : 'summary'
-  const previousPath = previous && previous.frontmatter.path
-  const previousLabel = previous && previous.frontmatter.title
-  const nextPath = next && next.frontmatter.path
-  const nextLabel = next && next.frontmatter.title
+  } = data.markdownRemark;
+  const { next, previous } = pageContext;
+  const metaImage = image ? image.childImageSharp.fixed : site.image;
+  const twitterCardType = image ? 'summary_large_image' : 'summary';
+  const previousPath = previous && previous.frontmatter.path;
+  const previousLabel = previous && previous.frontmatter.title;
+  const nextPath = next && next.frontmatter.path;
+  const nextLabel = next && next.frontmatter.title;
 
   const disqusConfig = {
     shortname: 'prabin-poudel',
@@ -94,7 +94,8 @@ const PostTemplate = ({ data, pageContext }) => {
                     Comments are closed
                   </div>
                   <div className="custom-block-body">
-                    If you have a question concerning the content of this page, please feel free to <Link to="/contact/">contact me</Link>.
+                    If you have a question concerning the content of this page,
+                    please feel free to <Link to="/contact/">contact me</Link>.
                   </div>
                 </div>
               ) : (
@@ -112,9 +113,9 @@ const PostTemplate = ({ data, pageContext }) => {
       />
     </Layout>
   );
-}
+};
 
-export default PostTemplate
+export default PostTemplate;
 
 PostTemplate.propTypes = {
   data: PropTypes.object.isRequired,
@@ -122,7 +123,7 @@ PostTemplate.propTypes = {
     next: PropTypes.object,
     previous: PropTypes.object,
   }),
-}
+};
 
 export const pageQuery = graphql`
   query($path: String) {
@@ -164,4 +165,4 @@ export const pageQuery = graphql`
       tableOfContents(pathToSlugField: "frontmatter.path", maxDepth: 3)
     }
   }
-`
+`;

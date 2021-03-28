@@ -1,29 +1,29 @@
-import React, { useState } from 'react'
-import PropTypes from 'prop-types'
-import { Link } from 'gatsby'
-import { Helmet } from 'react-helmet'
+import React, { useState } from 'react';
+import PropTypes from 'prop-types';
+import { Link } from 'gatsby';
+import { Helmet } from 'react-helmet';
 
-import Menu from './menu'
+import Menu from './menu';
 
-import style from '../styles/header.module.css'
+import style from '../styles/header.module.css';
 
 import BlogLogo from '../images/blog-logo.png';
 
-const Header = props => {
-  const { siteTitle, mainMenu, defaultTheme } = props
+const Header = (props) => {
+  const { siteTitle, mainMenu, defaultTheme } = props;
   const defaultThemeState =
     (typeof window !== 'undefined' && window.localStorage.getItem('theme')) ||
-    null
-  const [userTheme, changeTheme] = useState(defaultThemeState)
+    null;
+  const [userTheme, changeTheme] = useState(defaultThemeState);
   const onChangeTheme = () => {
     const alternateTheme =
-      (userTheme || defaultTheme) === 'light' ? 'dark' : 'light'
+      (userTheme || defaultTheme) === 'light' ? 'dark' : 'light';
 
-    changeTheme(alternateTheme)
+    changeTheme(alternateTheme);
 
     typeof window !== 'undefined' &&
-      window.localStorage.setItem('theme', alternateTheme)
-  }
+      window.localStorage.setItem('theme', alternateTheme);
+  };
 
   return (
     <>
@@ -56,14 +56,18 @@ const Header = props => {
       <header className={style.header}>
         <div className={style.name}>
           <Link to="/" className={style.blogLogoLink}>
-            <img src={BlogLogo} alt="blog-logo" className={style.blogLogo} />
+            <img
+              data-src={BlogLogo}
+              alt="blog-logo"
+              className={`${style.blogLogo}  lazyload`}
+            />
           </Link>
         </div>
         <Menu mainMenu={mainMenu} onChangeTheme={onChangeTheme} />
       </header>
     </>
-  )
-}
+  );
+};
 
 Header.propTypes = {
   siteTitle: PropTypes.string,
@@ -74,6 +78,6 @@ Header.propTypes = {
       path: PropTypes.string,
     })
   ),
-}
+};
 
-export default Header
+export default Header;

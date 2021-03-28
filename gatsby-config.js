@@ -278,13 +278,11 @@ module.exports = {
             }
         }`,
         serialize: ({ site, allSitePage }) =>
-          allSitePage.edges.map((edge) => {
-            return {
-              url: site.siteMetadata.siteUrl + edge.node.path,
-              changefreq: 'daily',
-              priority: 0.7,
-            };
-          }),
+          allSitePage.edges.map((edge) => ({
+            url: site.siteMetadata.siteUrl + edge.node.path,
+            changefreq: 'daily',
+            priority: 0.7,
+          })),
       },
     },
     {
@@ -306,24 +304,22 @@ module.exports = {
             site: { siteMetadata },
             ...rest
           },
-        }) => {
-          return {
-            ...siteMetadata,
-            ...rest,
-            custom_namespaces: {
-              webfeeds: 'http://webfeeds.org/rss/1.0',
+        }) => ({
+          ...siteMetadata,
+          ...rest,
+          custom_namespaces: {
+            webfeeds: 'http://webfeeds.org/rss/1.0',
+          },
+          custom_elements: [
+            {
+              'webfeeds:logo': site.url + site.favicon,
             },
-            custom_elements: [
-              {
-                'webfeeds:logo': site.url + site.favicon,
-              },
-              {
-                'webfeeds:icon': site.url + site.favicon,
-              },
-              { 'webfeeds:accentColor': '000000' },
-            ],
-          };
-        },
+            {
+              'webfeeds:icon': site.url + site.favicon,
+            },
+            { 'webfeeds:accentColor': '000000' },
+          ],
+        }),
         feeds: [
           {
             query: `
@@ -358,8 +354,8 @@ module.exports = {
                 }
               }
             `,
-            serialize: ({ query: { site, allMarkdownRemark } }) => {
-              return allMarkdownRemark.edges.map((edge) => {
+            serialize: ({ query: { site, allMarkdownRemark } }) =>
+              allMarkdownRemark.edges.map((edge) => {
                 const {
                   node: {
                     frontmatter: { title, date, path, excerpt, image },
@@ -412,8 +408,7 @@ module.exports = {
                     },
                   ],
                 });
-              });
-            },
+              }),
             output: '/atom.xml',
             title: `${site.title} RSS Feed`,
           },

@@ -6,11 +6,15 @@ import style from '../styles/technologyStacks.module.css';
 
 const TechCategory = ({ techList, title }) => {
   const techArray = techList.map((tech) => {
-    const { name, category, icon } = tech;
+    const { name, icon } = tech;
 
     return (
       <div className={style.technologyStack}>
-        <img src={icon} alt={`${name} icon`} className={style.icon} />
+        <img
+          data-src={icon}
+          alt={`${name} icon`}
+          className={`${style.icon} lazyload`}
+        />
 
         <span className={style.name}>{name}</span>
       </div>
@@ -27,25 +31,25 @@ const TechCategory = ({ techList, title }) => {
 
 const TechnologyStacks = () => {
   const backendTechList = technologyStacks.filter(
-    (stack) => stack.category == 'Backend'
+    (stack) => stack.category === 'Backend'
   );
   const frontendTechList = technologyStacks.filter(
-    (stack) => stack.category == 'Frontend'
+    (stack) => stack.category === 'Frontend'
   );
   const mobileTechList = technologyStacks.filter(
-    (stack) => stack.category == 'Mobile'
+    (stack) => stack.category === 'Mobile'
   );
   const staticTechList = technologyStacks.filter(
-    (stack) => stack.category == 'Static'
+    (stack) => stack.category === 'Static'
   );
   const stylingTechList = technologyStacks.filter(
-    (stack) => stack.category == 'Styling'
+    (stack) => stack.category === 'Styling'
   );
   const databaseTechList = technologyStacks.filter(
-    (stack) => stack.category == 'Database'
+    (stack) => stack.category === 'Database'
   );
   const othersTechList = technologyStacks.filter(
-    (stack) => stack.category == 'Others'
+    (stack) => stack.category === 'Others'
   );
 
   return (

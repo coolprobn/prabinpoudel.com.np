@@ -1,11 +1,11 @@
-import React from 'react'
-import PropTypes from 'prop-types'
-import { graphql } from 'gatsby'
+import React from 'react';
+import PropTypes from 'prop-types';
+import { graphql } from 'gatsby';
 
-import SEO from '../components/seo'
-import Layout from '../components/layout'
-import Document from '../components/document'
-import site from '../../config/site'
+import SEO from '../components/seo';
+import Layout from '../components/layout';
+import Document from '../components/document';
+import site from '../../config/site';
 
 const PageTemplate = ({ data }) => {
   const {
@@ -24,9 +24,9 @@ const PageTemplate = ({ data }) => {
     excerpt: autoExcerpt,
     id,
     html,
-  } = data.markdownRemark
-  const metaImage = image ? image.childImageSharp.fixed : site.image
-  const twitterCardType = image ? 'summary_large_image' : 'summary'
+  } = data.markdownRemark;
+  const metaImage = image ? image.childImageSharp.fixed : site.image;
+  const twitterCardType = image ? 'summary_large_image' : 'summary';
 
   return (
     <Layout>
@@ -58,14 +58,14 @@ const PageTemplate = ({ data }) => {
         />
       </main>
     </Layout>
-  )
-}
+  );
+};
 
-export default PageTemplate
+export default PageTemplate;
 
 PageTemplate.propTypes = {
   data: PropTypes.object.isRequired,
-}
+};
 
 export const pageQuery = graphql`
   query($path: String) {
@@ -98,4 +98,4 @@ export const pageQuery = graphql`
       excerpt
     }
   }
-`
+`;
