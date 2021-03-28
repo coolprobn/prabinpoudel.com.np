@@ -1,16 +1,16 @@
-import React from 'react'
-import PropTypes from 'prop-types'
-import { graphql, Link } from 'gatsby'
-import SEO from '../components/seo'
-import Layout from '../components/layout'
-import Entry from '../components/entry'
-import Pagination from '../components/pagination'
+import React from 'react';
+import PropTypes from 'prop-types';
+import { graphql, Link } from 'gatsby';
+import SEO from '../components/seo';
+import Layout from '../components/layout';
+import Entry from '../components/entry';
+import Pagination from '../components/pagination';
 
-import site from '../../config/site'
+import site from '../../config/site';
 
-import style from '../styles/archive.module.css'
+import style from '../styles/archive.module.css';
 
-const _ = require('lodash-addons')
+const _ = require('lodash-addons');
 
 const Categories = ({
   data,
@@ -32,20 +32,20 @@ const Categories = ({
       html: taxonomyHtml,
     },
     allMarkdownRemark: { group, edges: posts },
-  } = data
+  } = data;
   const paginationTitle =
     humanPageNumber === 1
       ? ''
-      : ` - Page ${humanPageNumber} of ${numberOfPages}`
-  const metaImage = site.image
+      : ` - Page ${humanPageNumber} of ${numberOfPages}`;
+  const metaImage = site.image;
 
   // Sort object alphabetically function
-  const propComparator = propName => (a, b) =>
+  const propComparator = (propName) => (a, b) =>
     a[propName].toLowerCase() == b[propName].toLowerCase()
       ? 0
       : a[propName].toLowerCase() < b[propName].toLowerCase()
       ? -1
-      : 1
+      : 1;
 
   return (
     <Layout>
@@ -75,7 +75,7 @@ const Categories = ({
           <h2 className={style.subHeading}>Browse by topic</h2>
           <div className={style.columnList} style={{ marginBottom: '3rem' }}>
             <ul>
-              {group.sort(propComparator(`fieldValue`)).map(tag => (
+              {group.sort(propComparator(`fieldValue`)).map((tag) => (
                 <li key={tag.fieldValue}>
                   <Link to={`/tag/${_.slugify(tag.fieldValue)}/`}>
                     <strong>{tag.fieldValue}</strong>{' '}
@@ -100,7 +100,7 @@ const Categories = ({
                   image,
                   excerpt,
                 },
-              } = node
+              } = node;
 
               return (
                 <Entry
@@ -114,7 +114,7 @@ const Categories = ({
                   image={image}
                   excerpt={excerpt || autoExcerpt}
                 />
-              )
+              );
             })}
           </div>
         </div>
@@ -126,8 +126,8 @@ const Categories = ({
         nextLabel="Older posts"
       />
     </Layout>
-  )
-}
+  );
+};
 
 Categories.propTypes = {
   data: PropTypes.object.isRequired,
@@ -138,7 +138,7 @@ Categories.propTypes = {
     humanPageNumber: PropTypes.number,
     numberOfPages: PropTypes.number,
   }),
-}
+};
 
 export const postsQuery = graphql`
   query($limit: Int!, $skip: Int!, $category: String!) {
@@ -197,6 +197,6 @@ export const postsQuery = graphql`
       }
     }
   }
-`
+`;
 
-export default Categories
+export default Categories;

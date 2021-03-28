@@ -1,22 +1,22 @@
-const _ = require('lodash-addons')
-const { paginate } = require('gatsby-awesome-pagination')
-const { forEach, uniq, filter, not, isNil, flatMap } = require('rambdax')
-const path = require('path')
-const sharp = require('sharp')
+const _ = require('lodash-addons');
+const { paginate } = require('gatsby-awesome-pagination');
+const { forEach, uniq, filter, not, isNil, chain } = require('rambdax');
+const path = require('path');
+const sharp = require('sharp');
 
-const postTemplate = path.resolve(`./src/templates/post.js`)
-const pageTemplate = path.resolve(`./src/templates/page.js`)
-const categoriesTemplate = path.resolve(`./src/templates/categories.js`)
-const tagsTemplate = path.resolve(`./src/templates/tags.js`)
+const postTemplate = path.resolve(`./src/templates/post.js`);
+const pageTemplate = path.resolve(`./src/templates/page.js`);
+const categoriesTemplate = path.resolve(`./src/templates/categories.js`);
+const tagsTemplate = path.resolve(`./src/templates/tags.js`);
 
 // Sharp GLib-CRITICAL fix
 // https://github.com/gatsbyjs/gatsby/issues/6291#issuecomment-505097465
-sharp.simd(false)
-sharp.cache(false)
+sharp.simd(false);
+sharp.cache(false);
 
 exports.createPages = ({ actions, graphql, getNodes }) => {
-  const { createPage } = actions
-  const allNodes = getNodes()
+  const { createPage } = actions;
+  const allNodes = getNodes();
 
   return graphql(`
     {
@@ -61,28 +61,30 @@ exports.createPages = ({ actions, graphql, getNodes }) => {
         }
       }
     }
-  `).then(result => {
+  `).then((result) => {
     if (result.errors) {
-      return Promise.reject(result.errors)
+      return Promise.reject(result.errors);
     }
 
     const {
       site: { siteMetadata },
-    } = result.data
+    } = result.data;
 
     const postsNodes = allNodes.filter(
       ({ internal, fileAbsolutePath, frontmatter }) =>
         internal.type === 'MarkdownRemark' &&
         fileAbsolutePath.indexOf('/posts/') !== -1 &&
         frontmatter.published !== false
-    )
-    const posts = result.data.posts.edges
-    const pages = result.data.pages.edges
+    );
+    const posts = result.data.posts.edges;
+    const pages = result.data.pages.edges;
 
     // Create Markdown posts
     posts.forEach(({ node }, index) => {
-      const previous = index === posts.length - 1 ? null : posts[index + 1].node
-      const next = index === 0 ? null : posts[index - 1].node
+      const previous =
+        index === posts.length - 1 ? null : posts[index + 1].node;
+      const next = index === 0 ? null : posts[index - 1].node;
+
       createPage({
         path: node.frontmatter.path,
         component: postTemplate,
@@ -90,33 +92,29 @@ exports.createPages = ({ actions, graphql, getNodes }) => {
           next,
           previous,
         },
-      })
-    })
+      });
+    });
 
     // Create Markdown pages
     pages.forEach(({ node }) => {
       createPage({
         path: node.frontmatter.path,
         component: pageTemplate,
-      })
-    })
+      });
+    });
 
     // Create paginated category pages
-    const categories = ['articles', 'notes', 'book-reviews']
-    // const categories = filter(
-    //   category => not(isNil(category)),
-    //   uniq(flatMap(post => post.frontmatter.categories, postsNodes))
-    // )
+    const categories = ['articles', 'notes', 'book-reviews'];
 
-    forEach(category => {
+    forEach((category) => {
       const postsWithCategory = postsNodes.filter(
-        post =>
+        (post) =>
           post.frontmatter.categories &&
           post.frontmatter.categories.indexOf(category) !== -1
-      )
+      );
 
       const categoryPrefix = ({ pageNumber }) =>
-        pageNumber === 0 ? `/${category}/` : `/${category}/page`
+        pageNumber === 0 ? `/${category}/` : `/${category}/page`;
 
       paginate({
         createPage,
@@ -127,25 +125,25 @@ exports.createPages = ({ actions, graphql, getNodes }) => {
         context: {
           category,
         },
-      })
-    }, categories)
+      });
+    }, categories);
 
     // Create tag pages
     const tags = filter(
-      tag => not(isNil(tag)),
-      uniq(flatMap(post => post.frontmatter.tags, postsNodes))
-    )
+      (tag) => not(isNil(tag)),
+      uniq(chain((post) => post.frontmatter.tags, postsNodes))
+    );
 
-    forEach(tag => {
+    forEach((tag) => {
       const postsWithTag = postsNodes.filter(
-        post =>
+        (post) =>
           post.frontmatter.tags && post.frontmatter.tags.indexOf(tag) !== -1
-      )
+      );
 
       const tagPrefix = ({ pageNumber }) =>
         pageNumber === 0
           ? `/tag/${_.slugify(tag)}/`
-          : `/tag/${_.slugify(tag)}/page`
+          : `/tag/${_.slugify(tag)}/page`;
 
       paginate({
         createPage,
@@ -156,18 +154,18 @@ exports.createPages = ({ actions, graphql, getNodes }) => {
         context: {
           tag,
         },
-      })
-    }, tags)
+      });
+    }, tags);
 
     return {
       categories,
       tags,
-    }
-  })
-}
+    };
+  });
+};
 
 exports.createSchemaCustomization = ({ actions }) => {
-  const { createTypes } = actions
+  const { createTypes } = actions;
   const typeDefs = `
     type MarkdownRemark implements Node {
       frontmatter: Frontmatter!
@@ -199,6 +197,7 @@ exports.createSchemaCustomization = ({ actions }) => {
       excerpt: String
       html: String
     }
-  `
-  createTypes(typeDefs)
-}
+  `;
+
+  createTypes(typeDefs);
+};
