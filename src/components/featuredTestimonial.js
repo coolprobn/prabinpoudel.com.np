@@ -4,7 +4,7 @@ import testimonials from '../data/testimonial';
 import StarIcon from './icons/star-icon';
 
 import testimonialsStyle from '../styles/testimonials.module.css';
-import style from '../styles/featuredTestimonial.module.css';
+import style from '../styles/featured-testimonial.module.css';
 
 const FeaturedTestimonial = () => {
   const featuredTestimonial = testimonials.find(
