@@ -19,17 +19,16 @@ const FeaturedTestimonial = () => {
     imageUrl,
     platform,
     platformUrl,
-    rating,
   } = featuredTestimonial;
 
   return (
-    <div>
+    <div className="custom-block notice">
       <p className={style.excerpt}>
         <q>{excerpt}</q>
       </p>
 
       <div className={style.footer}>
-        <div className={style.footerButtons}>
+        {/* <div className={style.footerButtons}>
           <div className={style.startRatingContainer}>
             <StarIcon />
           </div>
@@ -42,7 +41,7 @@ const FeaturedTestimonial = () => {
           >
             Read {platform} Review
           </a>
-        </div>
+        </div> */}
 
         <div
           className={[
