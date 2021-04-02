@@ -8,7 +8,7 @@ image: ../../images/articles/interact-with-mysql-server-using-mysql2-gem-part-1-
 categories: [articles]
 tags: [ruby on rails, mysql, tutorial]
 toc: true
-featured: true
+featured: false
 comments: true
 canonical: true
 canonical_url: 'https://thedevpost.com/blog/mysql-server-mysql2-gem-select-operations/'
