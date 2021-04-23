@@ -1,5 +1,4 @@
 ---
-uid: 'PB-A-5'
 title: '[Fix] Issue while installing ruby with rbenv in M1 Mac'
 date: 2021-04-02
 path: /articles/fix-issue-while-installing-ruby-with-rbenv-in-m1-mac/

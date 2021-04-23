@@ -1,5 +1,4 @@
 ---
-uid: 'PB-A-9'
 title: 'Setup Gatsby with Strapi in M1 Mac'
 date: 2021-03-20
 path: /articles/setup-gatsby-with-strapi-in-m1-mac/

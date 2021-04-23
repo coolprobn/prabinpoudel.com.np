@@ -1,5 +1,4 @@
 ---
-uid: 'PB-N-3'
 title: 'Open google play store from react native app'
 date: 2020-06-24T01:53:41.410Z
 last_modified_at: 2020-08-16T17:43:06.026Z

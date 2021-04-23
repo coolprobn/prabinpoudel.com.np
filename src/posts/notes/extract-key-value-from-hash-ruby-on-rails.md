@@ -1,5 +1,4 @@
 ---
-uid: 'PB-N-2'
 title: 'Extract key or value from hash in ruby on rails'
 date: 2020-05-30T07:28:34.980Z
 last_modified_at: 2020-06-24T01:53:41.410Z

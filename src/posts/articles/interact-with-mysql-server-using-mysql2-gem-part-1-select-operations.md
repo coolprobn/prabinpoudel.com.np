@@ -1,5 +1,4 @@
 ---
-uid: 'PB-A-5'
 title: 'Interact with MySQL Server using mysql2 gem [Part 1] - Performing select operations'
 date: 2021-01-03
 path: /articles/interact-with-mysql-server-using-mysql2-gem-part-1-select-operations/

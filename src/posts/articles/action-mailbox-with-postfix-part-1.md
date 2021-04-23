@@ -1,5 +1,4 @@
 ---
-uid: 'PB-A-2'
 title: 'Setup Action Mailbox with Postfix - Part 1'
 date: 2020-05-01
 path: /articles/action-mailbox-with-postfix-part-1/
@@ -8,7 +7,7 @@ image: ../../images/articles/action-mailbox-with-postfix-part-1.webp
 categories: [articles]
 tags: [ruby on rails, tutorial, web development]
 toc: true
-featured: true
+featured: false
 comments: true
 last_modified_at: 2020-05-17
 canonical: true

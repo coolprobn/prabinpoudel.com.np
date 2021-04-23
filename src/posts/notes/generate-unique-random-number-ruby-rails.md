@@ -1,5 +1,4 @@
 ---
-uid: 'PB-N-1'
 title: 'Generate unique random numbers or tokens in ruby on rails'
 date: 2020-04-18T00:02:40.097Z
 path: /notes/generate-unique-random-number-token-ruby-rails/

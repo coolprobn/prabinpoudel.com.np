@@ -1,5 +1,4 @@
 ---
-uid: 'PB-N-4'
 title: 'Remove files or folders from remote git'
 date: 2020-08-16T17:43:06.026Z
 path: /notes/git-remove-files-and-folders-from-remote/
