@@ -1,5 +1,4 @@
 ---
-uid: 'PB-A-4'
 title: '[Fix] Missing top level class documentation comment Rubocop'
 date: 2020-09-12
 path: /articles/fix-missing-top-level-class-documentation-comment-rubocop/

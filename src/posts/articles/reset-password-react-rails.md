@@ -1,5 +1,4 @@
 ---
-uid: 'PB-A-1'
 title: 'Reset password in react and rails app with devise'
 date: 2020-01-16
 path: /articles/reset-password-react-rails/

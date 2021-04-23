@@ -1,5 +1,4 @@
 ---
-uid: 'PB-A-3'
 title: 'Setup Action Mailbox with Postfix - Part 2'
 date: 2020-05-02
 path: /articles/action-mailbox-with-postfix-part-2/

@@ -1,5 +1,4 @@
 ---
-uid: 'PB-A-8'
 title: 'Interact with Mysql Server using mysql2 gem [Part 4] - Perform Transactions'
 date: 2021-02-21
 path: /articles/interact-with-mysql-server-using-mysql2-gem-part-4-perform-transactions/

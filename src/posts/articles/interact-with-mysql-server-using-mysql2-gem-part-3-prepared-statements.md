@@ -1,5 +1,4 @@
 ---
-uid: 'PB-A-7'
 title: 'Interact with Mysql Server using mysql2 gem [Part 3] - Prepared Statement'
 date: 2021-01-15
 path: /articles/interact-with-mysql-server-using-mysql2-gem-part-3-prepared-statements/

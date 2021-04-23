@@ -1,5 +1,4 @@
 ---
-uid: 'PB-A-6'
 title: 'Interact with MySQL Server using mysql2 gem [Part 2] - Insert and Update Operations'
 date: 2021-01-07
 path: /articles/interact-with-mysql-server-using-mysql2-gem-part-2-insert-and-update-operations/
