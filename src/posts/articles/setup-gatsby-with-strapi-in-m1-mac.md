@@ -7,7 +7,7 @@ image: ../../images/articles/setup-gatsby-with-strapi-in-m1-mac.webp
 categories: [articles]
 tags: [gatsby, strapi, tutorial]
 toc: true
-featured: true
+featured: false
 comments: true
 ---
 
