@@ -4,6 +4,10 @@
   html: |
     <p>A collection of thoughts, inspiration, mistakes, and other long-form minutia I've written. For smaller, more regular tidbits &mdash; peruse the <a href="/notes/">notes section</a>.</p>
 
+- id: automated code review
+  excerpt:
+  html:
+
 - id: book-reviews
   name: Book Reviews
   excerpt: My thoughts on the books I read.
