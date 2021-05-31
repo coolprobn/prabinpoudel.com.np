@@ -9,28 +9,33 @@ tags: [ruby on rails, rubocop, lint, automated code review]
 toc: true
 featured: true
 comments: true
+last_modified_at: 2021-05-31
 ---
 
-At <a href="https://truemark.com.np" target="_blank">Truemark</a>, we are constantly looking to improve the code quality in our projects. And one way to do that is through the regualr code review process. Code review process can quickly get exhausting if team members have to spend majority of their time on maintaining best practices.
+At <a href="https://truemark.com.np" target="_blank">Truemark</a>, we are constantly looking to improve the code quality in our projects. And one way to do that is through the regular code review process. Code review process can quickly get exhausting if team members have to spend majority of their time on maintaining best practices.
 
-Enters automated code review; which review source code for compliance with a predefined set of rules or best practices. In Rails projects, to defined rules and best practices, we use Rubocop and for code reviews we will be using Pronto integrated with Gitlab CI.
+Enters automated code review; which reviews source code for compliance with a predefined set of rules and best practices.
+
+In Rails projects, to define rules and best practices, we use RuboCop and for code reviews we will be using Pronto integrated with Gitlab CI.
 
 ## What is Pronto?
 
-Pronto is a gem which uses Rubocop configuration file to perform analysis on changes made in the given feature branch and adds comment to merge requests based on the best practices configured. Pronto can be integrated with popular version control system managers like Gitlab. Guthub and Bitbucket.
+Pronto is a gem which uses RuboCop configuration file to perform analysis on changes made in the given feature branch and adds comment to merge requests based on the best practices configured. Pronto can be integrated with popular version control system managers like Gitlab. Github and Bitbucket.
 
-It also works on local machine and is perfect if you want to find out quickly if a branch introduces changes that conform to your styleguide, are DRY and doesn't introduce security holes.
+It also works on local machine and is perfect if you want to find out quickly if a branch introduces changes that conform to your style guide (rules configuration file), are DRY and doesn't introduce security holes.
 
 
 ## Why Pronto?
 
 Short answer, for automating the code review process so your team doesn't have to manually comment and make sure that every team member is following the best practices.
 
-Every developer has their own belief on the best practices and styles, for e.g. some want to use single quotes whereas others prefer double quotes. Some love using semicolons, other just think it's unnecessary. This can brew conflict in the team, when teammates are reviewing merge requests, hence we let Pronto do this. Best practices and styleguide can first be setup by the team and Pronto makes sure that every member is adhering to those rules.
+Every developer has their own belief on the best practices and styles, for e.g. some want to use single quotes whereas others prefer double quotes. Some love using semicolons, other just think it's unnecessary. This can brew conflict in the team, when teammates are reviewing merge requests, hence we let Pronto do this. 
+
+Best practices and style guide can first be setup by the team and Pronto makes sure that every member is adhering to those rules.
 
 ## Assumption
 
-- Rubocop has been configured in the app, i.e. **.rubocop.yml** exists in the project
+- RuboCop has been configured in the app, i.e. **.rubocop.yml** exists in the project
 
 ## Install Pronto
 
@@ -67,22 +72,22 @@ Every developer has their own belief on the best practices and styles, for e.g. 
 Create **.gitlab-ci.yml** in the root project and add the following:
 
 ```yml
-image: ruby:3.0.0 # this should be the ruby version that your rails app is using, ours was using 3.0.0
+  image: ruby:3.0.0 # this should be the ruby version that your rails app is using, ours was using 3.0.0
 
-before_script:
-  - apt-get update && apt-get install -y cmake # Install cmake needed for pronto
-  - bundle install # install all packages in the Gemfile
-  - git fetch origin # fetch all branches, was throwing Rugged::ReferenceError, you can remove this and try if it works for you
+  before_script:
+    - apt-get update && apt-get install -y cmake # Install cmake needed for pronto
+    - bundle install # install all packages in the Gemfile
+    - git fetch origin # fetch all branches, was throwing Rugged::ReferenceError, you can remove this and try if it works for you
 
-stages:
-  - lint # we are only formatting/linting the changes
+  stages:
+    - lint # we are only formatting/linting the changes
 
-pronto:
-  stage: lint # runs pronto on the lint stage
-  only:
-    - merge_requests # run pronto only on merge requests (also runs when new changes are pushed to the merge request)
-  script:
-    - PRONTO_GITLAB_API_PRIVATE_TOKEN=$PRONTO_ACCESS_TOKEN bundle exec pronto run -f gitlab_mr -c origin/$CI_MERGE_REQUEST_TARGET_BRANCH_NAME # Run pronto on branch of current merge request
+  pronto:
+    stage: lint # runs pronto on the lint stage
+    only:
+      - merge_requests # run pronto only on merge requests (also runs when new changes are pushed to the merge request)
+    script:
+      - PRONTO_GITLAB_API_PRIVATE_TOKEN=$PRONTO_ACCESS_TOKEN bundle exec pronto run -f gitlab_mr -c origin/$CI_MERGE_REQUEST_TARGET_BRANCH_NAME # Run pronto on branch of current merge request
 ```
 
 _NOTES_: 
@@ -95,7 +100,7 @@ _NOTES_:
 
 1. In Gitlab, after login, go to <a href="https://gitlab.com/-/profile/personal_access_tokens" target="_blank">personal access token</a>
 2. Enter a name and optional expiry date for the token.
-3. In scopes, choose only **api**, it is enough for our purpose as it gives all access to the project via Gitab API.
+3. In scopes, choose only **api**, it is enough for our purpose as it gives all access to the project via Gitlab API.
 4. Click on **Create token**
 5. Copy the token and keep it somewhere safe, we will need this in next step.
 
@@ -113,7 +118,7 @@ _NOTE_: Only project members with maintainer permissions can add or update proje
 4. Click on **Add Variable**
 5. In **Key**, add `PRONTO_ACCESS_TOKEN` as that is what we have configured in our .gitlab-ci.yml file. You can use any key name, just make sure to update it inside .gilab-ci.yml.
 6. In **Value**, add the token generated in the previous step
-7. In **Flags** section, uncheck **Protect variable**, checking this option will export the variable (`PRONTO_ACCESS_TOKEN`) only to protected branches like master/main. But we need this variable inside all merge request branches.
+7. In **Flags** section, uncheck **Protect variable**, checking this option will export the variable (`PRONTO_ACCESS_TOKEN`) only for protected branches like master/main. But we need this variable inside all merge request branches.
 8. Check **Mask variable** so our token value is not visible in the CI job logs.
 9. Click on **Add variable**
 
@@ -131,7 +136,7 @@ Reference: <a href="https://docs.gitlab.com/ee/ci/variables/#project-cicd-variab
 
 1. Commit the changes made in the branch and push the code to Gitlab
 2. You should see Gitlab CI running automatically now and it should pass
-3. If Pronto finds any issues after analysing the codes changed in the merge request, it will post those issues as comments in that merge request.
+3. If Pronto finds any issues after analyzing the codes changed in the merge request, it will post those issues as comments in that merge request.
 
 _NOTE_: Sometimes it throws **Reference::RuggedError** due to missing git branch, retry running the job in that case and it should work the second time.
 
@@ -142,13 +147,13 @@ If you are curious and want to see what is happening in the background, you can 
 1. From the left menu inside the project, hover over CI/CD and click on Jobs
 2. To view the log, click on job id in the Job column which starts with #, for e.g. #1290157388
 
-Due to installation of all gems (`bundle install`) in the project, it can take up to 3 minutes for the job to be completed.
+Due to installation of all gems (`bundle install`) in the project, it can take up to 3 minutes for the job to be completed even when there are not many changes.
 
 ## Conclusion
 
-The main reason for writing this article was because I couldn't find decent article explaining exactly what we should do to integrate Pronto in Gitlab. Integration guide for Pronto in official documentation was not clear enough to guide us what exactly to do for integrating Pronto with Gitalb CI.
+The main reason for writing this article was because I couldn't find decent article explaining exactly what we should do to integrate Pronto in Gitlab. Integration guide for Pronto in official documentation was not clear enough to guide us what exactly to do for integrating Pronto with Gitlab CI.
 
-We were able to find some blogs, and majority of them were using Docker or were Github integrations, it took a while for the team to figure this solution out. And, now, this should save your team's time when you are using Pronto with Gitlab Ci in your projects. Good luck!
+We were able to find some blogs, and majority of them were using Docker or were Github integrations, it took a while for the team to figure this solution out. Now this blog should save your team's time when you are using Pronto with Gitlab Ci in your projects. Good luck!
 
 Thank you for reading. See you in the next blog.
 
