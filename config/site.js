@@ -32,7 +32,7 @@ module.exports = {
 
   twitter: '@coolprobn', // Twitter username
   twitterUrl: 'https://twitter.com/coolprobn',
-  facebook: 'Probn Poudel', // Facebook site name
+  facebook: 'probn', // Facebook site name
   githubUrl: 'https://github.com/coolprobn',
   instagramUrl: 'https://www.instagram.com/coolprobn/',
   upworkUrl: 'https://www.upwork.com/freelancers/~0184b506a4486b8f86',

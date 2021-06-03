@@ -8,6 +8,7 @@ categories: [book-reviews]
 tags: [quotes]
 toc: true
 comments: true
+last_modified_at: 2021-06-03
 ---
 
 "How to Win Friends and Influence People" is a best seller by Dale Carnegie published in 1936 A.D. (I was amazed the book was this old, well book never gets old!). It is a self-help book where author teaches various techniques with various real life encounters and how those techniques have been implemented by various known people in the past.
@@ -238,7 +239,7 @@ It is a feeble atonement; I know that you would not understand these things whic
 
 I am afraid I have visualized you as a man. Yet as I see you now, Son, crumpled and weary in your bed. I see that you are still a baby. Yesterday you were in your mother's arms, your head on her shoulder. I have asked too much, too much!
 
-*Instead of condemning and criticizing others, perhaps we it would be better to try to understand them, to try to figure out why they do what they do. That's a lot more profitable and intriguing than criticism; and it breeds sympathy, tolerance and kindness, rather than contempt...!!!*
+*Instead of condemning and criticizing others, perhaps it would be better to try to understand them, to try to figure out why they do what they do. That's a lot more profitable and intriguing than criticism; and it breeds sympathy, tolerance and kindness, rather than contempt...!!!*
 
 ### The big secret of dealing with people
 
@@ -258,13 +259,13 @@ I am afraid I have visualized you as a man. Yet as I see you now, Son, crumpled 
 [[notice | Read the book!!!]]
 |There are many interesting stories in the book which I didn't go through because this book is full of such stories. You will find the book interesting if you found these lessons helpful.
 
-To conclude, these techniques are really great, at least in the reading. Personally I have found it very hard to apply these techniques. But at the same time, how can you know if it possible or not until you try?
+To conclude, these techniques are really great in the reading. Personally I have found it very hard to apply these techniques. But at the same time, how can you know if it is possible or not until you try?
 
 I am trying and applying some of these great techniques:
 
 - I always think twice before speaking anything (specially when messaging, hard in person though)
 - I have started being "Lavish in praises"
-- I try to not see mistakes in others and instead try to put myself in there shoes before making any decisions
+- I try to not see mistakes in others and instead try to put myself in thir shoes before making any decisions
 
 Thank you for reading it this far. Or did you just scroll to the end? LOL. Stay awesome and healthy.
 
