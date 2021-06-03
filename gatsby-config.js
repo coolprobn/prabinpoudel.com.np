@@ -400,11 +400,5 @@ module.exports = {
         icon: `src${site.favicon}`,
       },
     },
-    {
-      resolve: `gatsby-plugin-google-adsense`,
-      options: {
-        publisherId: process.env.GOOGLE_AD_SENSE_PUBLISHER_ID,
-      },
-    },
   ],
 };
