@@ -10,14 +10,14 @@ Inspired and cloned from [Made Mistakes](https://github.com/mmistakes/made-mista
    npm install
    ```
 
-2. **Add `.env` file to the root with your FB_APP_ID and GA_TRACKING_ID.**
+2. **Add `.env` file to the root with your GOOGLE_ANALYTICS_TRACKING_ID and GOOGLE_AD_SENSE_PUBLISHER_ID**
 
    ```env file
-   FB_APP_ID=your_facebook_app_id
-   GA_TRACKING_ID=your_google_analytics_tracking_id
+   GOOGLE_ANALYTICS_TRACKING_ID = 'your_google_analytics_tracking_id'
+   GOOGLE_AD_SENSE_PUBLISHER_ID = 'your google ad sense publisher id'
    ```
 
-   **Note:** do not commit this file.
+   **_Note_:** do not commit this file.
 
 3. **Start developing.**
 
@@ -25,4 +25,4 @@ Inspired and cloned from [Made Mistakes](https://github.com/mmistakes/made-mista
    gatsby develop
    ```
 
-   **Note:** When developing on Windows prepend all Gatsby commands with `dotenv` to load environment variables. e.g. `dotenv gatsby build`
+   **_Note_:** When developing on Windows prepend all Gatsby commands with `dotenv` to load environment variables. e.g. `dotenv gatsby build`

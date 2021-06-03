@@ -18,7 +18,7 @@ I will never share your email address or any other personal information to anyon
 
 ### Log files
 
-Like many other websites, MadeMistakes.com uses log files to help learn about when, from where, and how often traffic flows to this site. The information in these log files include:
+Like many other websites, prabinpoudel.com.np uses log files to help learn about when, from where, and how often traffic flows to this site. The information in these log files include:
 
 - Internet Protocol addresses (IP)
 - Types of browser
@@ -31,7 +31,7 @@ All of this information is not linked to anything that is personally identifiabl
 
 ### Cookies and web beacons
 
-Third-party advertisers may also place and read cookies on your browser and/or use web beacons to collect information. MadeMistakes.com has no access or control over these cookies. You should review the respective privacy policies on any and all third-party ad servers for more information regarding their practices and how to opt-out.
+Third-party advertisers may also place and read cookies on your browser and/or use web beacons to collect information. prabinpoudel.com.np has no access or control over these cookies. You should review the respective privacy policies on any and all third-party ad servers for more information regarding their practices and how to opt-out.
 
 If you wish to [disable cookies](https://cookies.insites.com/disable-cookies/), you may do so through your web browser options. Instructions for doing so can be found on the specific web browsers' websites.
 
@@ -39,13 +39,13 @@ If you wish to [disable cookies](https://cookies.insites.com/disable-cookies/), 
 
 Cloudflare, Inc. is a U.S. company that provides content delivery network services, DDoS mitigation, Internet security and distributed domain name server services. Cloudflare's `__cfduid` cookie is used to identify individual clients behind a shared IP address and apply security settings on a per-client basis. Read [Cloudflare's Privacy Policy](https://www.cloudflare.com/privacypolicy/).
 
-#### Google Analytics
+#### Google Analytics and Google AdSense
 
-Google Analytics is a web analytics tool I use to help understand how visitors engage with this website. It reports website trends using cookies and web beacons without identifying individual visitors. Read [Google's Privacy Policy](https://policies.google.com/privacy?hl=en).
+Google Analytics is a web analytics tool I use to help understand how visitors engage with this website. It reports website trends using cookies and web beacons without identifying individual visitors. 
 
-#### Facebook Analytics
+I am using Google AdSense to show ads in my blogs.
 
-Facebook Analytics is a web analytics tool I use to help understand how visitors engage with this website. It reports website trends using cookies and web beacons without identifying individual visitors. Read [Facebook's Privacy Policy](https://www.facebook.com/policy.php).
+Read [Google's Privacy Policy](https://policies.google.com/privacy?hl=en).
 
 #### Netlify
 
