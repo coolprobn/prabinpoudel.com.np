@@ -10,11 +10,10 @@ Inspired and cloned from [Made Mistakes](https://github.com/mmistakes/made-mista
    npm install
    ```
 
-2. **Add `.env` file to the root with your GOOGLE_ANALYTICS_TRACKING_ID and GOOGLE_AD_SENSE_PUBLISHER_ID**
+2. **Add `.env` file to the root with your GOOGLE_ANALYTICS_TRACKING_ID
 
    ```env file
    GOOGLE_ANALYTICS_TRACKING_ID = 'your_google_analytics_tracking_id'
-   GOOGLE_AD_SENSE_PUBLISHER_ID = 'your google ad sense publisher id'
    ```
 
    **_Note_:** do not commit this file.
