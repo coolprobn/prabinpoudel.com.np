@@ -17,6 +17,7 @@ const Header = (props) => {
 
   if (
     defaultThemeState == null &&
+    typeof window !== 'undefined' &&
     window.matchMedia &&
     window.matchMedia('(prefers-color-scheme: dark)').matches
   ) {
