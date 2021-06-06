@@ -2,17 +2,15 @@
 title: 'Books I have read'
 date: 2021-06-05
 path: /books-i-have-read/
-excerpt: 'Atomic Habit, a book by James Clear is a must read for anyone wanting to change or create a habit. Today, I list out some quotes and most important points talked about in the book.'
+excerpt: 'This is a live blog, I will be updating this blog every time I complete reading the book. Books here are divided first by year and then by their type/category. Most of the books are accompanied by  related blogs with extractions from my experience.'
 image: ../../images/book-reviews/books-i-have-read.webp
 categories: [book-reviews]
 toc: true
 comments: true
+featured: true
 ---
 
-This is a live blog, meaning I will be updating this blog everytime I complete reading the book. Books here are divided first by year and then their type/category. Most of the books are accompanied by  related blogs with the extractions from my experience.
-
-
-_NOTE_: I may read novels from time to time but they won't go in here. The purpose of this blog is to track all non-fictional books I read.
+This is a live blog, meaning I will be updating this blog every time I complete reading the book. Books here are divided first by year and then by their type/category. Most of the books are accompanied by related blogs with the extractions from my experience.
 
 ## 2021
 

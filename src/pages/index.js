@@ -41,8 +41,6 @@ const HomePage = ({ data }) => {
           </h1>
 
           <div className={style.intro}>
-            <p>Custom solutions for your business</p>
-
             <p className={style.hireMeButtonContainer}>
               <Link to="/contact/">
                 <button className={`${style.hireMeButton} btn`} type="button">

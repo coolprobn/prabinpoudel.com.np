@@ -22,13 +22,13 @@ This book changed the way I think about my professional life, I was wired to thi
 
 - "Civilization had too many rules for me, so I did my best to rewrite them" - Bill Cosby
 
-## Rules that chage the rules
+## Rules that change the rules
 
 - "I can’t give you a sure fire formula for success, but I can give you a formula for failure: try to please everybody all the time." - Herbert Bayard Swope
 
 ## Pessimism: Defining the nightmare
 
-- "Action may not always bring happiness, but there is no happiness without action." —BENJAMIN DISRAELI
+- "Action may not always bring happiness, but there is no happiness without action." — Benjamin Disraeli
 - To do or not to do? To try or not to try? Most people will vote no, whether they consider themselves brave or not. Uncertainty and the prospect of failure can be very scary noises in the shadows. Most people will choose unhappiness over uncertainty.
 
 ## Uncovering feat disguised as optimism
@@ -66,12 +66,12 @@ Spend a few minutes on each answer.
 
 7. What are you waiting for? 
 
-    If you cannot answer this without resorting to the previously rejected concept of good timing, the answer is simple: You’re afraid, just like the rest of the world. Measure the cost of inaction, realize the unlikelihood and re-pairability of most missteps, and develop the most important habit of those who excel and enjoy doing so: action. 
+    If you cannot answer this without resorting to the previously rejected concept of good timing, the answer is simple: You’re afraid, just like the rest of the world. Measure the cost of inaction, realize the unlikelihood and repairability of most missteps, and develop the most important habit of those who excel and enjoy doing so: action. 
 
 ## System Reset
 
 - "The reasonable man adapts himself to the world; the unreasonable one persists in trying to adapt the 
-world to himself. Therefore all progress depends on the unreasonable man." — GEORGE BERNARD SHAW, Maxims for Revolutionists
+world to himself. Therefore all progress depends on the unreasonable man." — George Bernard Shaw, Maxims for Revolutionists
 
 ## Doing the unrealistic is easier than doing the realistic
 
@@ -81,23 +81,22 @@ world to himself. Therefore all progress depends on the unreasonable man." — G
 
 - The most important actions are never comfortable
 
-## Step 2 - E is for elimination
+## Step 2-E is for elimination
 
-- "One does not accumulate but eliminate. It is not daily increase but daily decrease. The height of cultivation always runs to simplicity."  — BRUCE LEE
+- "One does not accumulate but eliminate. It is not daily increase but daily decrease. The height of cultivation always runs to simplicity."  — Bruce Lee
 - Being busy is a form of laziness—lazy thinking and indiscriminate action
 
-## The 9-5 Illusionand Parkinson's Law
+## The 9-5 Illusion and Parkinson's Law
 
 - Since we have 8 hours to fill, we fill 8 hours. If we had 15, we would fill 15. If we have an emergency and need to suddenly leave work in 2 hours but have pending deadlines, we miraculously complete those assignments in 2 hours. 
 
 ### Questions and actions
 
-- You are the average of the five people you associate with most, so do not underestimate the 
-effects of your pessimistic, unambitious, or disorganized friends. If someone isn’t making you stronger, they’re making you weaker.
+- You are the average of the five people you associate with most, so do not underestimate the effects of your pessimistic, unambitious, or disorganized friends. If someone isn’t making you stronger, they’re making you weaker.
 
 ## The low information diet
 
-- "Reading, after a certain age,diverts the mind too much from its creative pursuits. Any man who reads too much and uses his own brain too little falls into lazy habits of thinking." — Albert Einstein
+- "Reading, after a certain age, diverts the mind too much from its creative pursuits. Any man who reads too much and uses his own brain too little falls into lazy habits of thinking." — Albert Einstein
 
 ### Q&A: Questions And Actions
 
@@ -106,7 +105,7 @@ effects of your pessimistic, unambitious, or disorganized friends. If someone is
 
 ## Interrupting interruption and the art of refusal
 
-- "Do your own thinking independently. Be the chess player, not the chess piece." — RALPH CHARELL
+- "Do your own thinking independently. Be the chess player, not the chess piece." — Ralph Charell
 
 ## But I am an employee, how does this help me?
 
@@ -122,8 +121,7 @@ effects of your pessimistic, unambitious, or disorganized friends. If someone is
 
 ## Why to begin with end in mind: A cautionary tale
 
-- Creating demand is hard. Filling demand is much easier. Don’t create a product, then seek someone to 
-sell it to. Find a market—define your customers — then find or develop a product for them.
+- Creating demand is hard. Filling demand is much easier. Don’t create a product, then seek someone to sell it to. Find a market — define your customers — then find or develop a product for them.
 - It is said that if everyone is your customer, then no one is your customer.
 - The main benefit of your product should be explainable in one sentence or phrase. How is it different and why should I buy it? ONE sentence or phrase, folks. Apple did an excellent job of this with the iPod. Instead of using the usual industry jargon with GB, bandwidth, and so forth, they simply said, “1,000 songs in your pocket.” Done deal. Keep it simple and do not move ahead with a product until you can do this without confusing people. 
 
@@ -133,12 +131,11 @@ sell it to. Find a market—define your customers — then find or develop a pro
 
 ## Income autopilot 3
 
-### Mba (Management by Absence)
+### MBA (Management by Absence)
 
-- "A company is stronger if it is bound by love rather than by fear. If 
-the employees come first, then they’re happy." — HERB KELLEHER
+- "A company is stronger if it is bound by love rather than by fear. If the employees come first, then they’re happy." — Herb Kelleher 
 
-## How ro escape the office
+## How to escape the office
 
 - "By working faithfully eight hours a day, you may eventually get to be a boss and work twelve hours a day." — ROBERT FROST, American poet 
 
@@ -152,7 +149,7 @@ the employees come first, then they’re happy." — HERB KELLEHER
 
 ## Beyond Repair
 
-- "All courses of action are risky, so prudence is not in avoiding danger (it’s impossible), but calculating risk and acting decisively. Make mistakes of ambition and not mistakes of sloth. Develop the strength to do bold things, not the strength to suffer." — NICCOLÒ MACHIAVELLI, The 
+- "All courses of action are risky, so prudence is not in avoiding danger (it’s impossible), but calculating risk and acting decisively. Make mistakes of ambition and not mistakes of sloth. Develop the strength to do bold things, not the strength to suffer." — Niccolo Machiavelli, The 
 Prince
 
 ## Pride and punishment
@@ -161,17 +158,17 @@ Prince
 
 ### Questions and Actions
 
-- "Only those who are asleep make no mistakes." — INGVAR KAMPRAD, founder of IKEA, world’s largestfurniture brand
+- "Only those who are asleep make no mistakes." — Ingvar Kamprad, founder of IKEA, world’s largest furniture brand
 - In the world of action and negotiation, there is one principle that governs all others: The person who has more options has more power.
 
 ## The Birth of Mini-Retirements and the Death of Vacations
 
-- "There is more to life than increasing its speed." — MOHANDAS GANDHI
+- "There is more to life than increasing its speed." — Mohandas Gandhi
 - Learn to slow down
 
 ## Postpartum Depression: It’s Normal
 
-- Man is so made that he can only find relaxation from one kind of labor by taking up another. — ANATOLE FRANCE, author of The Crime of SylvestreBonnard
+- Man is so made that he can only find relaxation from one kind of labor by taking up another. — ANATOLE FRANCE, author of The Crime of Sylvestre Bonnard
 - Too much free time is no more than fertilizer for self-doubt and assorted mental tail-chasing.
 
 ## Frustrations and Doubts: You’re Not Alone

@@ -2,7 +2,7 @@
 title: 'The Subtle Art of Not Giving a Fuck [But Not a review]'
 date: 2021-06-06
 path: /book-reviews/the-subtle-art-of-not-giving-a-fuck/
-excerpt: "We give too many fucks in our life. But the key to a good life is not giving a fuck about more; it's giving a fuck about less, giving a fuck about only what is true and immediate and important."
+excerpt: "We give too many fucks in our life. We care too much just about everything. In this book; 'The Subtle Art of Not Giving a Fuck', Mark Manson teaches us ways to lead a happier life by giving a fuck about less, giving a fuck about only what is true and immediate and important to us."
 image: ../../images/book-reviews/the-subtle-art-of-not-giving-a-fuck.webp
 categories: [book-reviews]
 tags: [quotes, not a review]
@@ -10,7 +10,9 @@ toc: true
 comments: true
 ---
 
-In life, we care too much. In Mark Manson's own fucking words "We give too many fucks in our life". This behaviour of ours makes us miserable and unhappy. So, what's the solution? The author says, the less fucks you give, happier you will be. In life, there is no such thing as not giving a fuck, because one way or the other we end up and have to give fuck about something. So, how to know, what to give the fuck about?
+In life, we care too much, about every single thing. In Mark Manson's own fucking words "We give too many fucks in our life". 
+
+This behavior of ours makes us miserable and unhappy. So, what's the solution? The author says, the less fucks you give, happier you will be. In life, there is no such thing as not giving a fuck, because one way or the other we end up and have to give fuck about something. So, how to know, what to give the fuck about?
 
 In "The Subtle Art of Not Giving a Fuck", Mark Manson teaches us ways to find what we truly care for. So that we can spend our life on giving a fuck about only those things and lead a happy life. If you lead a "normal" life, this book will blow your mind, because in this era where every self-help book is all about making you feel good; this book makes you confront "facts" of real life.
 
@@ -42,12 +44,12 @@ In "The Subtle Art of Not Giving a Fuck", Mark Manson teaches us ways to find wh
 #### Subtlety#2: To not give a fuck about adversity, you must first give a fuck about something more important than adversity.
 
 - If you find yourself consistently giving too many fucks about trivial shit that bothers you - your ex-boyfriend's new Facebook picture, how quickly the batteries die in the TV remote, missing out on yet another two-for-one sale on hand sanitizer - chances are you don't have much going on in your life to give a legitimate fuck about. And that's your real problem. Not the hand sanitizer. Not the TV remote.
-- I once heard an artist say that when a person has no problems, the mind automatically finds a way to invent some. I think what most people consider"life problems" are really just side effects of not having anything more important to worry about.
+- I once heard an artist say that when a person has no problems, the mind automatically finds a way to invent some. I think what most people consider "life problems" are really just side effects of not having anything more important to worry about.
 - It then follows that finding something important and meaningful in your life is perhaps the most productive use of your time and energy. Because if you don't find that meaningful something, your fucks will be given to meaningless and frivolous causes.
 
 #### Subtlety#3: Whether you are realizing or not, you are always choosing what to give a fuck about.
 
-- Maturity is what happens when one learns to only give a fuck about what's truly fuckworthy.
+- Maturity is what happens when one learns to only give a fuck about what's truly fuck worthy.
 
 ## Chapter 2: Happiness is a problem
 
@@ -81,7 +83,7 @@ In "The Subtle Art of Not Giving a Fuck", Mark Manson teaches us ways to find wh
 
 ### Choose Your Struggle
 
-- What determines your success isn't, "What do you want to enjoy?" The relevant question is, "What pain do you want to sustain?" The path to happiness is a path full of shitheaps and shame.
+- What determines your success isn't, "What do you want to enjoy?" The relevant question is, "What pain do you want to sustain?" The path to happiness is a path full of shit heaps and shame.
 - You want the reward and not the struggle. You want the result and not the process. You are in love with not the fight but only the victory. And life doesn't work that way.
 - Our struggles determine our success.
 
@@ -94,7 +96,7 @@ In "The Subtle Art of Not Giving a Fuck", Mark Manson teaches us ways to find wh
 
 ### The Tyranny of Exceptionalism
 
-- Most of us are pretty average at most things we do. Even if you're exceptional at one thing, chances are you're average or below average at most other things. That's just the nature of life. --> Tweeted
+- Most of us are pretty average at most things we do. Even if you're exceptional at one thing, chances are you're average or below average at most other things. That's just the nature of life.
 - To become truly great at something, you have to dedicate see shit-tons of time and energy to it. And because we all have limited time and energy, few of us ever become truly exceptional at more than one thing, if anything at all.
 - Brilliant businesspeople are often fuckups in their personal lives.
 - Many celebrities are probably just as clueless about life as the people who gawk at them and follow their every move.
@@ -134,7 +136,7 @@ In "The Subtle Art of Not Giving a Fuck", Mark Manson teaches us ways to find wh
 
 4. Staying Positive
 
-    While there is something to be said for "staying on the sunny side of life", the truth is, sometimes lifes sucks, and the healthiest thing you can do is admit to it.
+    While there is something to be said for "staying on the sunny side of life", the truth is, sometimes life sucks, and the healthiest thing you can do is admit to it.
 
     Denying negative emotions leads to experiencing deeper and more prolonged negative emotions and to emotional dysfunction. Constant positivity is a form of avoidance, not a valid solution to life's problem.
 
@@ -149,7 +151,7 @@ Some of the greatest moments of one's life are not pleasant, not successful, not
 - Bad values are 1) superstitious, 2) socially destructive, and 3) not immediate or controllable.
 
 - When we have poor values - that is, poor standards we set for ourselves and others - we are essentially giving fucks about the things that don't matter, things that in fact make our life worse. But when we choose better values, we are able to divert our fucks to something better - toward things that matter, things that improve the state of our well-being and that generate happiness, pleasure and success as side effects.
-- This, is what "self-improvement" is really about: prioritizing better values, choosing better things to give a fuck about. Because when you give better fucks, you get better problemss. And when you get better problems , you get a better life.
+- This, is what "self-improvement" is really about: prioritizing better values, choosing better things to give a fuck about. Because when you give better fucks, you get better problems. And when you get better problems , you get a better life.
 
 ## Chapter 5: You are Always Choosing
 
@@ -159,7 +161,7 @@ Some of the greatest moments of one's life are not pleasant, not successful, not
 ### The Choice
 
 - We don't always control what happens to us. But we always control how we interpret what happens to us, as well as how we respond.
-- Whether we like it or not, we are always taking an active role in what's occuring to and within us. We are always interpreting the meaning of every moment and every occurrence. We are always choosing the value by which live and the metrics by which we measure everything that happen to us. Often the same event can be good or bad, depending on the metrics we choose to use.
+- Whether we like it or not, we are always taking an active role in what's occurring to and within us. We are always interpreting the meaning of every moment and every occurrence. We are always choosing the value by which live and the metrics by which we measure everything that happen to us. Often the same event can be good or bad, depending on the metrics we choose to use.
 - In reality, there is no such thing as not giving a single fuck. It's impossible. We must all give a fuck about something. The real question is, What are we choosing to give a fuck about? What values are we choosing to base our actions on? What metrics are we choosing to use to measure our life? And are those good choices - good values and good metrics?
 
 ### The Responsibility/Fault Fallacy
@@ -211,7 +213,7 @@ Some of the greatest moments of one's life are not pleasant, not successful, not
         - Many people are able to ask themselves if they're wrong, but few are able to go the extra step and admit what it would mean if they were wrong. That's because the potential meaning behind our wrongness is often painful.
 
     Question #3: Would being wrong create a better or a worse problem than my current problem, for both myself and others?
-        - This is the litmus test for determining whether we've got some pretty solid values going on, or we're totally neurotic fuckwads taking our fucks out on everyone, including ourselves.
+        - This is the litmus test for determining whether we've got some pretty solid values going on, or we're totally neurotic fuck wads taking our fucks out on everyone, including ourselves.
         - The goal here is to look at which problem is better. Because after all, as Disappointment Panda said, life's problems are endless.
 
 ## Chapter 7: Failure is the Way Forward
@@ -288,15 +290,51 @@ Some of the greatest moments of one's life are not pleasant, not successful, not
 
 ## Chapter 9: ... And Then You Die
 
+- Death scares us. And because it scares us, we avoid thinking about it, talking about it, sometimes even acknowledging it, even when it's happening to someone close to us.
+
+    Yet, in a bizarre, backwards way, death is the light by which the shadow of all of life's meaning is measured, Without death, everything would feel inconsequential, all experience arbitrary, all metrics and values suddenly zero.
+
+### Something Beyond Our Selves
+
+Ernest Becker was an academic outcast. When he had colon cancer, he decided to write a book which would be about death.
+
+Becker died in 1974. His book _The Denial of Death_, would win the Pulitzer Prize and become one of the most influential intellectual works of the twentieth century.
+
+_The Denial of Death_ essentially makes two points:
+
+1. Humans are unique in that we're the only animals that can conceptualize and think about ourselves abstractly. Dog don't sit around and worry about their career. Cats don't think about their past mistakes or wonder what would have happened if they'd done something differently. Monkeys don't argue over future possibilities, just as fish don't sit around wondering if other fish would like them more if they had longer fins.
+
+    As humans, we're blesses with the ability to imagine ourselves in hypothetical situations, to contemplate both the past and the future, to imaging other realities or situations where things might be different. And it's because of this unique mental  ability, Becker says, that we all, at some point, become aware of the inevitability of our own death. Because we're able to conceptualize alternate versions of reality, we are the only animal capable of imagining a reality without ourselves in it.
+
+    This realization causes what Becker calls "death terror", a deep existential anxiety that underlies everything we think or do.
+
+2. Becker's second point starts with the premise that we essentially have two "selves". The first self is the physical self - the one that eats, sleeps, snores and poops. The second self is our conceptual self - our identity, or how we see ourselves.
+
+    Becker's argument is this: We are all aware on some level that our physical self will eventually die, that this death is inevitable, and that its inevitability _ on some unconscious level - scares the shit out of us. Therefore, in order to compensate for our fear of the inevitable loss of our physical self, we try to construct a conceptual self that will live forever. This is why people try so hard to put their names on buildings, on statues, on spines of books. It's why we feel compelled to spend so much time giving ourselves to others, especially to children, in the hopes that our influence - our conceptual self - will last way beyond our physical self. That we will be remembered and revered and idolized long after our physical self ceases to exist.
+
+    Becker called such efforts our "immortality projects, projects that allow our conceptual self to live on way past the point of our physical death. Whether it be through mastering an art form, conquering a new land, gaining great riches, or simply having a large and loving family that will live on for generations, _all the meaning in our life is shaped by this innate desire to never truly die._
+
+### The Sunny Side of Death
+
+- Nothing makes you present and mindful like being mere inches away from your own death.
+- "The fear of death follows from the fear of life. A man who lives fully is prepared to die at any time."
+- Confronting the reality of our own mortality is important because it obliterates all the crappy, fragile, superficial values in life. While most people whittle their days chasing another buck, or a little bit more fame and attention, or a little bit more assurance that they're right or loved, death confronts all of us with a far more painful and important question: What is your legacy?
+
+    How will the world be different and better when you're gone? What mark will you have made? What influence will you have caused? They say that a butterfly flapping its wings in Africa can cause a hurricane in Florida; well, what hurricane will you leave in your wake?
+
+    As Becker pointed out, this is arguably the only truly important question in our life. Yet we avoid thinking about it. One, because it's hard. Two, because it's scary. Three, because we have no fucking clue what we're doing.
+- Death is the only thing we know with any certainty. It is the correct answer to all of the questions we should ask but never do.
+- We are so materially well off, yet so psychologically tormented in so many low-level and shallow ways. People relinquish all responsibility, demanding that society cater to their feelings and sensibilities. People hold on to arbitrary certainties and try to enforce them on others, often violently, in the name of some made-up righteous cause. People, high on a sense of false superiority, fall into inaction and lethargy for fear of trying something worthwhile and failing at it.
+- Bukowski once wrote, "We're all going to die, all of us. What a circus! That alone should make us love each other, but it doesn't. We are terrorized and flattened by life's trivialities; we are eaten up by nothing."
 - 
 
 ## Conclusion
 
-I love this book because Mark throws all the facts straight to my face, unlike every other "make you feel good" book. When someone throws so many "Fucks" at me, I surely won't like it, but this book made me comfortable with this word "Fuck". 
+I love this book because Mark throws all the facts straight to my face, unlike every other "make you feel good" book. If you allergic to the "Fuck" word, fret not, after reading this book, you will be comfortable with it.
 
-There are hard truths, a lot of stories and all facts in this book. Worth every minute.
+There are hard truths, a lot of stories and all facts in this book. This book stands out from the crowd. Worth every minute.
 
-Hope you learnt something from the extract. Thank you for reading.
+Hope you learnt something new. Thank you for reading.
 
 **Image Credits:** Cover Image by <a href="https://unsplash.com/@jasonhogan?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText" target="_blank">Jason Hogan</a> from <a href="https://unsplash.com/s/photos/freedom?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText" target="_blank">Unsplash</a>
   

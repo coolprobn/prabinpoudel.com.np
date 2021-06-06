@@ -2,7 +2,7 @@
 title: 'Zero to One [But Not a review]'
 date: 2021-06-06
 path: /book-reviews/zero-to-one/
-excerpt: 'Zero to One by Peter Thiel is a book on entrepreneurship. Ever new creation goes from 0 to 1. This book teaches you how to get there. If you are copying then you are not learning.'
+excerpt: 'Zero to One by Peter Thiel is a book on entrepreneurship. Every new creation goes from 0 to 1. This book teaches you how to get there. If you are copying then you are not learning.'
 image: ../../images/book-reviews/zero-to-one.webp
 categories: [book-reviews]
 tags: [quotes, not a review]
