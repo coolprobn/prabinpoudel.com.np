@@ -5,7 +5,7 @@ path: /book-reviews/top-quotes-and-important-points-from-atomic-habits/
 excerpt: 'Atomic Habit, a book by James Clear is a must read for anyone wanting to change or create a habit. Today, I list out some quotes and most important points talked about in the book.'
 image: ../../images/book-reviews/top-quotes-and-important-points-from-atomic-habits.webp
 categories: [book-reviews]
-tags: [quotes]
+tags: [quotes, not a review]
 toc: true
 comments: true
 ---

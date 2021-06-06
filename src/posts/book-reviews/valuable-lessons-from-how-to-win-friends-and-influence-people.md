@@ -5,7 +5,7 @@ path: /book-reviews/valuable-lessons-from-how-to-win-friends-and-influence-peopl
 excerpt: 'How to Win Friends And Influence People, a book by Dale Carnegie packs a lot of techniques which can help us in winning over other people. Today we will be talking about all the valuable techniques, the author has provided to us.'
 image: ../../images/book-reviews/valuable-lessons-from-how-to-win-friends-and-influence-people.webp
 categories: [book-reviews]
-tags: [quotes]
+tags: [quotes, not a review]
 toc: true
 comments: true
 last_modified_at: 2021-06-03

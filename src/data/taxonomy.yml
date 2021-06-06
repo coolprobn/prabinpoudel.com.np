@@ -44,6 +44,10 @@
   html: |
     <p>Small, bite sized content I've written. For longer, more thorough writing &mdash; peruse the <a href="/articles/">articles section</a>.</p>
 
+- id: not a review
+  excerpt:
+  html:
+
 - id: quotes
   excerpt:
   html:
