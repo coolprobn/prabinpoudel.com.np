@@ -1,9 +1,9 @@
-import React from 'react'
-import Helmet from 'react-helmet'
-import PropTypes from 'prop-types'
-import { useStaticQuery, graphql } from 'gatsby'
-import OpenGraph from './open-graph'
-import TwitterCard from './twitter-card'
+import React from 'react';
+import Helmet from 'react-helmet';
+import PropTypes from 'prop-types';
+import { useStaticQuery, graphql } from 'gatsby';
+import OpenGraph from './open-graph';
+import TwitterCard from './twitter-card';
 
 const SEO = ({
   title,
@@ -15,9 +15,9 @@ const SEO = ({
   datePublished,
   dateModified,
   canonical,
-  canonicalUrl
+  canonicalUrl,
 }) => {
-  const { site } = useStaticQuery(query)
+  const { site } = useStaticQuery(query);
 
   const {
     buildTime,
@@ -36,14 +36,14 @@ const SEO = ({
       twitter,
       facebook,
     },
-  } = site
+  } = site;
 
   const seo = {
     title: title || defaultTitle,
     description: description || defaultDescription,
     image: `${siteUrl}${metaImage.src || defaultBanner}`,
     url: `${siteUrl}${path || ''}`,
-  }
+  };
 
   // schema.org in JSONLD format
   // https://developers.google.com/search/docs/guides/intro-structured-data
@@ -82,9 +82,9 @@ const SEO = ({
       '@type': 'ImageObject',
       url: seo.image,
     },
-  }
+  };
 
-  let schemaArticle = null
+  let schemaArticle = null;
 
   if (article) {
     schemaArticle = {
@@ -118,7 +118,7 @@ const SEO = ({
         url: seo.image,
       },
       mainEntityOfPage: seo.url,
-    }
+    };
   }
 
   return (
@@ -164,9 +164,9 @@ const SEO = ({
       />
     </>
   );
-}
+};
 
-export default SEO
+export default SEO;
 
 SEO.propTypes = {
   title: PropTypes.string,
@@ -180,7 +180,7 @@ SEO.propTypes = {
   }),
   path: PropTypes.string,
   article: PropTypes.bool,
-}
+};
 
 SEO.defaultProps = {
   title: null,
@@ -190,7 +190,7 @@ SEO.defaultProps = {
   metaImage: null,
   path: null,
   article: false,
-}
+};
 
 const query = graphql`
   query SEO {
@@ -218,4 +218,4 @@ const query = graphql`
       }
     }
   }
-`
+`;

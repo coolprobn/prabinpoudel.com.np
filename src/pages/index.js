@@ -1,7 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { graphql, Link } from 'gatsby';
-import Img from 'gatsby-image';
+import { GatsbyImage, getImage } from 'gatsby-plugin-image';
+
 import Layout from '../components/layout';
 import SEO from '../components/seo';
 import Entry from '../components/entry';
@@ -53,8 +54,9 @@ const HomePage = ({ data }) => {
             </p>
           </div>
 
-          <Img
-            fluid={data.aboutImage.childImageSharp.fluid}
+          <GatsbyImage
+            image={getImage(data.aboutImage)}
+            alt="hero section"
             className={style.cover}
             backgroundColor="var(--input-background-color)"
           />
@@ -113,7 +115,7 @@ const HomePage = ({ data }) => {
                 frontmatter: {
                   title,
                   date,
-                  date_pretty,
+                  date_pretty: datePretty,
                   path,
                   author,
                   excerpt,
@@ -126,7 +128,7 @@ const HomePage = ({ data }) => {
                   key={id}
                   title={title}
                   date={date}
-                  datePretty={date_pretty}
+                  datePretty={datePretty}
                   path={path}
                   author={author || siteAuthor}
                   timeToRead={timeToRead}
@@ -191,7 +193,7 @@ const HomePage = ({ data }) => {
 };
 
 HomePage.propTypes = {
-  data: PropTypes.object.isRequired,
+  data: PropTypes.shape.isRequired,
 };
 
 export const pageQuery = graphql`
@@ -227,9 +229,12 @@ export const pageQuery = graphql`
             categories
             image {
               childImageSharp {
-                fluid(maxWidth: 400, maxHeight: 250, quality: 100) {
-                  ...GatsbyImageSharpFluid_noBase64
-                }
+                gatsbyImageData(
+                  width: 400
+                  height: 250
+                  quality: 100
+                  formats: [AUTO, WEBP]
+                )
               }
             }
           }
@@ -238,9 +243,12 @@ export const pageQuery = graphql`
     }
     aboutImage: file(relativePath: { eq: "landing-page-hero.jpeg" }) {
       childImageSharp {
-        fluid(maxWidth: 720, maxHeight: 500, quality: 75) {
-          ...GatsbyImageSharpFluid_noBase64
-        }
+        gatsbyImageData(
+          quality: 75
+          placeholder: BLURRED
+          formats: [AUTO, WEBP]
+          layout: FULL_WIDTH
+        )
       }
     }
   }

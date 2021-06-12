@@ -1,10 +1,10 @@
-import React from 'react'
-import Layout from '../components/layout'
-import SEO from '../components/seo'
+import React from 'react';
+import Layout from '../components/layout';
+import SEO from '../components/seo';
 
-import style from '../styles/archive.module.css'
+import style from '../styles/archive.module.css';
 
-import site from '../../config/site'
+import site from '../../config/site';
 
 const NotFoundPage = () => (
   <Layout>
@@ -24,6 +24,6 @@ const NotFoundPage = () => (
       </div>
     </main>
   </Layout>
-)
+);
 
-export default NotFoundPage
+export default NotFoundPage;

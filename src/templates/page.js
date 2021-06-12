@@ -25,7 +25,10 @@ const PageTemplate = ({ data }) => {
     id,
     html,
   } = data.markdownRemark;
-  const metaImage = image ? image.childImageSharp.fixed : site.image;
+
+  const metaImage = image
+    ? image.childImageSharp.gatsbyImageData.images.fallback
+    : site.image;
   const twitterCardType = image ? 'summary_large_image' : 'summary';
 
   return (
@@ -68,7 +71,7 @@ PageTemplate.propTypes = {
 };
 
 export const pageQuery = graphql`
-  query($path: String) {
+  query ($path: String) {
     markdownRemark(frontmatter: { path: { eq: $path } }) {
       frontmatter {
         title
@@ -82,14 +85,12 @@ export const pageQuery = graphql`
         toc
         image {
           childImageSharp {
-            fluid(maxWidth: 1100, quality: 75) {
-              ...GatsbyImageSharpFluid_noBase64
-            }
-            fixed(width: 1100, quality: 75) {
-              src
-              height
-              width
-            }
+            gatsbyImageData(
+              quality: 75
+              placeholder: BLURRED
+              formats: [AUTO, WEBP]
+              layout: FULL_WIDTH
+            )
           }
         }
       }

@@ -1,22 +1,22 @@
-import React from 'react'
-import PropTypes from 'prop-types'
-import { graphql } from 'gatsby'
-import Layout from '../components/layout'
-import SEO from '../components/seo'
-import Entry from '../components/entry'
-import Repository from '../components/repository'
+import React from 'react';
+import PropTypes from 'prop-types';
+import { graphql } from 'gatsby';
+import Layout from '../components/layout';
+import SEO from '../components/seo';
+import Entry from '../components/entry';
 
-import style from '../styles/archive.module.css'
+import style from '../styles/archive.module.css';
 
-import site from '../../config/site'
+import site from '../../config/site';
 
 const WorksPage = ({ data }) => {
   const {
     site: {
       siteMetadata: { author: siteAuthor },
     },
-    allMarkdownRemark: { edges: posts }
-  } = data
+    allMarkdownRemark: { edges: posts },
+  } = data;
+
   return (
     <Layout>
       <SEO
@@ -45,7 +45,7 @@ const WorksPage = ({ data }) => {
                 id,
                 excerpt: autoExcerpt,
                 frontmatter: { title, path, author, image, excerpt },
-              } = node
+              } = node;
 
               return (
                 <Entry
@@ -56,18 +56,18 @@ const WorksPage = ({ data }) => {
                   image={image}
                   excerpt={excerpt || autoExcerpt}
                 />
-              )
+              );
             })}
           </div>
         </div>
       </main>
     </Layout>
-  )
-}
+  );
+};
 
 WorksPage.propTypes = {
   data: PropTypes.object.isRequired,
-}
+};
 
 export const pageQuery = graphql`
   query WorksQuery {
@@ -111,6 +111,6 @@ export const pageQuery = graphql`
       }
     }
   }
-`
+`;
 
-export default WorksPage
+export default WorksPage;

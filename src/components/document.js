@@ -1,11 +1,11 @@
-import React from 'react'
-import PropTypes from 'prop-types'
-import { Link } from 'gatsby'
-import Img from 'gatsby-image'
+import React from 'react';
+import PropTypes from 'prop-types';
+import { Link } from 'gatsby';
+import { GatsbyImage, getImage } from 'gatsby-plugin-image';
 
-import style from '../styles/document.module.css'
+import style from '../styles/document.module.css';
 
-const _ = require('lodash-addons')
+const _ = require('lodash-addons');
 
 const Document = ({
   title,
@@ -21,92 +21,91 @@ const Document = ({
   tableOfContents,
   tags,
   html,
-}) => {
-  return (
-    <article className={`${style.document} h-entry`}>
-      <div className={style.title}>
-        <h1 className={`${style.heading} p-name`}>{title}</h1>
-        <div className={style.meta}>
-          <div style={{ display: hideMeta && `none` }}>
-            <span>
-              {author && (
-                <>
-                  {dateModified ? `Updated` : `Published`}{' '}
-                  <span style={{ display: 'none' }}>
-                    by{' '}
-                    <a className="p-author h-card" href={author.url}>
-                      {author.name}
-                    </a>
-                  </span>
-                </>
-              )}
-              {datePublished && (
-                <span style={{ display: dateModified && `none` }}>
-                  {' '}
-                  <time className="dt-published" dateTime={datePublished}>
-                    {dateFromNow}
-                  </time>
-                </span>
-              )}
-              {dateModified && (
-                <>
-                  {' '}
-                  <time className="dt-updated" dateTime={dateModified}>
-                    {dateModifiedFromNow}
-                  </time>
-                </>
-              )}
-            </span>
-            {timeToRead && (
+}) => (
+  <article className={`${style.document} h-entry`}>
+    <div className={style.title}>
+      <h1 className={`${style.heading} p-name`}>{title}</h1>
+      <div className={style.meta}>
+        <div style={{ display: hideMeta && `none` }}>
+          <span>
+            {author && (
               <>
-                {' '}
-                <span className={style.readTime}>
-                  {timeToRead}&nbsp;min&nbsp;read
+                {dateModified ? `Updated` : `Published`}{' '}
+                <span style={{ display: 'none' }}>
+                  by{' '}
+                  <a className="p-author h-card" href={author.url}>
+                    {author.name}
+                  </a>
                 </span>
               </>
             )}
-          </div>
-          {tags ? (
-            <div className={style.tags}>
-              {tags.map(tag => (
-                <Link
-                  className={style.tag}
-                  to={`/tag/${_.slugify(tag)}/`}
-                  key={_.slugify(tag)}
-                >
-                  <span>#{tag}</span>
-                </Link>
-              ))}
-            </div>
-          ) : null}
+            {datePublished && (
+              <span style={{ display: dateModified && `none` }}>
+                {' '}
+                <time className="dt-published" dateTime={datePublished}>
+                  {dateFromNow}
+                </time>
+              </span>
+            )}
+            {dateModified && (
+              <>
+                {' '}
+                <time className="dt-updated" dateTime={dateModified}>
+                  {dateModifiedFromNow}
+                </time>
+              </>
+            )}
+          </span>
+          {timeToRead && (
+            <>
+              {' '}
+              <span className={style.readTime}>
+                {timeToRead}&nbsp;min&nbsp;read
+              </span>
+            </>
+          )}
         </div>
+        {tags ? (
+          <div className={style.tags}>
+            {tags.map((tag) => (
+              <Link
+                className={style.tag}
+                to={`/tag/${_.slugify(tag)}/`}
+                key={_.slugify(tag)}
+              >
+                <span>#{tag}</span>
+              </Link>
+            ))}
+          </div>
+        ) : null}
       </div>
+    </div>
 
-      {image && (
-        <Img
-          fluid={image.childImageSharp.fluid}
-          className={style.cover}
-          backgroundColor="var(--input-background-color)"
-        />
-      )}
-
-      {toc && (
-        <details className={style.tocWrap}>
-          <summary className={style.tocTitle}>Table of contents</summary>
-          <div
-            className={style.toc}
-            dangerouslySetInnerHTML={{ __html: tableOfContents }}
-          />
-        </details>
-      )}
-
-      <div
-        className={`${style.content} e-content`}
-        dangerouslySetInnerHTML={{ __html: html }}
+    {image && (
+      <GatsbyImage
+        image={getImage(image)}
+        alt={`cover: ${title}`}
+        className={style.cover}
+        backgroundColor="var(--input-background-color)"
       />
-    </article>
-  )
-}
+    )}
+
+    {toc && (
+      <details className={style.tocWrap}>
+        <summary className={style.tocTitle}>Table of contents</summary>
+        <div
+          className={style.toc}
+          dangerouslySetInnerHTML={{ __html: tableOfContents }}
+        />
+      </details>
+    )}
+
+    <div
+      className={`${style.content} e-content`}
+      dangerouslySetInnerHTML={{ __html: html }}
+    />
+  </article>
+);
 
 Document.propTypes = {
   title: PropTypes.string,
@@ -122,6 +121,6 @@ Document.propTypes = {
   tableOfContents: PropTypes.string,
   html: PropTypes.string,
   tags: PropTypes.array,
-}
+};
 
-export default Document
+export default Document;
