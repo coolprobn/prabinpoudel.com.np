@@ -244,11 +244,10 @@ export const pageQuery = graphql`
     aboutImage: file(relativePath: { eq: "landing-page-hero.jpeg" }) {
       childImageSharp {
         gatsbyImageData(
-          width: 720
-          height: 500
           quality: 75
           placeholder: BLURRED
           formats: [AUTO, WEBP]
+          layout: FULL_WIDTH
         )
       }
     }
