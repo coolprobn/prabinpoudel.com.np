@@ -141,7 +141,7 @@ Categories.propTypes = {
 };
 
 export const postsQuery = graphql`
-  query($limit: Int!, $skip: Int!, $category: String!) {
+  query ($limit: Int!, $skip: Int!, $category: String!) {
     site {
       siteMetadata {
         author {
@@ -187,9 +187,12 @@ export const postsQuery = graphql`
             categories
             image {
               childImageSharp {
-                fluid(maxWidth: 760, quality: 75) {
-                  ...GatsbyImageSharpFluid_noBase64
-                }
+                gatsbyImageData(
+                  width: 760
+                  quality: 75
+                  placeholder: BLURRED
+                  formats: [AUTO, WEBP]
+                )
               }
             }
           }

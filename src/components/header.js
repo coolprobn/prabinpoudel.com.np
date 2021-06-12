@@ -2,12 +2,11 @@ import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'gatsby';
 import { Helmet } from 'react-helmet';
+import { StaticImage } from 'gatsby-plugin-image';
 
 import Menu from './menu';
 
 import style from '../styles/header.module.css';
-
-import BlogLogo from '../images/blog-logo.png';
 
 const Header = (props) => {
   const { mainMenu, defaultTheme } = props;
@@ -45,32 +44,13 @@ const Header = (props) => {
           }`}
         />
       </Helmet>
-      <nav className={style.skipLinks}>
-        <ul>
-          <li>
-            <a href="#nav-primary" className={style.shortcut}>
-              Skip to primary navigation
-            </a>
-          </li>
-          <li>
-            <a href="#main" className={style.shortcut}>
-              Skip to content
-            </a>
-          </li>
-          <li>
-            <a href="#footer" className={style.shortcut}>
-              Skip to footer
-            </a>
-          </li>
-        </ul>
-      </nav>
       <header className={style.header}>
         <div className={style.name}>
           <Link to="/" className={style.blogLogoLink}>
-            <img
-              data-src={BlogLogo}
+            <StaticImage
+              src="../images/blog-logo.png"
               alt="blog-logo"
-              className={`${style.blogLogo}  lazyload`}
+              className={style.blogLogo}
             />
           </Link>
         </div>

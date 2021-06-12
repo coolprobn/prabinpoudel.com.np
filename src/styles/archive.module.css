@@ -20,7 +20,7 @@
 
     @supports (display: grid) {
       display: grid;
-      grid-template-columns: auto 35rem 15rem auto; /* main content equal to var(--container-width) */
+      grid-template-columns: 4.6rem 35rem 15rem auto; /* main content equal to var(--container-width) */
       width: 100%; /* override */
       max-width: 100%; /* override */
       margin-top: 0;

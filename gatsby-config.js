@@ -136,6 +136,7 @@ module.exports = {
       },
     },
     'gatsby-plugin-css-customs',
+    'gatsby-plugin-image',
     'gatsby-transformer-sharp',
     {
       resolve: 'gatsby-plugin-sharp',
@@ -316,9 +317,11 @@ module.exports = {
                         date
                         image {
                           childImageSharp {
-                            fixed(width: 1100) {
-                              src
-                            }
+                            gatsbyImageData(
+                              width: 1100
+                              placeholder: BLURRED
+                              formats: [AUTO, WEBP]
+                            )
                           }
                         }
                       }
@@ -341,8 +344,8 @@ module.exports = {
                 const imageElement = image
                   ? `<p><img src="${
                       site.siteMetadata.siteUrl +
-                      image.childImageSharp.fixed.src
-                    }" alt=""></p>`
+                      image.childImageSharp.gatsbyImageData.images.fallback.src
+                    }" alt="cover: ${title}"></p>`
                   : ``;
                 let mainContent = html;
 

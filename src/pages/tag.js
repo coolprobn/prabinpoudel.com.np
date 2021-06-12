@@ -1,24 +1,24 @@
-import { graphql, Link } from 'gatsby'
-import PropTypes from 'prop-types'
-import React from 'react'
-import Layout from '../components/layout'
-import SEO from '../components/seo'
+import { graphql, Link } from 'gatsby';
+import PropTypes from 'prop-types';
+import React from 'react';
+import Layout from '../components/layout';
+import SEO from '../components/seo';
 
-import site from '../../config/site'
+import site from '../../config/site';
 
-import style from '../styles/archive.module.css'
+import style from '../styles/archive.module.css';
 
-const _ = require('lodash-addons')
+const _ = require('lodash-addons');
 
-const metaImage = site.image
+const metaImage = site.image;
 
 // Sort object alphabetically function
-const propComparator = propName => (a, b) =>
-a[propName].toLowerCase() == b[propName].toLowerCase()
-  ? 0
-  : a[propName].toLowerCase() < b[propName].toLowerCase()
-  ? -1
-  : 1
+const propComparator = (propName) => (a, b) =>
+  a[propName].toLowerCase() == b[propName].toLowerCase()
+    ? 0
+    : a[propName].toLowerCase() < b[propName].toLowerCase()
+    ? -1
+    : 1;
 
 const TagsPage = ({
   data: {
@@ -42,7 +42,7 @@ const TagsPage = ({
         <h2 className={style.subHeading}>Browse by topic</h2>
         <div className={style.columnList}>
           <ul>
-            {group.sort(propComparator(`fieldValue`)).map(tag => (
+            {group.sort(propComparator(`fieldValue`)).map((tag) => (
               <li key={tag.fieldValue}>
                 <Link to={`/tag/${_.slugify(tag.fieldValue)}/`}>
                   <strong>{tag.fieldValue}</strong>{' '}
@@ -55,11 +55,11 @@ const TagsPage = ({
       </div>
     </main>
   </Layout>
-)
+);
 
 TagsPage.propTypes = {
   data: PropTypes.object.isRequired,
-}
+};
 
 export const pageQuery = graphql`
   query TagsQuery {
@@ -70,6 +70,6 @@ export const pageQuery = graphql`
       }
     }
   }
-`
+`;
 
-export default TagsPage
+export default TagsPage;

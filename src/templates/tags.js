@@ -116,7 +116,7 @@ Tags.propTypes = {
 };
 
 export const postsQuery = graphql`
-  query($limit: Int!, $skip: Int!, $tag: String!) {
+  query ($limit: Int!, $skip: Int!, $tag: String!) {
     site {
       siteMetadata {
         author {
@@ -153,9 +153,12 @@ export const postsQuery = graphql`
             excerpt
             image {
               childImageSharp {
-                fluid(maxWidth: 760, quality: 75) {
-                  ...GatsbyImageSharpFluid_noBase64
-                }
+                gatsbyImageData(
+                  width: 760
+                  quality: 75
+                  placeholder: BLURRED
+                  formats: [AUTO, WEBP]
+                )
               }
             }
           }
