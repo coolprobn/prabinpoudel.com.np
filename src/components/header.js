@@ -10,10 +10,21 @@ import style from '../styles/header.module.css';
 import BlogLogo from '../images/blog-logo.png';
 
 const Header = (props) => {
-  const { siteTitle, mainMenu, defaultTheme } = props;
-  const defaultThemeState =
+  const { mainMenu, defaultTheme } = props;
+  let defaultThemeState =
     (typeof window !== 'undefined' && window.localStorage.getItem('theme')) ||
     null;
+
+  if (
+    defaultThemeState == null &&
+    typeof window !== 'undefined' &&
+    window.matchMedia &&
+    window.matchMedia('(prefers-color-scheme: dark)').matches
+  ) {
+    defaultThemeState = 'dark';
+    window.localStorage.setItem('theme', 'dark');
+  }
+
   const [userTheme, changeTheme] = useState(defaultThemeState);
   const onChangeTheme = () => {
     const alternateTheme =
@@ -70,7 +81,6 @@ const Header = (props) => {
 };
 
 Header.propTypes = {
-  siteTitle: PropTypes.string,
   defaultTheme: PropTypes.string,
   mainMenu: PropTypes.arrayOf(
     PropTypes.shape({

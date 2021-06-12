@@ -7,7 +7,7 @@ image: ../../images/notes/fix-ruby-with-rbenv-install-issue-in-m1-mac/cover.webp
 categories: [notes]
 tags: [ruby, rbenv]
 toc: true
-featured: true
+featured: false
 comments: true
 ---
 
