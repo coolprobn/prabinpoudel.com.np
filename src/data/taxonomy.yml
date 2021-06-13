@@ -18,6 +18,10 @@
   excerpt:
   html:
 
+- id: factory bot
+  excerpt:
+  html:
+
 - id: gatsby
   excerpt:
   html:
@@ -77,6 +81,10 @@
   html:
 
 - id: strapi
+  excerpt:
+  html:
+
+- id: testing
   excerpt:
   html:
 
