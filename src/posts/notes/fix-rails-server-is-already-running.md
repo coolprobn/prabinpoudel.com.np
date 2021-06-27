@@ -5,7 +5,7 @@ path: /notes/fix-rails-server-is-already-running/
 excerpt: "A server is already running. Check .../tmp/pids/server.pid This error means the rails server suspended or stopped abruptly, due to which background process is already running on the port that rails server was previously running on."
 image: ../../images/notes/fix-rails-server-is-already-running.webp
 categories: [notes]
-tags: [rails]
+tags: [ruby on rails]
 toc: true
 featured: true
 comments: true
