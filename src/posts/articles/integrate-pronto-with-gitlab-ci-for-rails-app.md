@@ -7,7 +7,7 @@ image: ../../images/articles/integrate-pronto-with-gitlab-ci-for-rails-app.webp
 categories: [articles]
 tags: [ruby on rails, rubocop, lint, automated code review]
 toc: true
-featured: true
+featured: false
 comments: true
 last_modified_at: 2021-05-31
 ---
