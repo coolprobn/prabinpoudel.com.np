@@ -7,7 +7,7 @@ image: ../../images/notes/fix-rails-server-is-already-running.webp
 categories: [notes]
 tags: [ruby on rails]
 toc: true
-featured: true
+featured: false
 comments: true
 ---
 
