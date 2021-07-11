@@ -7,7 +7,7 @@ image: ../../images/notes/fix-rails-auto-increment-id-postgres-error.webp
 categories: [notes]
 tags: [ruby on rails, postgresql]
 toc: true
-featured: true
+featured: false
 comments: true
 ---
 
