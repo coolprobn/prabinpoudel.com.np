@@ -7,7 +7,7 @@ image: ../../images/notes/override-default-date-format-in-rails-admin.webp
 categories: [notes]
 tags: [ruby on rails, rails admin]
 toc: true
-featured: true
+featured: false
 comments: true
 ---
 
