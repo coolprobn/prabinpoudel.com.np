@@ -326,7 +326,7 @@ Add the following inside:
 
 Fire up the rails server `rails s` and go to `localhost:3000/search`, you will see a view with search box in it like this:
 
-![Stream hello world 5 times](../../images/articles/search-engine-with-rails/empty-search-view.webp)
+![Empty Search View](../../images/articles/search-engine-with-rails/empty-search-view.webp)
 
 Type relevant text e.g. "ruby" and hit search.
 
@@ -334,12 +334,12 @@ Tada 🎉
 
 You will see search results grouped by model name and link to individual record's detail page like this:
 
-![Stream hello world 5 times](../../images/articles/search-engine-with-rails/search-results-grouped-by-model-name.webp)
+![Search result are grouped by model name](../../images/articles/search-engine-with-rails/search-results-grouped-by-model-name.webp)
 
 
 If there are no results you will see "No results found for [query]" like this:
 
-![Stream hello world 5 times](../../images/articles/search-engine-with-rails/results-not-found.webp)
+![Results not found](../../images/articles/search-engine-with-rails/results-not-found.webp)
 
 Since there aren't any APIs and required Views for other features, link will not work at the moment.
 
@@ -472,7 +472,7 @@ Your final view will look like this:
 
 You can search again for the same query and you will see the highlighted text like this:
 
-![Stream hello world 5 times](../../images/articles/search-engine-with-rails/highlighted-search-results.webp)
+![Highlighted search results](../../images/articles/search-engine-with-rails/highlighted-search-results.webp)
 
 ## Improve the app further
 
