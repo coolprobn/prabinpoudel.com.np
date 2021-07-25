@@ -1,8 +1,8 @@
 ---
 title: 'Search Engine with Rails'
-date: 2021-07-11
+date: 2021-07-25
 path: /articles/search-engine-with-rails/
-excerpt: "...."
+excerpt: "Yes! You can create a full functioning search engine with Rails. In this tutorial you will be learning how to create a search engine with Rails by using elasticsearch. You will learn to configure elasticsearch in the rails app, create search view to search and show results and bonus feature of highlighting matched texts like Google does in it's search results."
 image: ../../images/articles/search-engine-with-rails.webp
 categories: [articles]
 tags: [ruby on rails]
@@ -11,55 +11,57 @@ featured: true
 comments: true
 ---
 
-## Dependencies
+I had always wondered "How do I search through the relational database, in any table, in any column and get the related result?". After searching for a bit, I reached to the conclusion **YOU DON'T**.
 
-Update these as required when writing article. Should go inside app setup section.
-
-Docker
-Redis
-
-Run redis:
-
-once: /opt/homebrew/opt/redis/bin/redis-server /opt/homebrew/etc/redis.conf
-always in background: brew services start redis
+Searching through more than one table and add to that, more than one column is very complex with relational database. That's where Elasticsearch comes into play. Elasticsearch stores all records in documents and provides search functionality that is very fast.
 
 __DISCLAIMER__
 
-We will not actually be building another search engine for the web like Google. What we will be building is a search engine for our Rails App so that we can search for any string inside any table in our app. This will help us in adding app wide search.
+Before we move into the implementation part of the tutorial, I want to make this clear:
 
-## Configuring Elastic search
+> This is not the tutorial for building the web search engine like Google. What you will be building is a search engine for the Rails App where you can search for any string inside any table in the app. This will help you in adding the functionality of app wide search.
 
-TODO: this is only for Mac, need link to the installation path for all other platforms
+Now then, let's create a search engine for our Rails App.
 
-### Install Elastic search in Mac with Homebrew
+## Clone the example Rails app
 
-https://www.elastic.co/guide/en/elasticsearch/reference/current/brew.html 
+I have prepared an example app for making it more easier to follow through the tutorial and pushed to Github. You can clone it from <a href="https://flaviocopes.com/redis-installation/"  target="_blank" rel="noopener">here</a>.
 
-1. Update home-brew
+Or with the following command:
 
-	`brew tap elastic/tap`
+```cmd
+  git clone git@github.com:coolprobn/rails-search-engine.git
+```
 
-2. Install elastic search
+## Configure Elasticsearch
 
-	`brew install elastic/tap/elasticsearch-full`
+### Install Elasticsearch
 
-### Run Elastic Search Server
+You can install Elasticsearch by following instructions in the <a href="https://www.elastic.co/guide/en/elasticsearch/reference/current/install-elasticsearch.html" target="_blank" rel="noopener">official website</a>.
+
+### Run Elasticsearch Server
+
+When you have installed Elasticsearch in your machine, you will also be presented with commands to run the server. You can also find commands to run Elasticsearch for your OS <a href="https://www.elastic.co/guide/en/elasticsearch/reference/current/starting-elasticsearch.html" target="_blank" rel="noopener">here</a>.
+
+Following command is for MacOS where I installed Elasticsearch with Homebrew:
 
 1. Run only once
 
 	`elasticsearch`
 
-2. Automatically run on background and on machine restart
+2. Run in background and on machine restart
 
 	`brew services start elastic/tap/elasticsearch-full`
 
-### Check if Elastic Search is working
+_NOTE_: It can take some time to fully start the server.
 
-You can check if Elastic Search is working by opening localhost in port 9200 in the browser:
+### Check if Elasticsearch is working
+
+You can check if Elasticsearch is working by opening localhost on port **9200** in your browser:
 
 `http://localhost:9200/`
 
-You should see similar content like below:
+You should see content similar to this:
 
 ```
 {
@@ -81,165 +83,178 @@ You should see similar content like below:
 }
 ```
 
-## Install Kibana to visualize documents
+## Install elasticsearch in the app
 
-Mac with home-brew: https://www.elastic.co/guide/en/kibana/7.13/brew.html 
-Download for any device: https://www.elastic.co/downloads/kibana 
+Add the following to your `Gemfile.rb`
 
-### Run once or in background
-
-To have launchd start elastic/tap/kibana-full now and restart at login:
-  brew services start elastic/tap/kibana-full
-Or, if you don't want/need a background service you can just run:
-  kibana
-
-## Creating a Rails App
-
-- Create an app
-- Create models for it (Maybe blog app will be a good one with models: User (Author and normal users), Article, Comment, Tag/Category) -> In blog say I have this model and don't show the process of creating all these, you can provide link for the download if users are interested (Setup the project in Github after configuring, maybe a branch since master will have full search capability once the blog is completed)
-
-## Installing elastic search gems
-
-In Gemfile, add:
-
-```rb
-	# Elastic search for powerful searching
-	gem 'elasticsearch-model'
-	gem 'elasticsearch-rails'
+```ruby
+# Elasticsearch for powerful searching
+gem 'elasticsearch-model'
+gem 'elasticsearch-rails'
 ```
 
-## Adding Elastic Search to Models
+Install gems with `bundle install`
 
-Add following to all the models you require elastic search capability in:
+## Add Elasticsearch to Models
 
-```rb
-	include Elasticsearch::Model
-   	include Elasticsearch::Model::Callbacks
+Add following to all the models. At present, there are three models inside the app; Author, Article and Category.
+
+Example for Author model:
+
+```ruby
+class Author < ApplicationRecord
+  include Elasticsearch::Model
+  include Elasticsearch::Model::Callbacks
+end
 ```
 
-Cumbersome, right? We can refactor this by creating a concern called Searchable, which will extend the capability of models to be searched. By configure everything related to Elastic Search in this module, it lets us write DRY (Don't Repeat Yourself) code
+This will allow the models in the app to be searched through elasticsearch.
 
-## Creating Searchable module
+## Create Searchable module
 
-	```rb
-		# app/models/concerns/searchable.rb
+Hmm, that was cumbersome 😪. You can refactor and DRY the code by creating a concern called **Searchable** and just include that module in all models. This module can also have other configurations required to make the search more powerful.
 
-		module Searchable
-  			extend ActiveSupport::Concern
+Create the concern inside `app/models/concerns/searchable.rb` and add the following
 
-  			included do
-   				include Elasticsearch::Model
-   				include Elasticsearch::Model::Callbacks
-  			end
-		end
-	```
+```ruby
+module Searchable
+  extend ActiveSupport::Concern
 
-### Including Searchable module in required models
-
-E.g.
-
-```User
-	include Searchable
+  included do
+    include Elasticsearch::Model
+    include Elasticsearch::Model::Callbacks
+  end
+end
 ```
 
-Now all the codes inside Searchable module will be accessible to our models where we have included the module.
+### Include Searchable module in required models
 
-## Indexing database records of required models/tables
+Now, you can include the **Searchable** module in the models, at the moment there are there are three models in the app: Author, Article and Category, you can include the module as required in each one of them.
 
-### Create a rake task that can automate the indexing process for us:
+Example for Author model:
 
-```rb
-	#  lib/tasks/elastic_search.rb
+```ruby
+# app/models/author.rb
+class Author < ApplicationRecord
+  include Searchable
 
-	namespace :elastic_search do
- 		desc 'Index models to elastic search'
-  		task :index_models, [:models] => :environment do |_, args|
-    			default_models = %w[Agreement CellPhone DidNumber Pbx Subscription SubscriptionLine SubscriptionLineProperty User UserLicense]
-			argument_models = args[:models]&.split(',')&.map(&:strip)
-    			models = argument_models || default_models
+  # remaining code
+end
+```
+
+Now all the codes inside Searchable module will be accessible to models where this module is configured or included.
+
+## Index database records of required models/tables
+
+To make all records inside the database available to the Elasticsearch they need to be indexed/stored in various documents first. When comparing to relational database, indexing is same like storing records in tables.
+
+### Create a rake task to automate the indexing process
+
+Create a file `lib/tasks/elastic_search.rake` and add the following:
+
+```ruby
+namespace :elastic_search do
+  desc 'Index models to elasticsearch'
+  task :index_models, [:models] => :environment do |_, args|
+    # eager load first so that models are available for next step
+    Rails.application.eager_load!
     
-    			model_classes = models.map { |model| model.underscore.camelize.constantize }
+    # include all models inside the app/models folder
+    default_models = ApplicationRecord.descendants.map(&:to_s)
 
-    			model_classes.each do |model|
-      				model.import force: true
-    			end
-  		end
-	end
+    argument_models = args[:models]&.split(',')&.map(&:strip)
+    models = argument_models || default_models
+
+    model_classes = models.map { |model| model.underscore.camelize.constantize }
+
+    model_classes.each do |model|
+      model.import force: true
+    end
+  end
+end
 ```
 
-We are converting all model names to camel case for consistency so even if user provides model name in different case in argument when running rake task, it will always convert to class name. constantize converts string to class so that we can use class methods to index the model for elastic search.
+Inside the rake task, following thing is happening:
 
-Array of model names is not supported by rake task as an argument directly so we will be using ',' to split the models. Strip will take care off removing white spaces from the model names.
+1. `[:models]` allows the rake task to accept arguments, in this case rake task accepts string separated by "," i.e. each model name which needs to be indexed is separated by a comma.
+2. `Rails.application.eager_load!` loads all the classes inside the "app" folder, this is so that all model names are available to this rake task in the next step.
+3. `ApplicationRecord.descendants.map(&:to_s)` returns array of model names inside the folder `app/models` meaning all models in the app will be indexed. If this is not what you desire you can replace the code with array of model name like `['Author', 'Article']`
+4. If argument is passed which should be in the form of string separated by comma as mentioned above, they are converted to array by using the `split` method and then unnecessary whitespace are removed with `strip` method
+5. In `model_classes`, each model name is converted to camel case to maintain consistency and avoid errors, and then each model name which is in string is converted to **constant** with the help of the method `constantize`.
+6. Finally, each model is looped through and indexed one by one with the method `import' provided by elasticsearch gem.
 
-You can add/remove your default_models as required
+### Index models
 
-### Run the rake task
+1. Index all models
+    
+    If you are running the rake task for the first time, it's better if you don't pass any argument since you want records from all models to be indexed.
 
-When running for the first time don't pass any argument:
+    Run the following command in that case:
 
-`rails elastic_search:index_models`
+    `rails elastic_search:index_models`
 
-When you run for the second time after adding new models, pass those models when executing the rake task
+2. For new models
+   
+    If you add new models, you will normally want to only index that model, for that you can pass the names of new models when executing the rake task
 
-	`rails "elastic_search:index_models[Setting\, UserSetting\, Role]"`
+    `rails "elastic_search:index_models[Comment\, Tag]"`
 
-	We need to escape ',' with '\' otherwise it will be treated as second argument to rake task and only Setting will be passed to model_names argument 
+    You need to escape comma (,) with `\` otherwise it will be treated as second argument to rake task and only "Comment" will be passed to the argument model_names.
 
-## Search with Elastic Search
+## Search with Elasticsearch
+
+Now that all the records from required models are indexed, it's finally the time to search through them.
 
 ### Search only one model
 
-You can search only one model with `ModelName.search 'query'` e.g. `User.search 'Prabin'`
+You can search only one model with `ModelName.search 'query'`. Go to rails console and fire the command:
+
+`Author.search 'Jane'`
 
 ```cmd
-	$ response = User.search('Prabin').results
-	$ response.first.as_json
-	 
-	# result
-	{"_index"=>"users", "_type"=>"_doc", "_id"=>"80", "_score"=>3.5528386, "_source"=>{"id"=>80, "first_name"=>"Prabin", "middle_name"=>nil, "last_name"=>"Test User", "phone"=>nil, "note"=>nil, "odoo_contact_id"=>nil, "created_at"=>"2020-11-23T06:58:48.541Z", "updated_at"=>"2020-11-23T06:58:48.541Z", "email"=>"prabin@truemark.com", "user_license_id"=>59, "is_active"=>true}}
+> response = Author.search('Jane').results
+> response.first.as_json
+=> {"_index"=>"authors", "_type"=>"_doc", "_id"=>"2", "_score"=>0.6931471, "_source"=>{"id"=>2, "first_name"=>"Jane", "last_name"=>"Jones", "email"=>"jane@email.com", "nickname"=>"marvellous.jane", "created_at"=>"2021-07-25T15:18:18.192Z", "updated_at"=>"2021-07-25T15:18:18.192Z"}}
 ```
 
-You can also achieve similar result by using records instead of results. Difference between them is results always return Elastic Search result while records convert Elastic Search results to active record query which can take some time to execute for production environment.
+For the result part, you can also achieve the similar result by using the method "records" instead of "results". Difference between them is, "results" always returns Elasticsearch result while "records" convert Elasticsearch results to active record query.
 
-You can read more about **records** here: https://github.com/elastic/elasticsearch-rails/tree/master/elasticsearch-model#search-results-as-database-records 
+You can read more about **records** <a href="https://github.com/elastic/elasticsearch-rails/tree/master/elasticsearch-model#search-results-as-database-records"  target="_blank" rel="noopener">here</a>
 
 ### Search in multiple models
 
-You can search in multiple models with Elasticsearch::Model.search('query', [ModelName1, ModelName2]) e.g. Elasticsearch::Model.search('Ronni', [User, SubscriptionLineProperty])
+You can search in multiple models with `Elasticsearch::Model.search('query', [ModelName1, ModelName2])` e.g. `Elasticsearch::Model.search('Ronni', [User, SubscriptionLineProperty])`
 
 ```cmd
-	$ Elasticsearch::Model.search('Ronni', [User, SubscriptionLineProperty]).results.as_json
+> Elasticsearch::Model.search('Ruby', [Article, Category]).results.as_json
 	
-	# result
-	[{"_index"=>"subscription_line_properties", "_type"=>"_doc", "_id"=>"602", "_score"=>3.695231, "_source"=>{"id"=>602, "subscription_line_id"=>389, "property"=>"Name", "value"=>"Ronni Poulsen", "created_at"=>"2020-11-20T14:14:46.784Z", "updated_at"=>"2020-11-20T14:14:46.784Z"}},  {"_index"=>"users", "_type"=>"_doc", "_id"=>"77", "_score"=>3.5256014, "_source"=>{"id"=>77, "first_name"=>"Ronni", "middle_name"=>nil, "last_name"=>"Poulsen", "phone"=>nil, "note"=>nil, "odoo_contact_id"=>nil, "created_at"=>"2020-11-20T14:14:46.792Z", "updated_at"=>"2021-07-05T15:22:49.732Z", "email"=>"ronni-test@flexonet.dk", "user_license_id"=>56, "is_active"=>true}}]
+=> [{"_index"=>"categories", "_type"=>"_doc", "_id"=>"1", "_score"=>1.5697745, "_source"=>{"id"=>1, "title"=>"ruby", "created_at"=>"2021-07-25T15:18:18.202Z", "updated_at"=>"2021-07-25T15:18:18.202Z"}}, {"_index"=>"articles", "_type"=>"_doc", "_id"=>"2", "_score"=>1.2920684, "_source"=>{"id"=>2, "title"=>"Build Twitter Bot with Ruby", "content"=>"Today, we will be building a bot for Twitter that will retweet all hashtags related to #ruby or #rails. We can also configure it to retweet any hashtags so you can use this tutorial to create bot that can retweet whatever hashtag you want. Yes, and we will be building this Twitter bot with Ruby.\n\nWe will be using Twitter gem (Github) to help us in getting up and running quickly with Twitter APIs.\n", "published_on"=>"2021-04-23T05:00:00.000Z", "author_id"=>1, "created_at"=>"2021-07-25T15:18:18.236Z", "updated_at"=>"2021-07-25T15:18:18.236Z"}}, {"_index"=>"articles", "_type"=>"_doc", "_id"=>"4", "_score"=>0.83619946, "_source"=>{"id"=>4, "title"=>"Setup Factory Bot in Rails", "content"=>"Factory Bot is a library for setting up test data objects in Ruby. Today we will be setting up Factory Bot in Rails which uses RSpec for testing. If you are using different test suite, you can view all supported configurations in the official github repository of Factory Bot.\n", "published_on"=>"2021-06-13T13:00:00.000Z", "author_id"=>2, "created_at"=>"2021-07-25T15:18:18.245Z", "updated_at"=>"2021-07-25T15:18:18.245Z"}}]
 ```
 
 ## Converting Search Results to Active Record
 
-You can convert search result to active record with `to_a` For e.g. `User.search('prabin').records.to_a` will return 👇 
+You can convert search result to active record with `to_a` For e.g. `Author.search('john').records.to_a`
 
 ```cmd
-  User Load (9.2ms)  SELECT "users".* FROM "users" WHERE "users"."id" IN ($1, $2, $3)  [["id", 80], ["id", 130], ["id", 93]]
-=> [#<User id: 80, first_name: "Prabin", middle_name: nil, last_name: "Test User", phone: nil, note: nil, odoo_contact_id: nil, created_at: "2020-11-23 06:58:48", updated_at: "2020-11-23 06:58:48", email: "prabin@truemark.com", user_license_id: 59, is_active: true>, #<User id: 130, first_name: "Prabin", middle_name: nil, last_name: "Test", phone: "123412121", note: nil, odoo_contact_id: 2261, created_at: "2021-07-07 11:49:28", updated_at: "2021-07-07 11:54:46", email: "prabin@test.com", user_license_id: nil, is_active: true>, #<User id: 93, first_name: "Prabin", middle_name: nil, last_name: "Poudel", phone: nil, note: nil, odoo_contact_id: nil, created_at: "2021-01-08 08:17:55", updated_at: "2021-01-08 08:17:55", email: "hey@test.com", user_license_id: 64, is_active: true>]
+> Author.search('john').records.to_a
+Author Load (0.4ms)  SELECT "authors".* FROM "authors" WHERE "authors"."id" = $1  [["id", 1]]
+=> [#<Author id: 1, first_name: "John", last_name: "Doe", email: "john@email.com", nickname: "john101", created_at: "2021-07-25 15:18:18.190094000 +0000", updated_at: "2021-07-25 15:18:18.190094000 +0000">]
 ```
 
-We won't be using this in our tutorial nor will I use this in actual implementation because it executes an extra query and adds more time to the request.
-
-In this tutorial, we will instead be converting search results to JSON and render records in our view.
+This tutorial won't use this technique nor should this be used in actual implementation because it executes an extra query and adds more time to the request since each record should be converted to Active Record. In production application and especially for search app even 1 millisecond matters which is why in this tutorial, all search results will be converted to JSON and same records will be rendered inside the "view".
 
 ## API for search engine
 
-API should accept query and model_names to search in (model names not required right now, can be taken later for optimizing when database is very big and also make the search more narrow)
+Adding the search functionality to the app means everything that happened above in rails console should be replicated and added to the API.
 
-1. Create a controller
+### Create a controller
 
-     `touch app/controllers/search_controller.rb`
+From command line, run the command to create the controller: `touch app/controllers/search_controller.rb`
 
-     Add the following inside it:
+Add the following to it:
 
-     ```
-       class SearchController < ApplicationController
-
+```
+class SearchController < ApplicationController
   def search
     if params[:q].blank?
       @results = []
@@ -251,24 +266,34 @@ API should accept query and model_names to search in (model names not required r
     end
   end
 end
+```
 
-     ```
-2. Add route for search
+Results are grouped by "_index" so that results can be separated for each model name when rendering in the view.
 
-     Inside `config/routes.rb`, add the following line:
+### Add a route
 
-     `get :search, to: 'search#search'`
+Add the following to `config/routes.rb`
+
+`get :search, to: 'search#search'`
 
 ## View to search and show results
    
-     We will need view with search box and model multi select option (model option not required right now)
+To provide the search capability to the users, you will need to have:
 
-     Create a view with `touch app/views/search/search.html.erb`
+1. Search box where user can input their search query
+2. Show list of results for the search
 
-     Add following inside it:
+Create a view
 
-     ```
-       <h1>App Search</h1>
+```cmd
+  $ mkdir app/views/search
+  $ touch app/views/search/search.html.erb
+```
+
+Add the following inside:
+
+```ruby
+<h1>App Search</h1>
 
 <%= form_for search_path, method: :get do |f| %>
   <p>
@@ -287,7 +312,7 @@ end
 
   <ul>
     <% records.each do |record| %>
-      <% record_link = "api/v1/#{group}/#{record['_id']}" %>
+      <% record_link = "#{group}/#{record['_id']}" %>
 
       <li>
         <%= link_to record_link, record_link %>
@@ -295,55 +320,75 @@ end
     <% end %>
   </ul>
 <% end %>
-     ```
+```
 
 ## Test the implementation
 
-Now if you fire up the rails server `rails s` and go to `localhost:3000/search`, you should see a view with search box in it.
+Fire up the rails server `rails s` and go to `localhost:3000/search`, you will see a view with search box in it like this:
 
-Type relevant text and hit search.
+![Stream hello world 5 times](../../images/articles/search-engine-with-rails/empty-search-view.webp)
+
+Type relevant text e.g. "ruby" and hit search.
 
 Tada 🎉 
 
-You will see search results with link to its detail page. If there are no results you will see "No search results found for [query]"
+You will see search results grouped by model name and link to individual record's detail page like this:
+
+![Stream hello world 5 times](../../images/articles/search-engine-with-rails/search-results-grouped-by-model-name.webp)
+
+
+If there are no results you will see "No results found for [query]" like this:
+
+![Stream hello world 5 times](../../images/articles/search-engine-with-rails/results-not-found.webp)
+
+Since there aren't any APIs and required Views for other features, link will not work at the moment.
 
 ## Highlight matched text
 
-Let's take it one step further and add a functionality to highlight matching text.
+Elasticsearch also provides the feature of highlighting the matched text like what Google does in it's search results. You can take the search feature to next level by adding the highlighted text and rendering them in the view.
 
-1. Update the search query in controller to include `{ body: highlight_fields }`:
+### Update search query in the controller
 
-     ```rb
-       @results = Elasticsearch::Model
-                   .search(params[:q], [], { body: highlight_fields })
+Update the code inside else part of the controller in "search" action with the following:
+
+```ruby
+@results = Elasticsearch::Model
+                   .search(params[:q], [], { body: highlighted_fields })
                    .results.as_json
                    .group_by { |result| result['_index'] }
-     ```
+```
 
-2. Add private method for highlight fields
+### Add private method for highlight fields
 
-     ```rb
-       private
+```ruby
+private
 
-  def highlight_fields
-    {
-      highlight: {
-        fields: {
-          first_name: {},
-          last_name: {},
-          email: {},
-          value: {},
-          ref_number: {}
-        }
+def highlight_fields
+  {
+    highlight: {
+      fields: {
+        pre_tags: ['<strong>'],
+        post_tags: ['</strong>'],
+        first_name: {},
+        last_name: {},
+        nickname: {},
+        email: {},
+        title: {},
+        content: {}
       }
     }
-  end
-     ```
+  }
+end
+```
 
-Your final controller should look like this:
+Inside "fields" in the method "highlight_fields", you can add column names of any model that you want to highlight the text of. Current configuration includes highlighting for all 3 models available in the app.
 
-```rb
-  class SearchController < ApplicationController
+By default, highlighted texts are wrapped around "em" tag and can easily be overridden by specifying `pre` and `post` tags; here "em" tag is overridden by "strong" tag because I felt that bold text catches more attention than italicized text. You can ignore these two tags and remove them completely if you think italicized texts work great.
+
+Your final controller will look like this:
+
+```ruby
+class SearchController < ApplicationController
   def search
     if params[:q].blank?
       @results = []
@@ -361,32 +406,38 @@ Your final controller should look like this:
     {
       highlight: {
         fields: {
+          pre_tags: ['<strong>'],
+          post_tags: ['</strong>'],
           first_name: {},
           last_name: {},
+          nickname: {},
           email: {},
-          value: {},
-          ref_number: {}
+          title: {},
+          content: {}
         }
       }
     }
   end
 end
-```
-
-3. Update view to show highlighted text
-
-   Add following code just below the link
-
-   ```erb
-     <% record['highlight']&.each do |key, snippet| %>
-          <p><%= "#{key} - #{sanitize(snippet[0])}" %></p>
-        <% end %>
-   ```
-
-   Your final view should look like this:
 
 ```
-  <h1>App Search</h1>
+
+### Update view to show highlighted text
+
+Add following code just below the "link_to":
+
+```erb
+<% record['highlight']&.each do |key, snippet| %>
+  <p><%= "#{key} - " %> <%= sanitize(snippet[0]) %></p>
+<% end %>
+```
+
+Highlighted result will be available inside the key "highlight" and text to highlight will be available inside the "snippet" key which is what we are using to render highlighted text.
+
+Your final view will look like this:
+
+```
+<h1>App Search</h1>
 
 <%= form_for search_path, method: :get do |f| %>
   <p>
@@ -411,7 +462,7 @@ end
         <%= link_to record_link, record_link %>
 
         <% record['highlight']&.each do |key, snippet| %>
-          <p><%= "#{key} - #{sanitize(snippet[0])}" %></p>
+          <p><%= "#{key} - " %> <%= sanitize(snippet[0]) %></p>
         <% end %>
       </li>
     <% end %>
@@ -419,13 +470,29 @@ end
 <% end %>
 ```
 
-Now if you search again, you should also see the highlighted text with em tag.
+You can search again for the same query and you will see the highlighted text like this:
 
-## Concern: what if record link should actually be for associated data? For e.g. when searching subscription line property it should actually go to agreement
-	
-## Deploying the app to server (Don't cover in this tutorial)
-	- Configuring elastic search in database.yml so that one elastic search server runs for only one application
+![Stream hello world 5 times](../../images/articles/search-engine-with-rails/highlighted-search-results.webp)
+
+## Improve the app further
+
+There are many functionalities that I have skipped deliberately for making this tutorial small and more simpler, you can add the following functionalities if you want to play more with this app:
+
+1. Add API and required view to make the links to detail page work
+2. Show related articles when associated author or category is searched, for e.g. if user searches for "jane" show articles of the author "Jane", or for "ruby" show all articles that have categories "Ruby"
+
+## Conclusion
+
+In real world application, I am sure that search functionality can be a lot complex than what is shown here, but this is the start and you can build as required on top of this.
+
+I had always wanted to explore the idea of app wide search, and this blog is the result of my habit of exploring new technology every Sunday. It was fun to learn about elasticsearch, research through the internet on how other have implemented similar search features and actually implementing this with the sample app and in existing project for the client.
+
+I hope you enjoyed this blog as much as I enjoyed it building and writing. I thank you for sticking with me to the very end of the blog.
+
+Full code of this tutorial is available in the branch "app-search", you can find it <a href="https://github.com/coolprobn/rails-search-engine/pull/1" target="_blank" rel="noopener">here</a>.
+
+Happy tinkering and happy coding!
 
 ## Image Credits
 
-- Photo by <a href="https://unsplash.com/@jontyson?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Jon Tyson</a> on <a href="https://unsplash.com/s/photos/search-engine?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
+- Photo by <a href="https://unsplash.com/@jontyson?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText" target="_blank" rel="noopener">Jon Tyson</a> on <a href="https://unsplash.com/s/photos/search-engine?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText" target="_blank" rel="noopener">Unsplash</a>

@@ -7,7 +7,7 @@ image: ../../images/notes/update-multiple-records-at-once-in-rails.webp
 categories: [notes]
 tags: [ruby on rails]
 toc: true
-featured: true
+featured: false
 comments: true
 ---
 

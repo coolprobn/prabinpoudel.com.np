@@ -24,6 +24,7 @@ const HomePage = ({ data }) => {
       siteMetadata: { author: siteAuthor },
     },
     featuredPosts: { edges: featuredPosts },
+    recentPosts: { edges: recentPosts },
   } = data;
 
   return (
@@ -140,6 +141,42 @@ const HomePage = ({ data }) => {
           </div>
 
           <h2 className={style.subHeading}>
+            <span>Latest Posts</span>
+          </h2>
+          <div className={style.gridList}>
+            {recentPosts.map(({ node }) => {
+              const {
+                id,
+                excerpt: autoExcerpt,
+                timeToRead,
+                frontmatter: {
+                  title,
+                  date,
+                  date_pretty: datePretty,
+                  path,
+                  author,
+                  excerpt,
+                  image,
+                },
+              } = node;
+
+              return (
+                <Entry
+                  key={id}
+                  title={title}
+                  date={date}
+                  datePretty={datePretty}
+                  path={path}
+                  author={author || siteAuthor}
+                  timeToRead={timeToRead}
+                  image={image}
+                  excerpt={excerpt || autoExcerpt}
+                />
+              );
+            })}
+          </div>
+
+          <h2 className={style.subHeading}>
             <span>Explore more on this site</span>
           </h2>
           <div>
@@ -212,7 +249,42 @@ export const pageQuery = graphql`
         frontmatter: { featured: { eq: true }, published: { ne: false } }
       }
       sort: { fields: [frontmatter___date], order: DESC }
-      limit: 6
+      limit: 3
+    ) {
+      edges {
+        node {
+          id
+          excerpt(format: HTML)
+          timeToRead
+          frontmatter {
+            title
+            date
+            date_pretty: date(formatString: "MMMM Do, YYYY")
+            path
+            excerpt
+            featured
+            categories
+            image {
+              childImageSharp {
+                gatsbyImageData(
+                  width: 400
+                  height: 250
+                  quality: 100
+                  formats: [AUTO, WEBP]
+                )
+              }
+            }
+          }
+        }
+      }
+    }
+    recentPosts: allMarkdownRemark(
+      filter: {
+        fileAbsolutePath: { regex: "/posts/" }
+        frontmatter: { featured: { ne: true }, published: { ne: false } }
+      }
+      sort: { fields: [frontmatter___date], order: DESC }
+      limit: 3
     ) {
       edges {
         node {
