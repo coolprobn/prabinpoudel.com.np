@@ -10,7 +10,7 @@ Inspired and cloned from [Made Mistakes](https://github.com/mmistakes/made-mista
    npm install
    ```
 
-2. **Add `.env` file to the root with your GOOGLE_ANALYTICS_TRACKING_ID
+2. **Add `.env` file to the root with your GOOGLE_ANALYTICS_TRACKING_ID**
 
    ```env file
    GOOGLE_ANALYTICS_TRACKING_ID = 'your_google_analytics_tracking_id'
