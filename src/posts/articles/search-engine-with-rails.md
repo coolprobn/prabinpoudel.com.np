@@ -181,7 +181,7 @@ Inside the rake task, following thing is happening:
 3. `ApplicationRecord.descendants.map(&:to_s)` returns array of model names inside the folder `app/models` meaning all models in the app will be indexed. If this is not what you desire you can replace the code with array of model name like `['Author', 'Article']`
 4. If argument is passed which should be in the form of string separated by comma as mentioned above, they are converted to array by using the `split` method and then unnecessary whitespace are removed with `strip` method
 5. In `model_classes`, each model name is converted to camel case to maintain consistency and avoid errors, and then each model name which is in string is converted to **constant** with the help of the method `constantize`.
-6. Finally, each model is looped through and indexed one by one with the method `import' provided by elasticsearch gem.
+6. Finally, each model is looped through and indexed one by one with the method 'import' provided by elasticsearch gem.
 
 ### Index models
 
@@ -223,7 +223,7 @@ You can read more about **records** <a href="https://github.com/elastic/elastics
 
 ### Search in multiple models
 
-You can search in multiple models with `Elasticsearch::Model.search('query', [ModelName1, ModelName2])` e.g. `Elasticsearch::Model.search('Ronni', [User, SubscriptionLineProperty])`
+You can search in multiple models with `Elasticsearch::Model.search('query', [ModelName1, ModelName2])` e.g. `Elasticsearch::Model.search('ruby', [Article, Category])`
 
 ```cmd
 > Elasticsearch::Model.search('Ruby', [Article, Category]).results.as_json
@@ -495,4 +495,4 @@ Happy tinkering and happy coding!
 
 ## Image Credits
 
-- Photo by <a href="https://unsplash.com/@jontyson?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText" target="_blank" rel="noopener">Jon Tyson</a> on <a href="https://unsplash.com/s/photos/search-engine?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText" target="_blank" rel="noopener">Unsplash</a>
+- Cover Image by <a href="https://unsplash.com/@jontyson?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText" target="_blank" rel="noopener">Jon Tyson</a> on <a href="https://unsplash.com/s/photos/search-engine?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText" target="_blank" rel="noopener">Unsplash</a>
