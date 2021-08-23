@@ -18,6 +18,12 @@
   excerpt:
   html:
 
+- id: case-studies
+  name: Case Studies
+  excerpt: Case study for projects I have worked on.
+  html: |
+    <p>Case study for projects I have worked on.</p>
+
 - id: factory bot
   excerpt:
   html:

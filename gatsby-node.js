@@ -104,7 +104,7 @@ exports.createPages = ({ actions, graphql, getNodes }) => {
     });
 
     // Create paginated category pages
-    const categories = ['articles', 'notes', 'book-reviews'];
+    const categories = ['articles', 'notes', 'book-reviews', 'case-studies'];
 
     forEach((category) => {
       const postsWithCategory = postsNodes.filter(
