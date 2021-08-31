@@ -2,7 +2,7 @@
 title: 'Customer Management System to manage all customers from one place'
 date: 2021-08-31
 path: /case-studies/customer-management-system/
-excerpt: "Flexonet Aps is a telecommunication company based in Denmark. ..... ..... ..... ..... ...... ..... .... ...... ......"
+excerpt: "Customer Management System to manage all customers in telecom company by integrating with external services for ease in managing invoices and payments."
 image: ../../images/notes/fix-rails-auto-increment-id-postgres-error.webp
 categories: [case-studies]
 tags: [ruby on rails, reactjs]
@@ -13,7 +13,7 @@ comments: false
 
 ## General Information
 
-- Development: Ongoing
+- Time: Completed
 - Team: 3 members
 - Platform: Web
 - Type: ERP, Custom Solutions
@@ -28,21 +28,17 @@ Ronni Poulsen, Owner, Flexonet Aps
 
 ## Who is Flexonet?
 
-**Flexonet is a flexible telecommunications company who want to establish themselves as an alternative to the top telecom companies that are on the market today; with a focus on individual solutions for business**
+**Flexonet is a telecommunications company with focus on providing individual solutions to business with flexible plans for each solution**
 
-...... add more description ....
-
-https://thoughtbot.com/case-studies/real-simple-energy
-
-https://thoughtbot.com/case-studies/joydrive
+They want to establish themselves as an alternative to the top telecom companies that are on the market today in Denmark. Main focus and selling point of the company is to provide solutions that are tailored for the business which ultimately leads to flexible plans for each solutions that business want to use.
 
 ## Backstory
 
-Ronni Poulsen, owner of Flexonet Aps, felt that the current customer management app used in the company was outdated, very slow and cumbersome to work with.
+Ronni Poulsen, owner of Flexonet Aps, felt that the current customer management app used in the company was outdated, very slow and cumbersome to work with. Invoicing one customer would take around 5 minutes to process everything.
 
-Solution came in using [ODOO](https://www.odoo.com/), an external ERP system. ODOO provides customer management, invoice management, bank integrations for receiving and making payments and much more. Because ODOO is a general solution it was not tailored enough for the company since Flexonet being a company providing custom solutions tailored to each business. To handle that there was a need of custom web app that could integrate well with ODOO to manage customers, and their solutions like mobile phones, scheduled invoices, pbxes, internet and many more from the single web app.
+Solution he came up with was using <a href="https://www.odoo.com/"  target="_blank" rel="noopener">ODOO</a>, an external ERP system which provides customer management, invoice management and bank integrations for payments. Because ODOO is a general solution it was not  enough for the company. To handle that there was a need of custom web app that could integrate well with ODOO to manage customers, scheduled invoices, and in future also their solutions like mobile phones, pbxes, internet, etc. from the single web app.
 
-Ronni was looking for a freelancer with proven history and matching tech stack i.e. Ruby on Rails and ReactJS and within a budget because company could only afford a freelancer at that moment. That's when he found me in [Upwork](https://www.upwork.com/freelancers/~0184b506a4486b8f86?s=1110580755107926016) and sent the invitation to work in the project.
+Ronni was looking for a freelancer with proven history and matching tech stack i.e. Ruby on Rails and ReactJS and within the budget. That's when he found me in [Upwork](https://www.upwork.com/freelancers/~0184b506a4486b8f86?s=1110580755107926016) to work in the project.
 
 ## Planning
 
@@ -57,28 +53,30 @@ Ronni was looking for a freelancer with proven history and matching tech stack i
 
 2. Analysis
 
-   We analyzed the requirement very carefully:
+   Team analyzed requirements very carefully:
+
     - Held over 5 meetings for clarity of requirements
     - Analysed existing web applications
+    - Analysed database design of old web applications
 
 3. Outcome
 
     This resulted in:
 
     - Database design for the new application
-    - Project Roadmap for completing the project in given deadline
+    - Project Roadmap for completing the project within deadline
 
 ## Challenges and Solutions
 
 1. Manual Integration with external service
 
-    Normally, with Rails applications there are gems (pre configured packages) for the majority of the services but there wasn’t one for ODOO. Luckily, there were API endpoints we could use with XML RPC. 
+    Normally, with Rails applications there are gems (pre configured packages) for the majority of the services but there wasn’t one for ODOO. Luckily, there were API endpoints we could use with detailed documentation from ODOO. 
     
     To address the issue, we built our own service to connect with the ODOO API and perform CRUD operations through that API.
 
 2. Customer Login
 
-    Flexonet focuses on providing services to small and big companies so customers for in this case are debtors (or a company). And all customers are created in the database of ODOO. The challenge for us now was to allow users from the customers company to access the data in our web app.
+    All customers (business) of Flexonet are created in the database of ODOO while each users inside the business are inside our own web app. The challenge for us now was to allow users from the business to access the data in our web app.
 
     We solved this by maintaining a column in our database by referencing the record id in ODOO. That way each user created for login in our app was associated with the customer's company and we could easily fetch related records from the ODOO while other user information like names and passwords were inside the database of our web app.
 
@@ -92,35 +90,36 @@ Ronni was looking for a freelancer with proven history and matching tech stack i
 
 1. Blazing Fast Interface
 
-    One of the reasons for redeveloping features and creating the current customer management application was because the existing application was very slow. Either it be while invoicing customers or normal speed.
+    One of the reasons for redeveloping features and creating the current customer management application was that existing application was very slow. Either it be while invoicing customers or overall speed of the web interface.
 
     With ReactJS as a frontend and Rails as an API we resolved the issue of the speed very easily. All APIs are optimized and every UI loads in a matter of a second.
 
 2. General solution integrated with custom solutions
 
-
-    Write HOW ODOO being the general solution has been integrate with web app and what that has resulted in -> invoice handling easily, customer management from single place, etc....
-
-    old description:
-
-    With the current application, the client can now manage customers of the company, all pbxes in the company and invoices right from the web app.
-
-    It has made the invoicing a breeze to handle and has saved a lot of time of the client which would have otherwise gone in manually maintaining these invoices in ODOO. With the web app everything is connected and in one place.
+    ODOO provides solutions for general purposes which is not suited for all the company and that was the case for Flexonet too. With web app we have tailored the solution enough to work for the company.
+    
+    
+    This has resulted in general solutions being integrated with custom solutions:
+    
+        - ODOO provides handling of invoices, web app provides way to schedule all invoice generation for customers
+        - ODOO provides managing customers easily, web app provides login interface for all users inside the business so they can manage their invoices and solutions like cell phones, pbx, etc.
+        - ODOO provides products to use for solutions, web app provides subscription system to use those products and add to invoices
 
 3. Invoice Automation
 
-    DONT mention pbx and all, only need to mention agreement, invoices and odoo
+    ODOO provides an interface to handle invoices where we can create, edit and send the invoice to client. But invoices generally work with subscription system where each business can have multiple solutions they have subscribed to like cell phone, pbx, internet, etc. and all these subscription need to be invoiced on specific period configured for the customers e.g. monthly, quarterly, yearly, etc.
 
-    old description:
+    Previously, company had to manually add all the subscriptions to invoice and send to customers. This was not productive at all because it would take a lot of time to invoice 1000 customers in the company manually.
 
-    With the custom solutions developed for Flexonet, it has helped our client to automate some part of their business
-
-        - Pbx creation and syncing from Customer Management App with Pbx server
-        - Telecom usage billing (in separate app) integrated with customer subscriptions invoices
+    With the new web app, Flexonet had a way to add subscriptions for each solution in single place which we like to call "Agreement". Invoicing system inside the web app will then take care of generating invoice on specific period for each agreement with scheduling. This was invoicing customers was fully automated and Flexonet has saved a lot of money in terms of time of the employees.
 
 ## CTA
 
 Build your next solution with me (pfft, lame)
+
+It should be something that customers can relate to, what could their pain point be? I have to identify that put it here.
+
+Remember, CTA is not about me, it's about them (customers).
 
 ## Screenshots
 
@@ -150,8 +149,9 @@ Web App: https://mit.flexonet.dk/
 
 ## Feedback from Client
 
-......
+I had a bad experience with freelancing previously and was quite afraid when I hired Prabin to work on our telecom app. But he is such a professional that he right away made me feel that he was the right choice for the job. I needed a full stack developer who could work on redesigning existing system and also create new applications as we moved forward, and Prabin has done a brilliant job in that regard. He has excellent knowledge on Ruby on Rails and React. He always comes up with suggestions and is very approachable and flexible. I will definitely hire him again in the future and recommend him to anyone wanting to hire him!
 
+Ronni Poulsen, Owner, Flexonet Aps
 
 ## CTA
 
