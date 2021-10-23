@@ -400,7 +400,7 @@ Rails/WhereNot:
 
 ### Bonus: Configuration for RSpec
 
-_NOTE_: You should already have setup the <a href="https://github.com/rubocop/rubocop-rspec" _blank="true">rubocop-rspec</a> gem.
+_NOTE_: You should already have setup the <a href="https://github.com/rubocop/rubocop-rspec" target="_blank">rubocop-rspec</a> gem.
 
 Create `.rubocop-rspec.yml` in the root project and add the following:
 
