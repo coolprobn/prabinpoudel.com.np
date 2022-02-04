@@ -8,6 +8,7 @@ categories: [book-reviews]
 toc: true
 comments: true
 featured: true
+last_modified_at: 2020-11-09
 ---
 
 This is a live blog, meaning I will be updating this blog every time I complete reading the book. Books here are divided first by year and then by their type/category. Most of the books are accompanied by related blogs with the extractions from my experience.
@@ -32,6 +33,10 @@ This is a live blog, meaning I will be updating this blog every time I complete 
 1. Zero to One (Peter Thiel)
 
     <a href="/book-reviews/zero-to-one/" target="_blank">Zero to One [But Not a review] </a>
+
+2. Rework (Jason Fried and David Heinemeier Hansson aka DHH)
+
+    <a href="/book-reviews/rework/" target="_blank">Rework [But Not a review] </a>
 
 ### Financial Literacy
 

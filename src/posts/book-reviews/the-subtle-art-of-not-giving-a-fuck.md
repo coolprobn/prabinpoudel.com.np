@@ -330,7 +330,7 @@ _The Denial of Death_ essentially makes two points:
 
 ## Conclusion
 
-I love this book because Mark throws all the facts straight to my face, unlike every other "make you feel good" book. If you allergic to the "Fuck" word, fret not, after reading this book, you will be comfortable with it.
+I love this book because Mark throws all the facts straight to my face, unlike every other "make you feel good" book. If you are allergic to the "Fuck" word, fret not, after reading this book, you will be comfortable with it.
 
 There are hard truths, a lot of stories and all facts in this book. This book stands out from the crowd. Worth every minute.
 
