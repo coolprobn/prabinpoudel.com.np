@@ -8,10 +8,18 @@ categories: [book-reviews]
 toc: true
 comments: true
 featured: true
-last_modified_at: 2020-11-09
+last_modified_at: 2022-08-04
 ---
 
 This is a live blog, meaning I will be updating this blog every time I complete reading the book. Books here are divided first by year and then by their type/category. Most of the books are accompanied by related blogs with the extractions from my experience.
+
+## 2022
+
+### Self help
+
+1. Ikigai (Hector Garcia and Francesc Miralles)
+
+    <a href="/book-reviews/ikigai/" target="_blank">Ikigai [But Not a review] </a>
 
 ## 2021
 

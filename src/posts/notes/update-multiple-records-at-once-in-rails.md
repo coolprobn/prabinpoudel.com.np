@@ -64,7 +64,7 @@ Let's see how we can update multiple records like these at once in Rails.
     First of all, we should index all records by their id, for that we will be using **index_by** which  returns records grouped by the id and all records will be inside the hash.
 
     ```ruby
-      grouped_users = formatted_users.index_by( {|user| user[:id]})
+      grouped_users = formatted_users.index_by { |user| user[:id] }
 
       # index_by will return the following hash
       # => {1=>{:id=>1, :name=>"John Doe"}, 2=>{:id=>2, :name=>"Jessica Jones"}, 3=>{:id=>3, :name=>"Robert Junior"}}
