@@ -339,7 +339,7 @@ Let's setup NGROK in our local machine:
 
     Restart the rails server and reload the page in the browser. Now, you should be able to see the default page of your Rails app. This is what I see in mine since it's a new application just for this blog:
 
-    ![Blocked host error in Rails](../../images/articles/action-mailbox-with-sendgrid/rails-welcome-page.webp)
+    ![Welcome page in Rails](../../images/articles/action-mailbox-with-sendgrid/rails-welcome-page.webp)
   
 7. Authorize all NGROK URLs in development
   
@@ -380,7 +380,7 @@ We need to add DNS records from SendGrid to our DNS provider so our email is act
 I use <a href="https://www.cloudflare.com/" target="_blank">CloudFlare</a>, so I will be showing you process to setup MX record using the settings from CloudFlare as an example.
 
 1. Go to DNS tab from the left menu
-    ![Side Menu with menu item DNS active](../../images/articles/action-mailbox-with-sendgrid/side-menu-in-cloudflare.webp)
+    ![Side Menu with menu item "DNS" active in Cloudflare](../../images/articles/action-mailbox-with-sendgrid/side-menu-in-cloudflare.webp)
 
 2. Click on "Add Record" and choose MX from the dropdown then add the following values to each field
 
