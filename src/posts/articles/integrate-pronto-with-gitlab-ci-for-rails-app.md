@@ -9,7 +9,7 @@ tags: [ruby on rails, rubocop, lint, automated code review]
 toc: true
 featured: false
 comments: true
-last_modified_at: 2021-05-31
+last_modified_at: 2022-08-08
 ---
 
 At <a href="https://truemark.com.np" target="_blank">Truemark</a>, we are constantly looking to improve the code quality in our projects. And one way to do that is through the regular code review process. Code review process can quickly get exhausting if team members have to spend majority of their time on maintaining best practices.
@@ -148,6 +148,57 @@ If you are curious and want to see what is happening in the background, you can 
 2. To view the log, click on job id in the Job column which starts with #, for e.g. #1290157388
 
 Due to installation of all gems (`bundle install`) in the project, it can take up to 3 minutes for the job to be completed even when there are not many changes.
+
+## Bonus: Add Caching to Gitlab CI
+
+Caching helps in making the CI run really fast. At Truemark, before CI was implemented every job would take ~7 minutes and after the CI was implemented it's now taking ~1 minute.
+
+Let's look at the configuration changes we need to do in ".gitlab-ci.yml" file for the caching.
+
+```yml
+image: ruby:3.0.0
+
+# add this
+cache:
+  paths:
+    - vendor/
+
+before_script:
+  # add this
+  - bundle config set path 'vendor'
+  # replace "bundle install" with 👇
+  - bundle install -j $(nproc) --path=vendor
+
+# other content will be the same
+```
+
+With above configuration, we are telling Gitlab Ci to cache "vendor" folder where all our gems will be stored. Then when running "bundle install", we will ask the CI to install gems to vendor folder from where CI will reuse gems that haven't changed in version. This will help in reducing the time CI takes to install gems.
+
+Your final ".gitlab-ci.yml" could look similar to this:
+
+```yml
+image: ruby:3.0.0 # this should be the ruby version that your rails app is using, ours was using 3.0.0
+
+cache:
+  paths:
+    - vendor/
+
+before_script:
+  - apt-get update && apt-get install -y cmake # Install cmake needed for pronto
+  - bundle config set path 'vendor'
+  - bundle install -j $(nproc) --path=vendor
+  - git fetch origin # fetch all branches, was throwing Rugged::ReferenceError, you can remove this and try if it works for you
+
+stages:
+  - lint # we are only formatting/linting the changes
+
+pronto:
+  stage: lint # runs pronto on the lint stage
+  only:
+    - merge_requests # run pronto only on merge requests (also runs when new changes are pushed to the merge request)
+  script:
+    - PRONTO_GITLAB_API_PRIVATE_TOKEN=$PRONTO_ACCESS_TOKEN bundle exec pronto run -f gitlab_mr -c origin/$CI_MERGE_REQUEST_TARGET_BRANCH_NAME # Run pronto on branch of current merge request
+```
 
 ## Conclusion
 
