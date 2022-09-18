@@ -8,7 +8,7 @@ categories: [book-reviews]
 toc: true
 comments: true
 featured: true
-last_modified_at: 2022-08-04
+last_modified_at: 2022-09-18
 ---
 
 This is a live blog, meaning I will be updating this blog every time I complete reading the book. Books here are divided first by year and then by their type/category. Most of the books are accompanied by related blogs with the extractions from my experience.
@@ -21,10 +21,13 @@ This is a live blog, meaning I will be updating this blog every time I complete 
 
     <a href="/book-reviews/ikigai/" target="_blank">Ikigai [But Not a review] </a>
 
+### Technical
+
+1. Testing Rails (Josh Steiner & Thoughtbot)
+
 ## 2021
 
 ### Self help
-
 
 1. The 4 Hour Work Week (Tim Ferris)
 
