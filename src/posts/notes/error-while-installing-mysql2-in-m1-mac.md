@@ -5,7 +5,7 @@ path: /notes/error-while-installing-mysql2-in-m1-mac/
 excerpt: "In Ruby on Rails applications with mysql2 gem, mysql2 gem always threw error when trying in the new M1 Mac. The error always said \"ld: library not found for -lzstd\" and \"make failed\"."
 image: ../../images/notes/error-while-installing-mysql2-in-m1-mac.webp
 categories: [notes]
-tags: [mysql2, rails]
+tags: [mysql, ruby on rails]
 toc: true
 featured: false
 comments: true
