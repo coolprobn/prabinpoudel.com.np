@@ -1,6 +1,6 @@
 # [Personal Site](https://prabinpoudel.com.np) Source Code
 
-Inspired and cloned from [Made Mistakes](https://github.com/mmistakes/made-mistakes-gatsby/tree/master/src)
+Inspired and cloned from [Made Mistakes](https://mademistakes.com/) when it was open sourced! The author reverted to close sourced after few months.
 
 ## Getting started
 
