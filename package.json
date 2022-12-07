@@ -41,7 +41,7 @@
     "gatsby-remark-autolink-headers": "^2.2.1",
     "gatsby-remark-copy-linked-files": "^2.2.1",
     "gatsby-remark-custom-blocks": "^2.2.1",
-    "gatsby-remark-embed-video": "github:mmistakes/gatsby-remark-embed-video",
+    "gatsby-remark-embed-video": "^3.2.1",
     "gatsby-remark-images": "^3.2.2",
     "gatsby-remark-lazy-load": "^1.0.2",
     "gatsby-remark-numbered-footnotes": "^1.0.0",
