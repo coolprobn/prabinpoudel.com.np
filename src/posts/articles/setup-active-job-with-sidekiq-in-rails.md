@@ -125,9 +125,9 @@ _NOTE:_ You can also find these instructions in the official Redis documentation
 
 5. Create a directory inside /var/redis that will work as data and working directory for this Redis instance:
 
-  ```shell
-  sudo mkdir /var/redis/6379
-  ```
+    ```shell
+    sudo mkdir /var/redis/6379
+    ```
 
 6. Edit the configuration file with `sudo nano /etc/redis/6379.conf`, making sure to perform the following changes:
 
