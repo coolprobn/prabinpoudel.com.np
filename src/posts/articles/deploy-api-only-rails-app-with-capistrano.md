@@ -1,5 +1,5 @@
 ---
-title: 'Deploy API only Rails app with Capistrano'
+title: 'Deploy API only Rails App with Capistrano'
 date: 2022-12-04
 path: /articles/deploy-api-only-rails-app-with-capistrano/
 excerpt: "Capistrano provides a one line command deployment to remote servers. In this tutorial, we will be looking at how we can setup capistrano with our Rails application and deploy the app to remote server."
@@ -47,7 +47,7 @@ end
 
 Run the following from command line:
 
-```cmd
+```shell
 $ bundle install
 ```
 
@@ -65,7 +65,7 @@ end
 
 Run the generator to create a basic set of configuration files:
 
-```cmd
+```shell
 $ bundle exec cap install
 ```
 
@@ -283,7 +283,7 @@ after 'deploy:publishing', 'application:reload'
 
 From the command line you can now deploy the app to production using the following command:
 
-```cmd
+```shell
 cap production deploy
 ```
 
@@ -374,8 +374,7 @@ Now try to deploy the app to production and server will ask for password when ru
 
 ### Server Configurations
 
-We are assuming that sidekiq is already configured in your remote server.
-<!-- Link sidekiq tutorial if not  -->
+We are assuming that sidekiq is already configured in your remote server. If you have not configured it yet, you can refer to the section "Bonus: Setup Sidekiq in Ubuntu Server" at <a href="/articles/setup-active-job-with-sidekiq-in-rails/#bonus-setup-sidekiq-in-ubuntu-server" target="_blank">Setup Active Job with Sidekiq in Rails</a>
 
 For capistrano to perform sudo actions without asking for the password, the user used by capistrano, normally "deploy" user should be in the sudo group and you should add commands that need to be executed in the server with sudo access but without using password to "/etc/sudoers" file.
 
@@ -383,9 +382,9 @@ For capistrano to perform sudo actions without asking for the password, the user
     
     You can add your deploy user to the sudo group with the following command
 
-    ```
-      # add "deploy" user to sudo group
-      $ sudo usermod -aG sudo deploy
+    ```shell
+    # add "deploy" user to sudo group
+    $ sudo usermod -aG sudo deploy
 
     # verify if the user has been added to the sudo group
     # result should include "sudo" for the deploy user
@@ -398,14 +397,14 @@ For capistrano to perform sudo actions without asking for the password, the user
     - Open the sudoers file for the edit with `sudo EDITOR=nano vimsudo`, this will ensure that the content inside the file is validated before saving so you don't end up with invalid file. If you do `sudo nano /etc/sudoers` then it doesn't validate the content so you should never do that.
     - Add the following below the line `root    ALL=(ALL:ALL) ALL` under "# User privilege specification"
     
-    ```
+    ```text
       deploy ALL=NOPASSWD: /bin/systemctl restart sidekiq
       deploy ALL=NOPASSWD: /bin/systemctl daemon-reload
     ```
 
 3. You can try running above two commands now in the command line of the server and it should run normally without asking for password:
 
-    ```cmd
+    ```shell
     $ sudo systemctl restart sidekiq
     # doesn't ask for the password and executes the command
     ``` 
