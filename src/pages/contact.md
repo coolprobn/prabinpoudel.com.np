@@ -8,6 +8,14 @@ excerpt: "Preferred methods of sending your questions, inquires, messages, and l
 Want to discuss your next project with me? Just send me the details using the form below.
 
 <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+  <input type="hidden" name="form-name" value="contact" />
+
+  <div class="form-group hidden">
+    <label>
+      Don’t fill this out if you're human: <input name="bot-field" />
+    </label>
+  </div>
+  
   <div class="form-group">
     <label for="name">Name
       <input id="name" name="name" type="text" spellcheck="false" maxlength="255" required>
