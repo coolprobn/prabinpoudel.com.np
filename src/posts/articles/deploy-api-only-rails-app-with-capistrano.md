@@ -9,6 +9,7 @@ tags: [ruby on rails]
 toc: true
 featured: false
 comments: true
+last_modified_at: 2023-03-08
 ---
 
 Capistrano is a deployment automation tool built on Ruby, Rake, and SSH. It allows you to deploy your app to a remote server in a single command after initial configurations are done.
@@ -394,7 +395,7 @@ For capistrano to perform sudo actions without asking for the password, the user
 
 2. Add commands required for the sidekiq restart and daemon-reload to be performed without password
 
-    - Open the sudoers file for the edit with `sudo EDITOR=nano vimsudo`, this will ensure that the content inside the file is validated before saving so you don't end up with invalid file. If you do `sudo nano /etc/sudoers` then it doesn't validate the content so you should never do that.
+    - Open the sudoers file for the edit with `sudo EDITOR=nano visudo`, this will ensure that the content inside the file is validated before saving so you don't end up with invalid file. If you do `sudo nano /etc/sudoers` then it doesn't validate the content so you should never do that.
     - Add the following below the line `root    ALL=(ALL:ALL) ALL` under "# User privilege specification"
     
     ```text
