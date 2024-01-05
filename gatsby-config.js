@@ -101,13 +101,20 @@ module.exports = {
     },
     'gatsby-remark-source-name',
     {
-      resolve: `gatsby-plugin-google-analytics`,
+      resolve: `gatsby-plugin-google-gtag`,
+      // See https://www.gatsbyjs.com/plugins/gatsby-plugin-google-gtag/ for options description
       options: {
-        trackingId: process.env.GOOGLE_ANALYTICS_TRACKING_ID,
-        head: false,
-        anonymize: true,
-        respectDNT: true,
-        cookieDomain: 'prabinpoudel.com.np',
+        trackingIds: [process.env.GOOGLE_TAG_TRACKING_ID],
+        gtagConfig: {
+          anonymize_ip: true,
+        },
+        pluginConfig: {
+          // Puts tracking script in the head instead of the body
+          head: false,
+          respectDNT: true,
+          origin: 'prabinpoudel.com.np',
+          delayOnRouteUpdate: 0,
+        },
       },
     },
     'gatsby-plugin-catch-links',
@@ -401,12 +408,6 @@ module.exports = {
         theme_color: site.themeColor,
         display: 'standalone',
         icon: `src${site.favicon}`,
-      },
-    },
-    {
-      resolve: `gatsby-plugin-google-adsense`,
-      options: {
-        publisherId: process.env.GOOGLE_AD_SENSE_PUBLISHER_ID,
       },
     },
   ],
