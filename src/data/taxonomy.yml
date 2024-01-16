@@ -18,6 +18,10 @@
   excerpt:
   html:
 
+- id: cron
+  excerpt:
+  html:
+
 - id: factory bot
   excerpt:
   html:
