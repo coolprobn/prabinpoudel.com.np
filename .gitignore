@@ -2,5 +2,7 @@
 /public/
 /.cache
 .env
+.env.*
+^.env.sample
 .DS_Store
 .idea/
