@@ -9,7 +9,7 @@ tags: [ruby on rails, tutorial, web development]
 toc: true
 featured: false
 comments: true
-last_modified_at: 2020-05-17
+last_modified_at: 2024-02-18
 canonical: true
 canonical_url: 'https://thedevpost.com/blog/setup-action-mailbox-with-postfix-part-1/'
 ---
@@ -172,11 +172,20 @@ end
 
 You should make sure that email in from input box matches the email domain configured. Now when you click `Deliver inbound email`, the execution of the server process should stop at the `process` method since we have a breakpoint at there. This means action mailbox is correctly forwarding incoming emails and our configurations are correct. You can perform further process as required in your app now.
 
+## Conclusion
+
 That's it, we have now successfully setup action mailbox and tested in development it is working.
 
 In the second part, we will configure postfix in production server to pipe emails to our rails app where action mailbox will further process it. You can read it <a href="/articles/action-mailbox-with-postfix-part-2/">here</a>.
 
 If you have any confusions or suggestions, please let me know in comment section below.
+
+## Similar Articles
+
+If you are interested in seeing how this same process can be accomplished with other ingress options, you can check articles below:
+
+- <a href="/articles/action-mailbox-with-sendgrid" target="_blank">Action Mailbox with SendGrid</a>
+- <a href="https://www.codynorman.com/ruby/deploy_action_mailbox_with_postmark/" target="_blank" rel="noopener">Deploy Action Mailbox To Postmark [External Link]</a> from <a href="https://www.codynorman.com/about/" target="_blank" rel="noopener">Cody Norman</a>
 
 **References:** <a href="https://guides.rubyonrails.org/action_mailbox_basics.html" target="_blank">Action Mailbox</a>
 

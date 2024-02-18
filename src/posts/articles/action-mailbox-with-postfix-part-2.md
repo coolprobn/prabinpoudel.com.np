@@ -9,7 +9,7 @@ tags: [ruby on rails, tutorial, web development]
 toc: true
 featured: false
 comments: true
-last_modified_at: 2020-05-17
+last_modified_at: 2024-02-18
 canonical: true
 canonical_url: 'https://thedevpost.com/blog/setup-action-mailbox-with-postfix-part-2/'
 ---
@@ -121,6 +121,13 @@ We should specify **user** so script is run by that user and not postfix or nobo
 You can view postfix log with `tail -f /var/log/mail.log`.
 
 You must have everything now to receive email in your rails app. Test it with any of your email provider; just send the email to `email@your-configured-domain.com` and check if it is being received in the log. If you have any comments or suggestions, please let me know in comments below.
+
+## Similar Articles
+
+If you are interested in seeing how this same process can be accomplished with other ingress options, you can check articles below:
+
+- <a href="/articles/action-mailbox-with-sendgrid" target="_blank">Action Mailbox with SendGrid</a>
+- <a href="https://www.codynorman.com/ruby/deploy_action_mailbox_with_postmark/" target="_blank" rel="noopener">Deploy Action Mailbox To Postmark [External Link]</a> from <a href="https://www.codynorman.com/about/" target="_blank" rel="noopener">Cody Norman</a>
 
 **References:** <a href="https://guides.rubyonrails.org/action_mailbox_basics.html" target="_blank">Action Mailbox</a>, <a href="https://serverfault.com/questions/258469/how-to-configure-postfix-to-pipe-all-incoming-email-to-a-script" target="_blank">Pipe incoming mails to script</a>
 
