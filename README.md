@@ -7,7 +7,7 @@ Inspired and cloned from [Made Mistakes](https://mademistakes.com/) when it was 
 1. **Install dependencies**
 
    ```shell
-   npm install
+   npm install --legacy-peer-deps
    ```
 
 2. **Add `.env` file to the root with your GOOGLE_ANALYTICS_TRACKING_ID**
