@@ -9,6 +9,7 @@ tags: [ruby on rails, tutorial, web development]
 toc: true
 featured: false
 comments: true
+last_modified_at: 2024-02-18
 ---
 
 Rails 6 released with many awesome features and action mailbox was one of them that has come to make the life easier. <a href="https://guides.rubyonrails.org/action_mailbox_basics.html#introduction" target="_blank">From Official Action Mailbox Guide:</a>
@@ -477,6 +478,13 @@ Next, you can deploy the app to staging or production and add new Inbound Parse 
 If you have any confusions, suggestions or issues while implementing any steps in this email, please let me know in comment section below and I will do my best to help you.
 
 Thanks for reading. Happy coding and tinkering!
+
+## Similar Articles
+
+If you are interested in seeing how this same process can be accomplished with other ingress options, you can check articles below:
+
+- <a href="/articles/action-mailbox-with-postfix-part-1/" target="_blank">Action Mailbox with Postfix</a>
+- <a href="https://www.codynorman.com/ruby/deploy_action_mailbox_with_postmark/" target="_blank" rel="noopener">Deploy Action Mailbox To Postmark [External Link]</a> from <a href="https://www.codynorman.com/about/" target="_blank" rel="noopener">Cody Norman</a>
 
 **References:** 
 
