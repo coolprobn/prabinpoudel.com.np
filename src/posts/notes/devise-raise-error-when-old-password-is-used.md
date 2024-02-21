@@ -61,7 +61,9 @@ We will understand what each line of code means in next section.
     ActiveModel stores changes that were made in the current transaction inside the variable "changed" and with this line of code we are returning early from the validation if user was updated but password wasn't updated.
 2. `Devise::Encryptor.compare(User, encrypted_password_was, password)`
   
-    Since it's a bad security practice to decrypt the password, we use helper from Devise to directly compare the previous password in encrypted form with the new password changed by the user. This line will return true if previous password is same as the new password or false if they are different.
+    We are already using Devise for authentication so we are reaching out to the helper module "Encryptor" from Devise to compare new password with the old one. Here, current password will be in plain format and "Encryptor" will hash the password with relevant algorithm before comparing so we know if the password is same or different.
+    
+    This line will return true if previous password is same as the new password or false if they are different.
 3. `errors.add(:password, I18n.t('validations.not_allowed.old_password'))`
   
     Lastly, we are adding validation errors to the User model if the password is same. And controller action will return the validation error to show it in frontend.
