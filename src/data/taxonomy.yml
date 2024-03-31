@@ -38,6 +38,10 @@
   excerpt:
   html:
 
+- id: gitlab ci
+  excerpt:
+  html:
+
 - id: lint
   excerpt:
   html:
@@ -81,6 +85,10 @@
   html:
 
 - id: react native
+  excerpt:
+  html:
+
+- id: rspec
   excerpt:
   html:
 

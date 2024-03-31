@@ -5,11 +5,11 @@ path: /articles/integrate-pronto-with-gitlab-ci-for-rails-app/
 excerpt: "There are multiple ways to fix missing top level class documentation comment in Rubocop. You can disable it in your whole app with by disabling cop in the whole project, disable it in one class or just add a comment above the class declaration."
 image: ../../images/articles/integrate-pronto-with-gitlab-ci-for-rails-app.webp
 categories: [articles]
-tags: [ruby on rails, rubocop, lint, automated code review]
+tags: [ruby on rails, rubocop, lint, automated code review, gitlab ci]
 toc: true
 featured: false
 comments: true
-last_modified_at: 2022-08-08
+last_modified_at: 2024-03-31
 ---
 
 At <a href="https://truemark.com.np" target="_blank">Truemark</a>, we are constantly looking to improve the code quality in our projects. And one way to do that is through the regular code review process. Code review process can quickly get exhausting if team members have to spend majority of their time on maintaining best practices.
@@ -55,39 +55,36 @@ Best practices and style guide can first be setup by the team and Pronto makes s
     bundle install
    ```
 
-3. Add specific version for the installed Gems
-
-    After bundle install, go to your Gemfile and search the gem version installed and update the Gemfile with that version
-
-    ```gemfile
-      group :development, :test do
-        gem 'pronto', '~> 0.11.0'
-        gem 'pronto-rubocop', '~> 0.11.1', require: false
-        gem 'pronto-flay', '~> 0.11.0', require: false
-      end
-    ```
-
 ## Setup Pronto
 
 Create **.gitlab-ci.yml** in the root project and add the following:
 
 ```yml
-  image: ruby:3.0.0 # this should be the ruby version that your rails app is using, ours was using 3.0.0
+# this should be the ruby version that your rails app is using, ours was using 3.3.0
+image: ruby:3.3.0
 
+stages:
+  # You can name your stage anything you like, just need to be sensible
+  - lint
+
+pronto:
   before_script:
-    - apt-get update && apt-get install -y cmake # Install cmake needed for pronto
-    - bundle install # install all packages in the Gemfile
-    - git fetch origin # fetch all branches, was throwing Rugged::ReferenceError, you can remove this and try if it works for you
-
-  stages:
-    - lint # we are only formatting/linting the changes
-
-  pronto:
-    stage: lint # runs pronto on the lint stage
-    only:
-      - merge_requests # run pronto only on merge requests (also runs when new changes are pushed to the merge request)
-    script:
-      - PRONTO_GITLAB_API_PRIVATE_TOKEN=$PRONTO_ACCESS_TOKEN bundle exec pronto run -f gitlab_mr -c origin/$CI_MERGE_REQUEST_TARGET_BRANCH_NAME # Run pronto on branch of current merge request
+    # <Optional> Install bundler version from Gemfile.lock
+    - gem install bundler -v "$(grep -A 1 "BUNDLED WITH" Gemfile.lock | tail -n 1)" --no-document
+    # Install cmake required for rugged gem (Pronto depends on it)
+    - apt-get update -qq && apt-get install -y -qq cmake
+    - bundle install --jobs $(nproc)
+  stage: lint
+  only:
+    # run pronto only on merge requests (also runs when new changes are pushed to the merge request)
+    - merge_requests
+  variables:
+    PRONTO_GITLAB_API_PRIVATE_TOKEN: $PRONTO_ACCESS_TOKEN
+  script:
+    # Pronto fails with the error "revspec 'origin/{target_branch}' because Gitlab fetches changes with git depth set to 20 by default. You can remove this line if you update Gitlab CI setting to clone the full project.
+    - git fetch origin $CI_MERGE_REQUEST_TARGET_BRANCH_NAME
+    # Run pronto on branch of current merge request
+    - bundle exec pronto run -f gitlab_mr -c origin/$CI_MERGE_REQUEST_TARGET_BRANCH_NAME
 ```
 
 _NOTES_: 
@@ -165,9 +162,9 @@ cache:
 
 before_script:
   # add this
-  - bundle config set path 'vendor'
+  - bundle config set --local path 'vendor'
   # replace "bundle install" with 👇
-  - bundle install -j $(nproc) --path=vendor
+  - bundle install -j $(nproc)
 
 # other content will be the same
 ```
@@ -177,27 +174,29 @@ With above configuration, we are telling Gitlab Ci to cache "vendor" folder wher
 Your final ".gitlab-ci.yml" could look similar to this:
 
 ```yml
-image: ruby:3.0.0 # this should be the ruby version that your rails app is using, ours was using 3.0.0
+image: ruby:3.3.0
 
 cache:
   paths:
     - vendor/
 
-before_script:
-  - apt-get update && apt-get install -y cmake # Install cmake needed for pronto
-  - bundle config set path 'vendor'
-  - bundle install -j $(nproc) --path=vendor
-  - git fetch origin # fetch all branches, was throwing Rugged::ReferenceError, you can remove this and try if it works for you
-
 stages:
-  - lint # we are only formatting/linting the changes
+  - lint
 
 pronto:
-  stage: lint # runs pronto on the lint stage
+  before_script:
+    - gem install bundler -v "$(grep -A 1 "BUNDLED WITH" Gemfile.lock | tail -n 1)" --no-document
+    - apt-get update -qq && apt-get install -y -qq cmake
+    - bundle config set --local path 'vendor'
+    - bundle install --jobs $(nproc)
+  stage: lint
   only:
-    - merge_requests # run pronto only on merge requests (also runs when new changes are pushed to the merge request)
+    - merge_requests
+  variables:
+    PRONTO_GITLAB_API_PRIVATE_TOKEN: $PRONTO_ACCESS_TOKEN
   script:
-    - PRONTO_GITLAB_API_PRIVATE_TOKEN=$PRONTO_ACCESS_TOKEN bundle exec pronto run -f gitlab_mr -c origin/$CI_MERGE_REQUEST_TARGET_BRANCH_NAME # Run pronto on branch of current merge request
+    - git fetch origin $CI_MERGE_REQUEST_TARGET_BRANCH_NAME
+    - bundle exec pronto run -f gitlab_mr -c origin/$CI_MERGE_REQUEST_TARGET_BRANCH_NAME
 ```
 
 ## Conclusion
