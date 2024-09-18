@@ -9,6 +9,7 @@ tags: [ruby on rails, rspec, gitlab ci]
 toc: true
 featured: false
 comments: true
+last_modified_at: 2024-09-18
 ---
 
 At <a href="https://www.truemark.dev" target="_blank" rel="noopener">Truemark</a>, we are constantly looking to improve the code quality in our projects. And one way to do that is through the integration of CI into our workflow. CI can help in automating code reviews for linting and standard practices as well as for running tests to check if code change breaks any existing functionalities.
@@ -130,7 +131,8 @@ RSpec.configure do |config|
 
     if ENV.fetch("SELENIUM_REMOTE_URL", nil)
       # Use the application container's IP instead of localhost so Capybara knows where to direct Selenium
-      Capybara.app_host = "http://#{IPSocket.getaddress(Socket.gethostname)}"
+      ip = Socket.ip_address_list.detect(&:ipv4_private?).ip_address
+      Capybara.app_host = "http://#{ip}:#{Capybara.server_port}"
     end
 
     driven_by :selenium_chrome_custom
@@ -188,7 +190,8 @@ Capybara.server_host = "0.0.0.0"
 
 if ENV.fetch("SELENIUM_REMOTE_URL", nil)
   # Use the application container's IP instead of localhost so Capybara knows where to direct Selenium
-  Capybara.app_host = "http://#{IPSocket.getaddress(Socket.gethostname)}"
+  ip = Socket.ip_address_list.detect(&:ipv4_private?).ip_address
+  Capybara.app_host = "http://#{ip}:#{Capybara.server_port}"
 end
 ```
 
