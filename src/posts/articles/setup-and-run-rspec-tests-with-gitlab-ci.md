@@ -9,12 +9,20 @@ tags: [ruby on rails, rspec, gitlab ci]
 toc: true
 featured: false
 comments: true
-last_modified_at: 2024-09-18
+last_modified_at: 2024-11-12
 ---
 
 At <a href="https://www.truemark.dev" target="_blank" rel="noopener">Truemark</a>, we are constantly looking to improve the code quality in our projects. And one way to do that is through the integration of CI into our workflow. CI can help in automating code reviews for linting and standard practices as well as for running tests to check if code change breaks any existing functionalities.
 
-Today we will look at adding configurations to Gitlab CI for running RSpec tests in our Rails application.
+If you don't want to read the whole blog and just want the whole configuration automatically, you can do so using Zero Config Rails. Just hit the following command and you will be good to go:
+
+```bash
+$ gem install zcr-zen && zen add ci:gitlab_ci --app_test_framework=rspec
+```
+
+For the detailed list of configurations, you can visit <a href="https://generators.zeroconfigrails.com/install/gitlab_ci" target="_blank" rel="noopener">Gitlab CI Generator</a>.
+
+Now without further ado, let's look at adding configurations to Gitlab CI for running RSpec tests in our Rails application.
 
 ## Assumption
 
